@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="vendor/sitemap/styles/xml.xsl" type="text/xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+	<url>
+	<loc>https://www.storialtech.com/tutorial</loc>
+		<priority>1.0</priority>
+		<lastmod>2021-04-27T06:54:36+00:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/tutorial/create-3d-rotating-cube-with-images</loc>
+		<priority>0.6</priority>
+		<lastmod>2021-08-09T13:19:57+00:00</lastmod>
+		<changefreq>daily</changefreq>
+		<image:image>
+			<image:loc>https://www.storialtech.com/storage/app/public/image/tutorial/8JGToBe0ois7B7FA300QwGi4Uk0mazBrqP3Il4wO.jpg</image:loc>
+			<image:title>Create 3d Rotating Cube with Images</image:title>
+			<image:caption>Create 3d Rotating Cube with Images</image:caption>
+		</image:image>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/tutorial/beginners-guide-to-learning-illustration</loc>
+		<priority>0.6</priority>
+		<lastmod>2021-07-17T12:39:44+00:00</lastmod>
+		<changefreq>daily</changefreq>
+		<image:image>
+			<image:loc>https://www.storialtech.com/storage/app/public/image/tutorial/OhKTcr5i791PKObY5GZ593ov1Fzdm0L3Nt7atcB8.jpg</image:loc>
+			<image:title>Beginner's Guide to Learning Illustration in 2021</image:title>
+			<image:caption>Beginner's Guide to Learning Illustration in 2021</image:caption>
+		</image:image>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/tutorial/build-tower-blocks-game-with-html-css-in-2021</loc>
+		<priority>0.6</priority>
+		<lastmod>2021-07-16T21:31:47+00:00</lastmod>
+		<changefreq>daily</changefreq>
+		<image:image>
+			<image:loc>https://www.storialtech.com/storage/app/public/image/tutorial/oLYyKb14MwrG1Nsh3qyI2wy821S1j36mPy8jcqOP.jpg</image:loc>
+			<image:title>Build Tower Blocks Game With Html &amp; CSS in 2021</image:title>
+			<image:caption>Build Tower Blocks Game With Html &amp; CSS in 2021</image:caption>
+		</image:image>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/tutorial/newtons-cradle-animated-design-with-html-css</loc>
+		<priority>0.6</priority>
+		<lastmod>2021-07-16T10:53:41+00:00</lastmod>
+		<changefreq>daily</changefreq>
+		<image:image>
+			<image:loc>https://www.storialtech.com/storage/app/public/image/tutorial/wbfRGyRUWWdksyMejJdLFs2F9gzoA80SDIH3EW7J.jpg</image:loc>
+			<image:title>Newton's Cradle Animated Design With Html &amp; CSS</image:title>
+			<image:caption>Newton's Cradle Animated Design With Html &amp; CSS</image:caption>
+		</image:image>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/tutorial/simple-button-design-using-html-css-in-2021</loc>
+		<priority>0.6</priority>
+		<lastmod>2021-07-16T09:31:24+00:00</lastmod>
+		<changefreq>daily</changefreq>
+		<image:image>
+			<image:loc>https://www.storialtech.com/storage/app/public/image/tutorial/FrqJhYYU3kfULxvt21TgTERziVObs8gJvpbgNQOh.png</image:loc>
+			<image:title>Simple Button Design Using Html &amp; CSS in 2021</image:title>
+			<image:caption>Simple Button Design Using Html &amp; CSS in 2021</image:caption>
+		</image:image>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/tutorial/how-to-make-a-calculator-using-html-css-and-javascript-in-2021</loc>
+		<priority>0.6</priority>
+		<lastmod>2021-07-16T09:30:47+00:00</lastmod>
+		<changefreq>daily</changefreq>
+		<image:image>
+			<image:loc>https://www.storialtech.com/storage/app/public/image/tutorial/LWiwsOe15S4o9RiPm2ZcWnYeCQL9n3QRRNvBjy1f.jpg</image:loc>
+			<image:title>How to make a calculator using html css and javascript in 2021</image:title>
+			<image:caption>How to make a calculator using html css and javascript in 2021</image:caption>
+		</image:image>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/tutorial/best-practice-how-can-you-make-money-with-affiliate-marketing</loc>
+		<priority>0.6</priority>
+		<lastmod>2021-07-13T21:45:36+00:00</lastmod>
+		<changefreq>daily</changefreq>
+		<image:image>
+			<image:loc>https://www.storialtech.com/storage/app/public/image/tutorial/TCjUhU96uQ9fgvINz3jA1MHDj4qz083BK6VPMylM.jpg</image:loc>
+			<image:title>Best Practice: How can you make money with affiliate marketing</image:title>
+			<image:caption>Best Practice: How can you make money with affiliate marketing</image:caption>
+		</image:image>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/tutorial/the-fundamentals-of-graphic-design-for-beginner</loc>
+		<priority>0.6</priority>
+		<lastmod>2021-07-11T19:59:20+00:00</lastmod>
+		<changefreq>daily</changefreq>
+		<image:image>
+			<image:loc>https://www.storialtech.com/storage/app/public/image/tutorial/6BVFmwffv7SYm1Kfl2GdJwTTMRi8OZGcmzeH3toW.jpg</image:loc>
+			<image:title>The Fundamentals of Graphic Design for Beginner - Learn Graphic Design</image:title>
+			<image:caption>The Fundamentals of Graphic Design for Beginner - Learn Graphic Design</image:caption>
+		</image:image>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/tutorial/javascript-light-on-and-off-code</loc>
+		<priority>0.6</priority>
+		<lastmod>2021-05-15T13:21:01+00:00</lastmod>
+		<changefreq>daily</changefreq>
+		<image:image>
+			<image:loc>https://www.storialtech.com/storage/app/public/image/tutorial/W040Tr0T7RhyfjtN2NgXtsru9YJ1Mi6NafirSIMG.jpg</image:loc>
+			<image:title>JavaScript light on and off code</image:title>
+			<image:caption>JavaScript light on and off code</image:caption>
+		</image:image>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/tutorial/use-gates-to-implement-simple-role-based-authorization-in-laravel-8</loc>
+		<priority>0.6</priority>
+		<lastmod>2021-05-13T13:27:26+00:00</lastmod>
+		<changefreq>daily</changefreq>
+		<image:image>
+			<image:loc>https://www.storialtech.com/storage/app/public/image/tutorial/bytyGmt5YtCwI9cTRoGGNCn3a6I6SD9DCPiESluq.jpg</image:loc>
+			<image:title>Use Gates to implement simple role-based authorization in Laravel 8</image:title>
+			<image:caption>Use Gates to implement simple role-based authorization in Laravel 8</image:caption>
+		</image:image>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/tutorial/laravel-8-multilevel-nested-comments-system</loc>
+		<priority>0.6</priority>
+		<lastmod>2021-04-08T06:21:36+00:00</lastmod>
+		<changefreq>daily</changefreq>
+		<image:image>
+			<image:loc>https://www.storialtech.com/storage/app/public/image/tutorial/bkX3AwzNYKTSrIKdlinEPzybItTefUChZN8YCiPp.webp</image:loc>
+			<image:title>Laravel 8 Multilevel Nested Comments System</image:title>
+			<image:caption>Laravel 8 Multilevel Nested Comments System</image:caption>
+		</image:image>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/tutorial/install-laravel-8-application-quickly</loc>
+		<priority>0.6</priority>
+		<lastmod>2021-04-04T11:42:45+00:00</lastmod>
+		<changefreq>daily</changefreq>
+		<image:image>
+			<image:loc>https://www.storialtech.com/storage/app/public/image/tutorial/g8CJ97EZ6tIhsTnrXqrvb6AbXFZwgJEv8KVFUYXd.webp</image:loc>
+			<image:title>Install Laravel 8 Application Quickly</image:title>
+			<image:caption>Install Laravel 8 Application Quickly</image:caption>
+		</image:image>
+	</url>
+</urlset>
+

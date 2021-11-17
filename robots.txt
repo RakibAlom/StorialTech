@@ -1,0 +1,10 @@
+#GroupOne
+User-agent: Googlebot
+Disallow: /nogooglebot/
+
+#GroupTwo
+User-agent: *
+Allow: /
+
+Sitemap: https://www.storialtech.com/sitemap.xml
+

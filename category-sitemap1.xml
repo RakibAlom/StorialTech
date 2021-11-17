@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    
+    <!--blog category url are here-->
+    <url>
+       <loc>https://www.storialtech.com/blog/category/tools-and-plugins</loc>
+       <lastmod>2021-07-10</lastmod>
+       <priority>0.80</priority>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/blog/category/off-topic</loc>
+       <lastmod>2021-07-10</lastmod>
+       <priority>0.80</priority>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/blog/category/others</loc>
+       <lastmod>2021-07-10</lastmod>
+       <priority>0.80</priority>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/blog/category/tech-news</loc>
+       <lastmod>2021-07-10</lastmod>
+       <priority>0.80</priority>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/blog/category/website-template</loc>
+       <lastmod>2021-04-27</lastmod>
+       <priority>0.80</priority>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/blog/category/film-and-media</loc>
+       <lastmod>2021-04-27</lastmod>
+       <priority>0.80</priority>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/blog/category/tips-and-tricks</loc>
+       <lastmod>2021-05-17</lastmod>
+       <priority>0.80</priority>
+    </url>
+
+    <!--template category url are here-->
+    <url>
+       <loc>https://www.storialtech.com/template/category/html</loc>
+       <lastmod>2021-04-27</lastmod>
+       <priority>0.80</priority>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/template/category/wordpress</loc>
+       <lastmod>2021-04-27</lastmod>
+       <priority>0.80</priority>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/template/category/cms</loc>
+       <lastmod>2021-04-27</lastmod>
+       <priority>0.80</priority>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/template/category/others</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    
+    <!--template tag url are here-->
+    <url>
+       <loc>https://www.storialtech.com/template/tag/blogger-template</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/template/tag/joomla-template</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/template/tag/drupal-template</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/template/tag/other-cms-template</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/template/tag/shopify</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/template/tag/admin-dashboard</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/template/tag/multi-purpose-template</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/template/tag/ecommerce-template</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/template/tag/news-template</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/template/tag/magazine-template</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/template/tag/th-html-template</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/template/tag/react</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/template/tag/vue</loc>
+       <lastmod>2021-04-27</lastmod>
+       <priority>0.80</priority>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/template/tag/angular</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/template/tag/html</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/template/tag/psd</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/template/tag/laravel</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/template/tag/other</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/template/tag/wordpress-multi-purpose-template</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/template/tag/wordpress-ecommerce-template</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/template/tag/wordpress-news-template</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/template/tag/wordpress-magazine-template</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/template/tag/tf-wordpress-template</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    
+    <!--tutorial category url are here-->
+    <url>
+       <loc>https://www.storialtech.com/tutorial/category/web-design</loc>
+       <lastmod>2021-04-27</lastmod>
+       <priority>0.80</priority>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/tutorial/category/web-development</loc>
+       <lastmod>2021-04-27</lastmod>
+       <priority>0.80</priority>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/tutorial/category/digital-marketing</loc>
+       <lastmod>2021-04-27</lastmod>
+       <priority>0.80</priority>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/tutorial/category/graphic-design</loc>
+       <lastmod>2021-04-27</lastmod>
+       <priority>0.80</priority>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/tutorial/category/office-application</loc>
+       <lastmod>2021-04-27</lastmod>
+       <priority>0.80</priority>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/tutorial/category/search-engine-optimization</loc>
+       <lastmod>2021-05-17</lastmod>
+       <priority>0.80</priority>
+    </url>
+    
+    <!--tutorial tag url are here-->
+    <url>
+       <loc>https://www.storialtech.com/tutorial/tag/graphics-tips-and-tools</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/tutorial/tag/graphics-fundamental</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/tutorial/tag/seo</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/tutorial/tag/adobe-photoshop</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/tutorial/tag/adobe-illustrator</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/tutorial/tag/word</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/tutorial/tag/excel</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/tutorial/tag/powerpoint</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/tutorial/tag/html</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/tutorial/tag/css</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/tutorial/tag/bootstrap</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/tutorial/tag/javascript</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/tutorial/tag/php</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/tutorial/tag/mysql</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/tutorial/tag/laravel</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/tutorial/tag/website-seo</loc>
+       <lastmod>2021-05-17</lastmod>
+    </url>
+    
+    <!-- movie category url are here-->
+    <!--<url>-->
+    <!--   <loc>https://www.storialtech.com/movie/category/action-movie</loc>-->
+    <!--   <lastmod>2021-04-27</lastmod>-->
+    <!--</url>-->
+    <!--<url>-->
+    <!--   <loc>https://www.storialtech.com/movie/category/adventure-movie</loc>-->
+    <!--   <lastmod>2021-04-27</lastmod>-->
+    <!--</url>-->
+    <!--<url>-->
+    <!--   <loc>https://www.storialtech.com/movie/category/animation-movie</loc>-->
+    <!--   <lastmod>2021-04-27</lastmod>-->
+    <!--</url>-->
+    <!--<url>-->
+    <!--   <loc>https://www.storialtech.com/movie/category/bollywood-movie</loc>-->
+    <!--   <lastmod>2021-04-27</lastmod>-->
+    <!--</url>-->
+    <!--<url>-->
+    <!--   <loc>https://www.storialtech.com/movie/category/comedy-movie</loc>-->
+    <!--   <lastmod>2021-04-27</lastmod>-->
+    <!--</url>-->
+    <!--<url>-->
+    <!--   <loc>https://www.storialtech.com/movie/category/crime-fiction</loc>-->
+    <!--   <lastmod>2021-04-27</lastmod>-->
+    <!--</url>-->
+    <!--<url>-->
+    <!--   <loc>https://www.storialtech.com/movie/category/drama-series</loc>-->
+    <!--   <lastmod>2021-04-27</lastmod>-->
+    <!--</url>-->
+    <!--<url>-->
+    <!--   <loc>https://www.storialtech.com/movie/category/fantasy-movie</loc>-->
+    <!--   <lastmod>2021-04-27</lastmod>-->
+    <!--</url>-->
+    <!--<url>-->
+    <!--   <loc>https://www.storialtech.com/movie/category/hindi-dubbed-movie</loc>-->
+    <!--   <lastmod>2021-04-27</lastmod>-->
+    <!--</url>-->
+    <!--<url>-->
+    <!--   <loc>https://www.storialtech.com/movie/category/hollywood-movie</loc>-->
+    <!--   <lastmod>2021-04-27</lastmod>-->
+    <!--   <priority>0.80</priority>-->
+    <!--</url>-->
+    <!--<url>-->
+    <!--   <loc>https://www.storialtech.com/movie/category/horror-movie</loc>-->
+    <!--   <lastmod>2021-04-27</lastmod>-->
+    <!--</url>-->
+    <!--<url>-->
+    <!--   <loc>https://www.storialtech.com/movie/category/japanese-chinese</loc>-->
+    <!--   <lastmod>2021-04-27</lastmod>-->
+    <!--</url>-->
+    <!--<url>-->
+    <!--   <loc>https://www.storialtech.com/movie/category/korean-movie</loc>-->
+    <!--   <lastmod>2021-04-27</lastmod>-->
+    <!--</url>-->
+    <!--<url>-->
+    <!--   <loc>https://www.storialtech.com/movie/category/malayalam-movie</loc>-->
+    <!--   <lastmod>2021-04-27</lastmod>-->
+    <!--</url>-->
+    <!--<url>-->
+    <!--   <loc>https://www.storialtech.com/movie/category/mystery</loc>-->
+    <!--   <lastmod>2021-04-27</lastmod>-->
+    <!--</url>-->
+    <!--<url>-->
+    <!--   <loc>https://www.storialtech.com/movie/category/romantic</loc>-->
+    <!--   <lastmod>2021-04-27</lastmod>-->
+    <!--</url>-->
+    <!--<url>-->
+    <!--   <loc>https://www.storialtech.com/movie/category/science-fiction-movie</loc>-->
+    <!--   <lastmod>2021-04-27</lastmod>-->
+    <!--</url>-->
+    <!--<url>-->
+    <!--   <loc>https://www.storialtech.com/movie/category/tamil-movie</loc>-->
+    <!--   <lastmod>2021-04-27</lastmod>-->
+    <!--</url>-->
+    <!--<url>-->
+    <!--   <loc>https://www.storialtech.com/movie/category/telegu-movie</loc>-->
+    <!--   <lastmod>2021-04-27</lastmod>-->
+    <!--</url>-->
+    <!--<url>-->
+    <!--   <loc>https://www.storialtech.com/movie/category/thriller-movie</loc>-->
+    <!--   <lastmod>2021-04-27</lastmod>-->
+    <!--</url>-->
+    <!--<url>-->
+    <!--   <loc>https://www.storialtech.com/movie/category/bangla-movie</loc>-->
+    <!--   <lastmod>2021-05-17</lastmod>-->
+    <!--</url>-->
+    
+    <!--pdf category url are here-->
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/comedy-ebook</loc>
+       <lastmod>2021-07-10</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/children-ebook</loc>
+       <lastmod>2021-07-10</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/sebar-book</loc>
+       <lastmod>2021-07-10</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/bangla-pdf-ebook</loc>
+       <lastmod>2021-07-10</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/action-ebook</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/adventure-ebook</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/artical-ebook</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/awarded-ebook</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/bangla-onubad</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/biography-ebook</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/comics-ebook</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/cooking-food-and-nutrition</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/detective-ebook</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/drama-ebook</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/economics-ebook</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/educational-ebook</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/environment-and-nature-ebook</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/family-ebook</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/fantasy-ebook</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/fashion-and-beauty-ebook</loc>
+       <lastmod>2021-04-27</lastmod>
+       <priority>0.64</priority>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/fictional-ebook</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/freelancing-and-outsourcing-ebook</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/health-and-care</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/historical-ebook</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/horror-ebook</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/ict-ebook</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/islamic-ebook</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/journey-ebook</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/kids-ebook</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/motivational-ebook</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/novels-ebook</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/patriotic-ebook</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/philosophy-ebook</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/poem-ebook</loc>
+       <lastmod>2021-04-27</lastmod>
+       <priority>0.64</priority>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/poetry-ebook</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/politics-ebook</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/psychology-ebook</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/religious-ebook</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/science-fiction-ebook</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/singing-ebook</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/thriller-ebook</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/war-ebook</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/teenage-ebook</loc>
+       <lastmod>2021-05-17</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/category/english-ebook</loc>
+       <lastmod>2021-05-17</lastmod>
+    </url>
+    
+    <!--pdf author url are here-->
+    <url>
+       <loc>https://www.storialtech.com/pdf/atuhor/rafael-sabatini</loc>
+       <lastmod>2021-07-10</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/atuhor/agatha-christie</loc>
+       <lastmod>2021-07-10</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/atuhor/anish-das-apu</loc>
+       <lastmod>2021-07-10</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/atuhor/henry-rider-haggard</loc>
+       <lastmod>2021-07-10</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/atuhor/paulo-coelho</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/atuhor/humayun-ahmed</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/atuhor/humayun-azad</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/atuhor/satyajit-chakroborty</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/atuhor/sumanto-aslam</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/atuhor/jibanananda-das</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/atuhor/muhammed-zafar-iqbal</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/atuhor/saiful-baten-tito</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/atuhor/narendra-nath-mitra</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/atuhor/mohammad-nazim-uddin</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/atuhor/zafar-iqbal</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/atuhor/satyajit-ray</loc>
+       <lastmod>2021-05-17</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/atuhor/shirshendu-mukhopadhyay</loc>
+       <lastmod>2021-05-17</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/atuhor/anish-deb</loc>
+       <lastmod>2021-05-17</lastmod>
+    </url>
+    
+    
+    <!--pdf series url are here-->
+    <url>
+       <loc>https://www.storialtech.com/pdf/series/masud-rana</loc>
+       <lastmod>2021-07-10</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/series/himu-series</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/series/misir-ali</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/series/harry-potter-series</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/series/dragon-samagro</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/series/science-fiction-samagro</loc>
+       <lastmod>2021-05-17</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/pdf/series/suvro</loc>
+       <lastmod>2021-05-17</lastmod>
+    </url>
+    
+    <!--story url are here-->
+    <url>
+       <loc>https://www.storialtech.com/story/category/crime-story</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/story/category/detective-story</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/story/category/fantasy-story</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/story/category/funny-story</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/story/category/historical-story</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/story/category/horror-story</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/story/category/islamic-story</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/story/category/life-story</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/story/category/love-story</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/story/category/magazine-story</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/story/category/other-story</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/story/category/romantic-story</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/story/category/sad-story</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/story/category/science-fiction-story</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    
+    <!--premium free source category url are here-->
+    <url>
+       <loc>https://www.storialtech.com/premium-free-source/category/course</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    <url>
+       <loc>https://www.storialtech.com/premium-free-source/category/source</loc>
+       <lastmod>2021-04-27</lastmod>
+    </url>
+    
+</urlset>	  	  
