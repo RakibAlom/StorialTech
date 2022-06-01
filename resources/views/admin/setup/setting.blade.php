@@ -1,7 +1,8 @@
 @extends('admin.layouts.app')
 
 @section('css')
-<!--  END CUSTOM STYLE FILE  -->
+<!--  START CUSTOM STYLE FILE  -->
+<link href="{{ asset('public/backend/assets/css/users/account-setting.css') }}" rel="stylesheet" type="text/css" />
 {{-- <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script> --}}
 
 @endsection
@@ -231,7 +232,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <label for="">favicon (max: 20KB)</label>
                                             <input type="file" onchange="iconChange(this)" name="favicon" class="form-control">
                                         @if($setting->favicon)
@@ -241,7 +242,7 @@
                                             <img class="mt-4" src="" id="icon" style="height: 120px;">
                                         @endif
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <label for="">Logo (max: 50KB)</label>
                                             <input type="file" onchange="logoChange(this)" name="logo" class="form-control">
                                         @if($setting->logo)
@@ -251,7 +252,7 @@
                                             <img class="mt-4" src="" id="icon" style="height: 120px;">
                                         @endif
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <label for="">Cover Image (max: 100KB)</label>
                                             <input type="file" onchange="coverChange(this)" name="cover_image" class="form-control">
                                         @if($setting->cover_image)
@@ -259,6 +260,16 @@
                                             <img class="img-thumbnail mt-4" src="{{ asset('storage/app/public/'.$setting->cover_image) }}" id="cover" style="height: 120px;">
                                         @else
                                             <img class="mt-4" src="" id="cover" style="height: 120px;">
+                                        @endif
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="">Donate Image (max: 100KB)</label>
+                                            <input type="file" onchange="donateImageChange(this)" name="donate_image" class="form-control">
+                                        @if($setting->donate_image)
+                                            <input type="hidden" name="olddonateimage" value="{{ $setting->donate_image }}">
+                                            <img class="img-thumbnail mt-4" src="{{ asset('storage/app/public/'.$setting->donate_image) }}" id="donate" style="height: 120px;">
+                                        @else
+                                            <img class="mt-4" src="" id="donate" style="height: 120px;">
                                         @endif
                                         </div>
 
@@ -479,20 +490,25 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <label for="">FAVICON (max:20KB)</label>
                                         <input type="file" onchange="iconChange(this)" name="favicon" class="form-control">
                                         <img src="" id="icon">
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <label for="">LOGO (max:50KB)</label>
                                         <input type="file" onchange="logoChange(this)" name="logo" class="form-control">
                                         <img src="" id="logo">
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <label for="">COVER IMAGE (max:100KB)</label>
                                         <input type="file" onchange="coverChange(this)" name="cover_image" class="form-control">
                                         <img src="" id="cover">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="">DONATE IMAGE (max:100KB)</label>
+                                        <input type="file" onchange="donateImageChange(this)" name="donate_image" class="form-control">
+                                        <img src="" id="donate">
                                     </div>
 
                                     <div class="col-md-12">
@@ -522,6 +538,7 @@
 @endsection
 
 @section('js')
+<script src="{{ asset('public/backend/assets/js/users/account-settings.js') }}"></script>
 
 <script>
 	function iconChange(input) {
@@ -554,6 +571,19 @@
           	var reader = new FileReader();
           	reader.onload = function (e) {
               	$('#cover')
+              	.attr('src', e.target.result)
+			  	.attr("class","img-thumbnail mt-4")
+			  	.attr("height",'120px')
+          	};
+          	reader.readAsDataURL(input.files[0]);
+     	}
+    }
+
+    function donateImageChange(input) {
+      	if (input.files && input.files[0]) {
+          	var reader = new FileReader();
+          	reader.onload = function (e) {
+              	$('#donate')
               	.attr('src', e.target.result)
 			  	.attr("class","img-thumbnail mt-4")
 			  	.attr("height",'120px')

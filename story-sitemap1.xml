@@ -8,914 +8,1094 @@
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
+	<loc>https://www.storialtech.com/story/voyanok-rat</loc>
+		<priority>0.8</priority>
+		<lastmod>2022-01-26T11:09:41+00:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/story/neshagrosto-meye</loc>
+		<priority>0.8</priority>
+		<lastmod>2022-01-26T08:36:18+00:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/story/mon-mane-na</loc>
+		<priority>0.8</priority>
+		<lastmod>2022-01-26T08:24:06+00:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/story/ekti-notun-golper-sondhane</loc>
+		<priority>0.8</priority>
+		<lastmod>2022-01-26T07:59:41+00:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/story/premer-usnota</loc>
+		<priority>0.8</priority>
+		<lastmod>2022-01-26T07:39:49+00:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/story/golpo-fire-pawa</loc>
+		<priority>0.8</priority>
+		<lastmod>2022-01-21T08:52:23+00:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/story/golpo-ohonkar</loc>
+		<priority>0.8</priority>
+		<lastmod>2022-01-19T12:02:29+00:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/story/golpo-ahsan</loc>
+		<priority>0.8</priority>
+		<lastmod>2022-01-19T12:00:25+00:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/story/amader-ekdin-short-story</loc>
+		<priority>0.8</priority>
+		<lastmod>2022-01-19T11:55:30+00:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/story/halusulation</loc>
+		<priority>0.8</priority>
+		<lastmod>2022-01-19T11:52:39+00:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/story/golpo-pronoyvongo</loc>
+		<priority>0.8</priority>
+		<lastmod>2022-01-19T11:50:53+00:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/story/devorci</loc>
+		<priority>0.8</priority>
+		<lastmod>2022-01-19T11:48:00+00:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/story/shesh-drishya</loc>
+		<priority>0.8</priority>
+		<lastmod>2022-01-12T18:12:32+00:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/story/hride-dharini-ma</loc>
+		<priority>0.8</priority>
+		<lastmod>2022-01-12T18:08:50+00:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/story/somudrer-jole-vese-ja-vese-ja</loc>
+		<priority>0.8</priority>
+		<lastmod>2022-01-12T18:06:57+00:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/story/rommo-golpo-dengu</loc>
+		<priority>0.8</priority>
+		<lastmod>2022-01-12T18:03:24+00:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/story/choto-golpo-baba</loc>
+		<priority>0.8</priority>
+		<lastmod>2022-01-12T18:01:32+00:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/story/golpo-sukh</loc>
+		<priority>0.8</priority>
+		<lastmod>2021-12-11T07:26:57+00:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/story/golpo-beton</loc>
+		<priority>0.8</priority>
+		<lastmod>2021-12-11T07:24:45+00:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/story/feriouwala-tikto-oviggota-sotti-golpo</loc>
+		<priority>0.8</priority>
+		<lastmod>2021-12-11T07:21:44+00:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/story/amar-osumpurnotai-tumi-sompurno</loc>
+		<priority>0.8</priority>
+		<lastmod>2021-12-11T07:08:52+00:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/story/ফেসবুক-পোষ্টে'র-সাইড-ইফেক্ট</loc>
+		<priority>0.8</priority>
+		<lastmod>2021-12-11T07:04:03+00:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/story/golpo-rosogulla</loc>
+		<priority>0.8</priority>
+		<lastmod>2021-12-11T07:02:34+00:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/story/short-story-ghor-jamai</loc>
+		<priority>0.8</priority>
+		<lastmod>2021-12-11T07:00:36+00:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/story/rommo-golpo-61a7531ee0cfc</loc>
+		<priority>0.8</priority>
+		<lastmod>2021-12-01T10:49:02+00:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/story/prem-o-ami</loc>
+		<priority>0.8</priority>
+		<lastmod>2021-12-01T10:38:16+00:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/story/shokher-biggani-rommo-golpo</loc>
+		<priority>0.8</priority>
+		<lastmod>2021-12-01T10:35:59+00:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/story/odvut-chal</loc>
+		<priority>0.8</priority>
+		<lastmod>2021-12-01T10:34:11+00:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/story/golpo-rupa</loc>
+		<priority>0.8</priority>
+		<lastmod>2021-12-01T10:27:26+00:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/story/oggatkulshil-sompurno-bangla-golpo</loc>
+		<priority>0.8</priority>
+		<lastmod>2021-12-01T10:25:40+00:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
 	<loc>https://www.storialtech.com/story/mitthe-osukh</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-11-15T14:57:36+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/funny-golpo-shashurir-natok</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-11-13T16:27:49+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/niyoti-noyto-safolya</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-11-13T16:26:40+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/bastob-etai</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-11-13T16:23:58+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/onugolpo-somoyer-e-jora-pata</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-11-13T16:08:52+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/golper-name-ojante</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-11-13T16:05:38+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/bangla-golpo-chuti-oroni-megh</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-11-13T16:02:05+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/bangla-golpo-opekkha</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-11-13T15:58:48+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/kishor-prem</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-11-13T15:56:48+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/golpo-belaseshe</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-11-13T15:55:09+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/islamic-story-hidayat</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-10-07T12:04:08+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/short-story-arale-valobasa</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-10-07T12:02:57+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/funny-golpo-shami-porikkha</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-10-07T12:01:21+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/bangla-golpo-vul-dharona-porinam</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-10-07T11:40:45+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/choto-ektu-valobasa</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-10-07T11:38:54+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/bangla-short-story-biyer-shari</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-10-07T11:37:38+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/moga-miaher-ilish-kena</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-10-07T11:35:59+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/mihin-sathe-snigdho-komol-chokh</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-10-07T11:33:32+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/tom-and-jerry-life-bangla-golpo</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-10-07T11:31:52+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/rommo-golpo-manhin-pocket</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-10-07T11:29:07+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/shikar-bangla-golpo</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-10-07T11:27:13+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/abbu-rag-korbe</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-10-07T11:23:05+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/voutik-golpo-rater-otithi</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-10-07T11:21:20+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/opatre-valobasar-dan</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-10-07T11:17:13+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/lovi-nekre-chotoder-golpo</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-10-07T11:15:09+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/onugolpo-mitthe-moho</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-10-07T11:13:48+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/oshoriri</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-10-07T11:12:00+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/public-place-and-bus-e-kichu-adob-kayda</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-10-07T11:09:51+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/jibonta-bedonar</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-10-07T11:07:43+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/valobasar-somikoron</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-10-07T11:05:59+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/ijipshian-sister-rommo-golpo</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-10-07T11:02:49+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/icche-dairy-bangla-golpo</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-10-07T10:59:25+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/amader-bari-bangla-golpo</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-10-07T10:54:38+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/raiker-biye</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-10-07T10:50:29+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/osumpurno-jibon-golpo</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-10-07T10:25:34+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/osohayetter-vire</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-10-07T10:23:21+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/onugolpo-lal-molater-dairy</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-10-04T04:59:18+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/short-story-basor-giti</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-10-04T04:55:10+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/onugolpo-happy-anniversary</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-10-04T04:52:00+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/onugolpo-sondeho</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-10-04T04:48:56+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/onugolpo-protishodh</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-10-04T04:43:45+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/onugolpo-a-live-death</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-10-04T04:41:06+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/onugolpo-odhvuture</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-10-04T04:38:57+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/bangla-golpo-rat</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-09-28T15:23:59+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/rommo-golpo-phonalap</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-09-28T15:21:49+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/onugolpo-maya</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-09-28T15:18:56+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/bangla-golpo-khide</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-09-28T15:14:55+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/go-te-goyenda</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-09-28T15:13:16+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/short-story-jhor</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-09-28T15:11:27+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/moga-miar-ilish-kena</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-09-28T15:08:08+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/bangla-golpo-khura</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-09-28T15:05:08+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/bhoot-bivrat-golpo</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-09-23T18:33:15+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/dhomer-deyal-valobasar-golpo</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-09-23T18:28:23+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/golpo-purnimar-chad-jeno-jolsano-ruti</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-08-27T13:13:31+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/golpo-ma-vabir-mil</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-08-27T13:10:17+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/foring-mrittur-golpo</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-06-28T15:59:20+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/nothing-is-impossible</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-06-28T15:57:09+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/voutik-golpo-kalo-buri</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-06-28T15:29:46+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/golpo-bardhokko</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-06-28T15:25:43+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/golpo-protihingsa</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-06-28T15:21:33+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/mirur-ditio-oddhay</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-06-28T15:10:59+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/golpo-ekti-osampto-ba-somapto-golpo</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-06-28T15:06:59+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/golpo-flop</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-06-28T15:03:03+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/badoler-din</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-06-16T10:19:17+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/mayer-kotha</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-06-05T20:00:04+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/rommo-golpo-chalak</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-06-05T19:54:38+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/golper-name-protidan</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-06-05T19:53:21+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/islamic-golpo-muajjin</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-06-05T19:49:55+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/golpo-bariye-dew-tumar-hat</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-06-05T19:45:20+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/golpo-show-off</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-06-05T19:39:21+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/adhuni-bou-bangla-funny-story</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-06-05T19:36:02+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/fire-pauwa</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-06-05T19:30:07+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/rommo-golpo-jogra</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-06-05T19:25:25+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/golpo-palabodol</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-06-05T19:21:32+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/golpo-odhikar</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-06-05T19:17:46+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/golpo-soldier</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-05-30T07:19:34+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/golpo-gorom-chaye-jollad</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-05-30T07:14:30+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/romantic-meye-jokhon-ragi-bou</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-05-28T17:53:17+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/golpo-mukti</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-05-28T17:41:29+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/onugolpo-dali</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-05-28T17:35:35+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/golpo-jograpur</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-05-28T17:30:04+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/rommo-golpo</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-05-28T17:27:15+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/rongin-ghuri</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-05-28T17:21:34+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/onugolpo-nil-shari-o-romantic-premer-uponnas</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-05-28T17:16:09+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/golpo-red-dairy</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-05-23T15:14:39+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/golpo-shasti</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-05-23T15:13:26+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/golpo-mitthe-protisruti</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-05-23T15:11:44+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/golpo-sochetonotar-ovab</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-05-23T14:29:53+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/ekti-uttopto-dupurer-golpo</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-05-23T14:25:04+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/sarthokotar-prapti-bangla-golpo</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-05-23T14:20:21+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/golpo-sochetonotar-ekal-sekal</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-05-16T16:00:00+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/golpo-masud-ekhon-valo-hoye-geche</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-05-16T15:17:29+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/ek-krishoker-bangla-golpo</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-05-15T16:29:32+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/golpo-duplicate-ami</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-05-15T16:25:44+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/hothat-dekha</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-05-14T04:12:19+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/golpo-amar-motuke-dekhte-laglam</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-05-10T06:45:41+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/golpo-janalar-opashe-tumi</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-05-10T06:34:19+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/nikhil-golartek-rocket-punorbason-o-kollyan-somiti</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-05-10T06:28:43+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/golper-name-prapti</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-05-10T06:21:52+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/niotir-khel-bangla-golpo</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-05-09T18:31:26+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/voy-bangla-voutik-golpo</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-05-09T18:05:36+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/mitobayi-supatro-bangla-golpo</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-05-09T17:56:04+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/golpo-sotma</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-05-08T07:09:48+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/golpo-subidhabadi</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-05-08T07:04:06+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/golpo-niruddesh</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-05-07T16:03:46+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/golpo-mention-kahini</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-05-05T14:24:24+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/golpo-poriborton-60912da08d72d</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-05-04T11:18:56+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/roja-o-manush-bangla-golpo</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-28T09:06:12+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/shesh-boyoser-prapti</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-28T08:48:04+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/bangi-golpo</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-22T13:11:35+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/golpo-poriborton</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-22T12:50:55+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/হক</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-18T15:43:13+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/গল্প-ঘটনার-ঘনঘটা</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-18T15:40:11+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/ইফতারি</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-17T15:13:47+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/মুগ্ধতা</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-17T15:06:00+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/শোক</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-17T08:55:23+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/ন্যায়</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-17T08:43:37+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/গল্প-ওরা-দুইজন</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-15T16:33:55+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/অপেক্ষা</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-15T16:22:24+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/রম্য_গল্প_চুমু_বিড়ম্বনা</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-12T13:09:15+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/সুখ_কোথায়</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-12T13:07:31+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/গল্প-যাযাবরের-মত</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-12T12:32:28+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/ভালো_থেকো</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-12T08:34:09+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/গল্প-বোকা-ছেলে</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-11T18:24:19+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/ছোট-গল্প-মিরুর-সংসার</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-11T18:20:19+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/গল্প-মুক্তি</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-11T06:57:32+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/দ্যা-হান্টার-হাউজ</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-11T06:46:16+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/কন্যাসন্তান</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-11T06:39:04+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/রম্যগল্প-বই-দিয়ে-প্রপোজ</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-11T06:21:55+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/বাবার-চিঠি</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-11T06:19:07+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/আত্মার_উপলব্ধি</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-11T06:12:58+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/উপায়</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-11T06:08:02+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/স্মার্ট_আব্বু</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-11T06:06:13+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/গল্প-inverse-prank</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-11T06:01:24+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/এ-প্লাস-পাবি</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-11T05:59:07+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/গল্প-অধপতন</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-09T07:19:25+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/ব্রেকাপ_সমাচার</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-08T16:42:17+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/গল্পের-নাম-শেষটাও-শেষ-না</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-07T14:08:10+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/স্মৃতিকথা-দাবা-খেলা</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-06T16:18:46+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/গল্প-অপেক্ষার-প্রহর</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-05T17:07:14+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/গল্প-বিশ্বাসঘাতক</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-05T16:46:46+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/সেইরকম-একজন-বউ-পাগলার-গল্প</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-05T16:35:57+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/রম্য-পেট-ব্যাথা</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-05T15:18:30+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/রম্য-এক্স-সিরিজ</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-05T15:13:30+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/গল্প-অপরাধ</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-05T15:09:58+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/গল্প-সারপ্রাইজ</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-05T15:06:43+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/শেষ-কান্না</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-05T15:00:03+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/এরশাদ-টাইপ-রম্য</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-05T14:53:19+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/জামাই-বিভ্রাট</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-04T20:54:55+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/হুরমুজ-ভাইয়ের-ঢকের-বউ</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-04T20:40:27+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/নারী-কাহিনী-কোটি-কোটি-কাহিনির-একটা</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-04T20:21:00+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>
 	<url>
 	<loc>https://www.storialtech.com/story/ধার্মিক-মেয়ের-ভন্ডামি</loc>
-		<priority>0.6</priority>
+		<priority>0.8</priority>
 		<lastmod>2021-04-04T19:56:05+00:00</lastmod>
 		<changefreq>daily</changefreq>
 	</url>

@@ -1,9 +1,8 @@
 @php
-    $pcates = App\Models\Category\CategoryPdf::where('status', 1)->orderBy('snumber')->get();
-    $pauthors = App\Models\Author\AuthorPdf::where('status', 1)->orderBy('snumber')->get();
-    $pseries = App\Models\Series\SeriesPdf::where('status', 1)->orderBy('snumber')->get();
-    $setting = App\Models\Admin\Setting::first();
-
+    $pcates = App\Models\Category\CategoryPdf::with('pdf')->where('status', 1)->orderBy('name')->limit(18)->get();
+    $pauthors = App\Models\Author\AuthorPdf::with('pdf')->where('status', 1)->orderBy('name')->limit(18)->get();
+    $pseries = App\Models\Series\SeriesPdf::with('pdf')->where('status', 1)->orderBy('name')->limit(18)->get();
+    $platform = App\Models\Custom\PlatformControl::first();
 @endphp
 
 <!--Offcanvas sidebar-->
@@ -62,7 +61,7 @@
         </div>
 
         <!--Latest-->
-        <div class="sidebar-widget widget-latest-posts mt-30 mb-50">
+        {{-- <div class="sidebar-widget widget-latest-posts mt-30 mb-50">
             <div class="widget-header-2 position-relative mb-30">
                 <h5 class="mt-5 mb-30">Don't miss</h5>
             </div>
@@ -91,8 +90,28 @@
                 @endforeach
                 </ul>
             </div>
+        </div> --}}
+        
+    @if($platform->youtube_status == 1)
+        <div class="sidebar-widget widget_categories mb-20 mt-30">
+            <div class="widget-header-2 position-relative mb-20">
+                <h5 class="mt-5 mb-30">YouTube Cahnnel <i class=" text-danger fa fa-youtube-play "></i></h5>
+            </div>
+        @php
+            $youtubes = App\Models\Youtube\Youtube::where('status', 1)->get();
+        @endphp
+        @foreach($youtubes as $item)
+            <a href="{{ $item->clink }}" target="_blank">
+                <img class="advertise-img border-radius-5" src="{{ asset('storage/app/public/'.$item->image) }}" alt="{{ $item->name }}">
+            </a>
+            <a href="{{ $item->clink }}" target="_blank">
+                <div class="mb-30">
+                    <h6 class="mt-5 mb-30 text-success">{{ $item->name }}</h6>
+                </div>
+            </a>
+        @endforeach
         </div>
-        <!--Ads-->
+    @endif
 
     </div>
 </aside>

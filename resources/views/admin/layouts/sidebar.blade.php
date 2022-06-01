@@ -1,5 +1,6 @@
 @php
     $setting = App\Models\Admin\Setting::first();
+    $platform = App\Models\Custom\PlatformControl::first();
 @endphp
 <!--  BEGIN SIDEBAR  -->
 <div class="sidebar-wrapper sidebar-theme">
@@ -20,7 +21,7 @@
         <ul class="list-unstyled menu-categories" id="accordionExample">
         @if(auth()->user()->utype === 5)
             <li class="menu @if(URL::current() == route('admin.home')) active @endif">
-                <a href="{{ route('admin.home') }}" aria-expanded="true" class="dropdown-toggle">
+                <a href="{{ route('admin.home') }}" @if(URL::current() == route('admin.home')) aria-expanded="true" @endif class="dropdown-toggle">
                     <div class="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
                         <span>Dashboard</span>
@@ -29,7 +30,7 @@
             </li>
         @elseif(auth()->user()->utype === 2)
             <li class="menu @if(URL::current() == route('moderator.home')) active @endif">
-                <a href="{{ route('moderator.home') }}" aria-expanded="true" class="dropdown-toggle">
+                <a href="{{ route('moderator.home') }}" @if(URL::current() == route('moderator.home')) aria-expanded="true" @endif class="dropdown-toggle">
                     <div class="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
                         <span>Dashboard</span>
@@ -37,57 +38,61 @@
                 </a>
             </li>
         @endif
-            {{-- STORY START --}}
+            
+        
+        @if($platform->blog_status == 1)
+            {{-- BLOG START --}}
             <li class="menu menu-heading">
-                <div class="heading"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle"><circle cx="12" cy="12" r="10"></circle></svg><span>STORY SECTOR</span></div>
+                <div class="heading"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle"><circle cx="12" cy="12" r="10"></circle></svg><span>BLOG SECTOR</span></div>
             </li>
-            <li class="menu  @if(URL::current() == route('admin.create.story') || URL::current() ==  route('admin.pending-list.story') || URL::current() ==  route('admin.deactive-list.story') || URL::current() ==  route('admin.story') || URL::current() ==  route('admin.trash.story') || URL::current() == route('moderator.create.story')  || URL::current() ==  route('moderator.pending-list.story') || URL::current() ==  route('moderator.deactive-list.story') || URL::current() ==  route('moderator.story')) active @endif">
-                <a href="#story" data-toggle="collapse" @if(URL::current() == route('admin.create.story') || URL::current() ==  route('admin.pending-list.story') || URL::current() ==  route('admin.deactive-list.story') || URL::current() ==  route('admin.story') || URL::current() ==  route('admin.trash.story') || URL::current() == route('moderator.create.story')  || URL::current() ==  route('moderator.pending-list.story') || URL::current() ==  route('moderator.deactive-list.story') || URL::current() ==  route('moderator.story')) aria-expanded="true" @endif class="dropdown-toggle">
+            <li class="menu  @if(URL::current() == route('admin.create.blog') || URL::current() ==  route('admin.pending-list.blog') || URL::current() ==  route('admin.deactive-list.blog') || URL::current() ==  route('admin.blog') || URL::current() ==  route('admin.trash.blog') || URL::current() == route('moderator.create.blog') || URL::current() ==  route('moderator.deactive-list.blog') || URL::current() ==  route('moderator.blog')) active @endif">
+                <a href="#blog" data-toggle="collapse" @if(URL::current() == route('admin.create.blog') || URL::current() ==  route('admin.pending-list.blog') || URL::current() ==  route('admin.deactive-list.blog') || URL::current() ==  route('admin.blog') || URL::current() ==  route('admin.trash.blog') || URL::current() == route('moderator.create.blog') || URL::current() ==  route('moderator.deactive-list.blog') || URL::current() ==  route('moderator.blog')) aria-expanded="true" @endif class="dropdown-toggle">
                     <div class="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-                        <span>STORY</span>
+                        <span>BLOG</span>
                     </div>
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
                     </div>
                 </a>
-                <ul class="collapse submenu list-unstyled" id="story" data-parent="#accordionExample">
-                @if(auth()->user()->utype == 5)
-                    <li class="@if(URL::current() == route('admin.create.story')) active @endif">
-                        <a href="{{ route('admin.create.story') }}"> New Story </a>
+                <ul class="collapse submenu list-unstyled" id="blog" data-parent="#accordionExample">
+                @if(auth()->user()->utype === 5)
+                    <li class="@if(URL::current() == route('admin.create.blog')) active @endif">
+                        <a href="{{ route('admin.create.blog') }}"> New blog </a>
                     </li>
-                    <li class="@if(URL::current() == route('admin.story')) active @endif">
-                        <a href="{{ route('admin.story') }}"> Story List</a>
+                    <li class="@if(URL::current() == route('admin.blog')) active @endif">
+                        <a href="{{ route('admin.blog') }}"> Blog List</a>
                     </li>
-                    {{-- <li class="@if(URL::current() == route('admin.pending-list.story')) active @endif">
-                        <a href="{{ route('admin.pending-list.story') }}"> Pending List</a>
+                    {{-- <li class="@if(URL::current() == route('admin.pending-list.blog')) active @endif">
+                        <a href="{{ route('admin.pending-list.blog') }}"> Pending List</a>
                     </li> --}}
-                    <li class="@if(URL::current() == route('admin.deactive-list.story')) active @endif">
-                        <a href="{{ route('admin.deactive-list.story') }}"> Deactive List</a>
+                    <li class="@if(URL::current() == route('admin.deactive-list.blog')) active @endif">
+                        <a href="{{ route('admin.deactive-list.blog') }}"> Deactive List</a>
                     </li>
 
-                    <li class="@if(URL::current() == route('admin.trash.story')) active @endif">
-                        <a href="{{ route('admin.trash.story') }}"> Trash</a>
+                    <li class="@if(URL::current() == route('admin.trash.blog')) active @endif">
+                        <a href="{{ route('admin.trash.blog') }}"> Trash</a>
                     </li>
-                @elseif(auth()->user()->utype == 2)
-                    <li class="@if(URL::current() == route('moderator.create.story')) active @endif">
-                        <a href="{{ route('moderator.create.story') }}"> New Story </a>
+                @elseif(auth()->user()->utype === 2)
+                    <li class="@if(URL::current() == route('moderator.create.blog')) active @endif">
+                        <a href="{{ route('moderator.create.blog') }}"> New blog </a>
                     </li>
-                    <li class="@if(URL::current() == route('moderator.story')) active @endif">
-                        <a href="{{ route('moderator.story') }}"> Story List</a>
+                    <li class="@if(URL::current() == route('moderator.blog')) active @endif">
+                        <a href="{{ route('moderator.blog') }}"> Blog List</a>
                     </li>
-                    {{-- <li class="@if(URL::current() == route('moderator.pending-list.story')) active @endif">
-                        <a href="{{ route('moderator.pending-list.story') }}"> Pending List</a>
+                    {{-- <li class="@if(URL::current() == route('moderator.pending-list.blog')) active @endif">
+                        <a href="{{ route('moderator.pending-list.blog') }}"> Pending List</a>
                     </li> --}}
-                    <li class="@if(URL::current() == route('moderator.deactive-list.story')) active @endif">
-                        <a href="{{ route('moderator.deactive-list.story') }}"> Deactive List</a>
+                    <li class="@if(URL::current() == route('moderator.deactive-list.blog')) active @endif">
+                        <a href="{{ route('moderator.deactive-list.blog') }}"> Deactive List</a>
                     </li>
                 @endif
                 </ul>
             </li>
-        @if(auth()->user()->utype == 5)
-            <li class="menu  @if(URL::current() == route('admin.create-category.story') || URL::current() ==  route('admin.category.story') || URL::current() ==  route('admin.trash-category.story')) active @endif">
-                <a href="#scategory" data-toggle="collapse" @if(URL::current() == route('admin.create-category.story') || URL::current() ==  route('admin.category.story') || URL::current() ==  route('admin.trash-category.story')) aria-expanded="true"  @endif class="dropdown-toggle">
+
+        @if(auth()->user()->utype === 5)
+            <li class="menu  @if(URL::current() == route('admin.create-category.blog') || URL::current() ==  route('admin.category.blog') || URL::current() ==  route('admin.trash-category.blog')) active @endif">
+                <a href="#bcategory" data-toggle="collapse" @if(URL::current() == route('admin.create-category.blog') || URL::current() ==  route('admin.category.blog') || URL::current() ==  route('admin.trash-category.blog')) aria-expanded="true"  @endif class="dropdown-toggle">
                     <div class="">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder-plus"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path><line x1="12" y1="11" x2="12" y2="17"></line><line x1="9" y1="14" x2="15" y2="14"></line></svg>
                         <span>CATEGORY</span>
@@ -96,21 +101,24 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
                     </div>
                 </a>
-                <ul class="collapse submenu list-unstyled" id="scategory" data-parent="#accordionExample">
-                    <li class="@if(URL::current() == route('admin.create-category.story')) active @endif">
-                        <a href="{{ route('admin.create-category.story') }}"> Create Category</a>
+                <ul class="collapse submenu list-unstyled" id="bcategory" data-parent="#accordionExample">
+                    <li class="@if(URL::current() == route('admin.create-category.blog')) active @endif">
+                        <a href="{{ route('admin.create-category.blog') }}"> Create Category</a>
                     </li>
-                    <li class="@if(URL::current() == route('admin.category.story')) active @endif">
-                        <a href="{{ route('admin.category.story') }}"> Category List</a>
+                    <li class="@if(URL::current() == route('admin.category.blog')) active @endif">
+                        <a href="{{ route('admin.category.blog') }}"> Category List</a>
                     </li>
-                    <li class="@if(URL::current() == route('admin.trash-category.story')) active @endif">
-                        <a href="{{ route('admin.trash-category.story') }}"> Trash</a>
+                    <li class="@if(URL::current() == route('admin.trash-category.blog')) active @endif">
+                        <a href="{{ route('admin.trash-category.blog') }}"> Trash</a>
                     </li>
                 </ul>
             </li>
         @endif
-            {{-- STORY END --}}
+            {{-- Blog END --}}
+        @endif
 
+        
+        @if($platform->tutorial_status == 1)
             {{-- TUTORIAL START --}}
             <li class="menu menu-heading">
                 <div class="heading"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle"><circle cx="12" cy="12" r="10"></circle></svg><span>TUTORIAL SECTOR</span></div>
@@ -207,7 +215,85 @@
             </li>
         @endif
             {{-- TUTORIAL END --}}
+        @endif
+        
+        @if($platform->story_status == 1)
+            {{-- STORY START --}}
+            <li class="menu menu-heading">
+                <div class="heading"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle"><circle cx="12" cy="12" r="10"></circle></svg><span>STORY SECTOR</span></div>
+            </li>
+            <li class="menu  @if(URL::current() == route('admin.create.story') || URL::current() ==  route('admin.pending-list.story') || URL::current() ==  route('admin.deactive-list.story') || URL::current() ==  route('admin.story') || URL::current() ==  route('admin.trash.story') || URL::current() == route('moderator.create.story')  || URL::current() ==  route('moderator.pending-list.story') || URL::current() ==  route('moderator.deactive-list.story') || URL::current() ==  route('moderator.story')) active @endif">
+                <a href="#story" data-toggle="collapse" @if(URL::current() == route('admin.create.story') || URL::current() ==  route('admin.pending-list.story') || URL::current() ==  route('admin.deactive-list.story') || URL::current() ==  route('admin.story') || URL::current() ==  route('admin.trash.story') || URL::current() == route('moderator.create.story')  || URL::current() ==  route('moderator.pending-list.story') || URL::current() ==  route('moderator.deactive-list.story') || URL::current() ==  route('moderator.story')) aria-expanded="true" @endif class="dropdown-toggle">
+                    <div class="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                        <span>STORY</span>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </div>
+                </a>
+                <ul class="collapse submenu list-unstyled" id="story" data-parent="#accordionExample">
+                @if(auth()->user()->utype == 5)
+                    <li class="@if(URL::current() == route('admin.create.story')) active @endif">
+                        <a href="{{ route('admin.create.story') }}"> New Story </a>
+                    </li>
+                    <li class="@if(URL::current() == route('admin.story')) active @endif">
+                        <a href="{{ route('admin.story') }}"> Story List</a>
+                    </li>
+                    {{-- <li class="@if(URL::current() == route('admin.pending-list.story')) active @endif">
+                        <a href="{{ route('admin.pending-list.story') }}"> Pending List</a>
+                    </li> --}}
+                    <li class="@if(URL::current() == route('admin.deactive-list.story')) active @endif">
+                        <a href="{{ route('admin.deactive-list.story') }}"> Deactive List</a>
+                    </li>
 
+                    <li class="@if(URL::current() == route('admin.trash.story')) active @endif">
+                        <a href="{{ route('admin.trash.story') }}"> Trash</a>
+                    </li>
+                @elseif(auth()->user()->utype == 2)
+                    <li class="@if(URL::current() == route('moderator.create.story')) active @endif">
+                        <a href="{{ route('moderator.create.story') }}"> New Story </a>
+                    </li>
+                    <li class="@if(URL::current() == route('moderator.story')) active @endif">
+                        <a href="{{ route('moderator.story') }}"> Story List</a>
+                    </li>
+                    {{-- <li class="@if(URL::current() == route('moderator.pending-list.story')) active @endif">
+                        <a href="{{ route('moderator.pending-list.story') }}"> Pending List</a>
+                    </li> --}}
+                    <li class="@if(URL::current() == route('moderator.deactive-list.story')) active @endif">
+                        <a href="{{ route('moderator.deactive-list.story') }}"> Deactive List</a>
+                    </li>
+                @endif
+                </ul>
+            </li>
+        @if(auth()->user()->utype == 5)
+            <li class="menu  @if(URL::current() == route('admin.create-category.story') || URL::current() ==  route('admin.category.story') || URL::current() ==  route('admin.trash-category.story')) active @endif">
+                <a href="#scategory" data-toggle="collapse" @if(URL::current() == route('admin.create-category.story') || URL::current() ==  route('admin.category.story') || URL::current() ==  route('admin.trash-category.story')) aria-expanded="true"  @endif class="dropdown-toggle">
+                    <div class="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder-plus"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path><line x1="12" y1="11" x2="12" y2="17"></line><line x1="9" y1="14" x2="15" y2="14"></line></svg>
+                        <span>CATEGORY</span>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </div>
+                </a>
+                <ul class="collapse submenu list-unstyled" id="scategory" data-parent="#accordionExample">
+                    <li class="@if(URL::current() == route('admin.create-category.story')) active @endif">
+                        <a href="{{ route('admin.create-category.story') }}"> Create Category</a>
+                    </li>
+                    <li class="@if(URL::current() == route('admin.category.story')) active @endif">
+                        <a href="{{ route('admin.category.story') }}"> Category List</a>
+                    </li>
+                    <li class="@if(URL::current() == route('admin.trash-category.story')) active @endif">
+                        <a href="{{ route('admin.trash-category.story') }}"> Trash</a>
+                    </li>
+                </ul>
+            </li>
+        @endif
+            {{-- STORY END --}}
+        @endif
+
+        @if($platform->pdf_status == 1)
             {{-- PDF START --}}
             <li class="menu menu-heading">
                 <div class="heading"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle"><circle cx="12" cy="12" r="10"></circle></svg><span>PDF SECTOR</span></div>
@@ -321,7 +407,9 @@
             </li>
         @endif
             {{-- PDF END --}}
+        @endif
 
+        @if($platform->template_status == 1)
             {{-- TEMPLATE START --}}
             <li class="menu menu-heading">
                 <div class="heading"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle"><circle cx="12" cy="12" r="10"></circle></svg><span>TEMPLATE SECTOR</span></div>
@@ -330,7 +418,7 @@
                 <a href="#template" data-toggle="collapse" @if(URL::current() == route('admin.create.template') || URL::current() ==  route('admin.deactive-list.template') || URL::current() ==  route('admin.template') || URL::current() ==  route('admin.trash.template') || URL::current() == route('moderator.create.template') || URL::current() ==  route('moderator.deactive-list.template') || URL::current() ==  route('moderator.template')) aria-expanded="true" @endif class="dropdown-toggle">
                     <div class="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layout"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
-                        <span>TEMPLATE</span>
+                        <span>TEMPLATE/SCRIPTS</span>
                     </div>
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
@@ -339,10 +427,10 @@
                 <ul class="collapse submenu list-unstyled" id="template" data-parent="#accordionExample">
                 @if(auth()->user()->utype === 5)
                     <li class="@if(URL::current() == route('admin.create.template')) active @endif">
-                        <a href="{{ route('admin.create.template') }}"> New Template </a>
+                        <a href="{{ route('admin.create.template') }}"> New Template/Script </a>
                     </li>
                     <li class="@if(URL::current() == route('admin.template')) active @endif">
-                        <a href="{{ route('admin.template') }}"> Template List</a>
+                        <a href="{{ route('admin.template') }}"> Template/Script List</a>
                     </li>
                     <li class="@if(URL::current() == route('admin.deactive-list.template')) active @endif">
                         <a href="{{ route('admin.deactive-list.template') }}"> Deactive List</a>
@@ -412,10 +500,12 @@
             </li>
         @endif
             {{-- TEMPLATE END --}}
+        @endif
 
+        @if($platform->movie_status == 1)
             {{-- MOVIE START --}}
         @if(auth()->user()->utype === 5)
-            {{-- <li class="menu menu-heading">
+        <li class="menu menu-heading">
                 <div class="heading"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle"><circle cx="12" cy="12" r="10"></circle></svg><span>MOVIE SECTOR</span></div>
             </li>
             <li class="menu  @if(URL::current() == route('admin.create.movie') || URL::current() ==  route('admin.movie') || URL::current() ==  route('admin.deactive-list.movie') || URL::current() ==  route('admin.trash.movie')) active @endif">
@@ -491,85 +581,13 @@
                         <a href="{{ route('admin.trash-category.movie') }}"> Trash</a>
                     </li>
                 </ul>
-            </li> --}}
+            </li>
         @endif
             {{-- MOVIE END --}}
-
-            {{-- BLOG START --}}
-            <li class="menu menu-heading">
-                <div class="heading"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle"><circle cx="12" cy="12" r="10"></circle></svg><span>BLOG SECTOR</span></div>
-            </li>
-            <li class="menu  @if(URL::current() == route('admin.create.blog') || URL::current() ==  route('admin.pending-list.blog') || URL::current() ==  route('admin.deactive-list.blog') || URL::current() ==  route('admin.blog') || URL::current() ==  route('admin.trash.blog') || URL::current() == route('moderator.create.blog') || URL::current() ==  route('moderator.pending-list.blog') || URL::current() ==  route('moderator.deactive-list.blog') || URL::current() ==  route('moderator.blog')) active @endif">
-                <a href="#blog" data-toggle="collapse" @if(URL::current() == route('admin.create.blog') || URL::current() ==  route('admin.pending-list.blog') || URL::current() ==  route('admin.deactive-list.blog') || URL::current() ==  route('admin.blog') || URL::current() ==  route('admin.trash.blog') || URL::current() == route('moderator.create.blog') || URL::current() ==  route('moderator.pending-list.blog') || URL::current() ==  route('moderator.deactive-list.blog') || URL::current() ==  route('moderator.blog')) aria-expanded="true" @endif class="dropdown-toggle">
-                    <div class="">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-                        <span>BLOG</span>
-                    </div>
-                    <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                    </div>
-                </a>
-                <ul class="collapse submenu list-unstyled" id="blog" data-parent="#accordionExample">
-                @if(auth()->user()->utype === 5)
-                    <li class="@if(URL::current() == route('admin.create.blog')) active @endif">
-                        <a href="{{ route('admin.create.blog') }}"> New blog </a>
-                    </li>
-                    <li class="@if(URL::current() == route('admin.blog')) active @endif">
-                        <a href="{{ route('admin.blog') }}"> Blog List</a>
-                    </li>
-                    {{-- <li class="@if(URL::current() == route('admin.pending-list.blog')) active @endif">
-                        <a href="{{ route('admin.pending-list.blog') }}"> Pending List</a>
-                    </li> --}}
-                    <li class="@if(URL::current() == route('admin.deactive-list.blog')) active @endif">
-                        <a href="{{ route('admin.deactive-list.blog') }}"> Deactive List</a>
-                    </li>
-
-                    <li class="@if(URL::current() == route('admin.trash.blog')) active @endif">
-                        <a href="{{ route('admin.trash.blog') }}"> Trash</a>
-                    </li>
-                @elseif(auth()->user()->utype === 2)
-                    <li class="@if(URL::current() == route('moderator.create.blog')) active @endif">
-                        <a href="{{ route('moderator.create.blog') }}"> New blog </a>
-                    </li>
-                    <li class="@if(URL::current() == route('moderator.blog')) active @endif">
-                        <a href="{{ route('moderator.blog') }}"> Blog List</a>
-                    </li>
-                    {{-- <li class="@if(URL::current() == route('moderator.pending-list.blog')) active @endif">
-                        <a href="{{ route('moderator.pending-list.blog') }}"> Pending List</a>
-                    </li> --}}
-                    <li class="@if(URL::current() == route('moderator.deactive-list.blog')) active @endif">
-                        <a href="{{ route('moderator.deactive-list.blog') }}"> Deactive List</a>
-                    </li>
-                @endif
-                </ul>
-            </li>
-
-        @if(auth()->user()->utype === 5)
-            <li class="menu  @if(URL::current() == route('admin.create-category.blog') || URL::current() ==  route('admin.category.blog') || URL::current() ==  route('admin.trash-category.blog')) active @endif">
-                <a href="#bcategory" data-toggle="collapse" @if(URL::current() == route('admin.create-category.blog') || URL::current() ==  route('admin.category.blog') || URL::current() ==  route('admin.trash-category.blog')) aria-expanded="true"  @endif class="dropdown-toggle">
-                    <div class="">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder-plus"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path><line x1="12" y1="11" x2="12" y2="17"></line><line x1="9" y1="14" x2="15" y2="14"></line></svg>
-                        <span>CATEGORY</span>
-                    </div>
-                    <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                    </div>
-                </a>
-                <ul class="collapse submenu list-unstyled" id="bcategory" data-parent="#accordionExample">
-                    <li class="@if(URL::current() == route('admin.create-category.blog')) active @endif">
-                        <a href="{{ route('admin.create-category.blog') }}"> Create Category</a>
-                    </li>
-                    <li class="@if(URL::current() == route('admin.category.blog')) active @endif">
-                        <a href="{{ route('admin.category.blog') }}"> Category List</a>
-                    </li>
-                    <li class="@if(URL::current() == route('admin.trash-category.blog')) active @endif">
-                        <a href="{{ route('admin.trash-category.blog') }}"> Trash</a>
-                    </li>
-                </ul>
-            </li>
         @endif
-            {{-- Blog END --}}
 
+
+        @if($platform->source_status == 1)
             {{-- SOURCE START --}}
             <li class="menu menu-heading">
                 <div class="heading"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle"><circle cx="12" cy="12" r="10"></circle></svg><span>SOURCE SECTOR</span></div>
@@ -637,8 +655,95 @@
             </li>
         @endif
             {{-- SOURCE END --}}
+        @endif
+
+
+        @if($platform->web_stories_status == 1)
+            {{-- WEB STORY START --}}
+            <li class="menu menu-heading">
+                <div class="heading"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle"><circle cx="12" cy="12" r="10"></circle></svg><span>WEB STORY SECTOR</span></div>
+            </li>
+            <li class="menu  @if(URL::current() == route('admin.create.web-story') || URL::current() == route('admin.web-stories.grid') || URL::current() ==  route('admin.pending-list.web-stories') || URL::current() ==  route('admin.deactive-list.web-stories') || URL::current() ==  route('admin.web-stories') || URL::current() ==  route('admin.trash.web-stories') || URL::current() == route('moderator.create.web-story') || URL::current() ==  route('moderator.deactive-list.web-stories') || URL::current() ==  route('moderator.web-stories')) active @endif">
+                <a href="#webstories" data-toggle="collapse" @if(URL::current() == route('admin.create.web-story') || URL::current() ==  route('admin.pending-list.web-stories') || URL::current() ==  route('admin.deactive-list.web-stories') || URL::current() ==  route('admin.web-stories') || URL::current() == route('admin.web-stories.grid') || URL::current() ==  route('admin.trash.web-stories') || URL::current() == route('moderator.create.web-story') || URL::current() ==  route('moderator.deactive-list.web-stories') || URL::current() ==  route('moderator.web-stories')) aria-expanded="true" @endif class="dropdown-toggle">
+                    <div class="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        <span>WEB STORY</span>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </div>
+                </a>
+                <ul class="collapse submenu list-unstyled" id="webstories" data-parent="#accordionExample">
+                @if(auth()->user()->utype === 5)
+                    <li class="@if(URL::current() == route('admin.create.web-story')) active @endif">
+                        <a href="{{ route('admin.create.web-story') }}"> New Web Story </a>
+                    </li>
+                    <li class="@if(URL::current() == route('admin.web-stories')) active @endif">
+                        <a href="{{ route('admin.web-stories') }}"> Web Story List</a>
+                    </li>
+                    <li class="@if(URL::current() == route('admin.web-stories.grid')) active @endif">
+                        <a href="{{ route('admin.web-stories.grid') }}"> List Grid View</a>
+                    </li>
+                    <li class="@if(URL::current() == route('admin.deactive-list.web-stories')) active @endif">
+                        <a href="{{ route('admin.deactive-list.web-stories') }}"> Deactive List</a>
+                    </li>
+                    <li class="@if(URL::current() == route('admin.trash.web-stories')) active @endif">
+                        <a href="{{ route('admin.trash.web-stories') }}"> Trash</a>
+                    </li>
+                @elseif(auth()->user()->utype === 2)
+                    <li class="@if(URL::current() == route('moderator.create.web-story')) active @endif">
+                        <a href="{{ route('moderator.create.web-story') }}"> New Web Story </a>
+                    </li>
+                    <li class="@if(URL::current() == route('moderator.web-stories')) active @endif">
+                        <a href="{{ route('moderator.web-stories') }}"> Web Story List</a>
+                    </li>
+                    <li class="@if(URL::current() == route('moderator.deactive-list.web-stories')) active @endif">
+                        <a href="{{ route('moderator.deactive-list.web-stories') }}"> Deactive List</a>
+                    </li>
+                @endif
+                </ul>
+            </li>
+            {{-- WEB STORY END --}}
+        @endif
+
+
         
         @if(auth()->user()->utype === 5)
+
+        @if($platform->backlinks_status == 1)
+            {{-- BACKLINKS START --}}
+            <li class="menu menu-heading">
+                <div class="heading"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle"><circle cx="12" cy="12" r="10"></circle></svg><span>BACKLINKS SECTOR</span></div>
+            </li>
+            <li class="menu  @if(URL::current() == route('admin.create-backlinks') || URL::current() ==  route('admin.backlinks') || URL::current() ==  route('admin.backlinks.page') || URL::current() == route('admin.trash-backlinks')) active @endif">
+                <a href="#backlinks" data-toggle="collapse" @if(URL::current() == route('admin.create-backlinks') || URL::current() ==  route('admin.backlinks') || URL::current() ==  route('admin.backlinks.page') || URL::current() == route('admin.trash-backlinks')) aria-expanded="true" @endif class="dropdown-toggle">
+                    <div class="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder-plus"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path><line x1="12" y1="11" x2="12" y2="17"></line><line x1="9" y1="14" x2="15" y2="14"></line></svg>
+                        <span>BACKLINKS</span>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </div>
+                </a>
+                <ul class="collapse submenu list-unstyled" id="backlinks" data-parent="#accordionExample">
+                    <li class="@if(URL::current() == route('admin.create-backlinks')) active @endif">
+                        <a href="{{ route('admin.create-backlinks') }}"> New Backlinks </a>
+                    </li>
+                    <li class="@if(URL::current() == route('admin.backlinks')) active @endif">
+                        <a href="{{ route('admin.backlinks') }}"> Backlinks List </a>
+                    </li>
+                    <li class="@if(URL::current() == route('admin.trash-backlinks')) active @endif">
+                        <a href="{{ route('admin.trash-backlinks') }}"> Backlinks Trash </a>
+                    </li>
+                    <li class="@if(URL::current() == route('admin.backlinks.page')) active @endif">
+                        <a href="{{ route('admin.backlinks.page') }}"> Backlinks Page </a>
+                    </li>
+                </ul>
+            </li>
+            {{-- BACKLINKS END --}}
+        @endif
+
+        @if($platform->youtube_status == 1)
             {{-- YOUTUBE START --}}
             <li class="menu menu-heading">
                 <div class="heading"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle"><circle cx="12" cy="12" r="10"></circle></svg><span>YOUTUBE SECTOR</span></div>
@@ -666,6 +771,7 @@
                 </ul>
             </li>
             {{-- YOUTUBE END --}}
+        @endif
 
             {{-- USER MANAGEMENT --}}
             <li class="menu menu-heading">
@@ -707,6 +813,44 @@
                 <div class="heading"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle"><circle cx="12" cy="12" r="10"></circle></svg><span>WEBSITE MASTER</span></div>
             </li>
 
+            <li class="menu  @if(URL::current() == route('admin.seo.blog') || URL::current() == route('admin.seo.tutorial') || URL::current() == route('admin.seo.template') || URL::current() == route('admin.seo.story') || URL::current() == route('admin.seo.pdf') || URL::current() == route('admin.seo.source') || URL::current() == route('admin.seo.web-story') || URL::current() == route('admin.seo.movie')) active @endif">
+                <a href="#seo" data-toggle="collapse" @if(URL::current() == route('admin.seo.blog') || URL::current() == route('admin.seo.tutorial') || URL::current() == route('admin.seo.template') || URL::current() == route('admin.seo.story') || URL::current() == route('admin.seo.pdf') || URL::current() == route('admin.seo.source') || URL::current() == route('admin.seo.web-story') || URL::current() == route('admin.seo.movie')) aria-expanded="true" @endif class="dropdown-toggle">
+                    <div class="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder-plus"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path><line x1="12" y1="11" x2="12" y2="17"></line><line x1="9" y1="14" x2="15" y2="14"></line></svg>
+                        <span>SEO</span>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </div>
+                </a>
+                <ul class="collapse submenu list-unstyled" id="seo" data-parent="#accordionExample">
+                    <li class="@if(URL::current() == route('admin.seo.blog')) active @endif">
+                        <a href="{{ route('admin.seo.blog') }}"> BLOG</a>
+                    </li>
+                    <li class="@if(URL::current() == route('admin.seo.tutorial')) active @endif">
+                        <a href="{{ route('admin.seo.tutorial') }}"> TUTORIAL</a>
+                    </li>
+                    <li class="@if(URL::current() == route('admin.seo.template')) active @endif">
+                        <a href="{{ route('admin.seo.template') }}"> TEMPLATE/SCRIPT</a>
+                    </li>
+                    <li class="@if(URL::current() == route('admin.seo.story')) active @endif">
+                        <a href="{{ route('admin.seo.story') }}"> STORY</a>
+                    </li>
+                    <li class="@if(URL::current() == route('admin.seo.pdf')) active @endif">
+                        <a href="{{ route('admin.seo.pdf') }}"> PDF</a>
+                    </li>
+                    <li class="@if(URL::current() == route('admin.seo.source')) active @endif">
+                        <a href="{{ route('admin.seo.source') }}"> PREMIUM SOURCE</a>
+                    </li>
+                    <li class="@if(URL::current() == route('admin.seo.web-story')) active @endif">
+                        <a href="{{ route('admin.seo.web-story') }}"> WEB STORY</a>
+                    </li>
+                    <li class="@if(URL::current() == route('admin.seo.movie')) active @endif">
+                        <a href="{{ route('admin.seo.movie') }}"> MOVIE</a>
+                    </li>
+                </ul>
+            </li>
+
             <li class="menu  @if(URL::current() == route('admin.create.faq') || URL::current() ==  route('admin.faq') || URL::current() ==  route('admin.trash.faq')) active @endif">
                 <a href="#faq" data-toggle="collapse" @if(URL::current() == route('admin.create.faq') || URL::current() ==  route('admin.faq') || URL::current() ==  route('admin.trash.faq')) aria-expanded="true" @endif class="dropdown-toggle">
                     <div class="">
@@ -726,6 +870,52 @@
                     </li>
                     <li class="@if(URL::current() == route('admin.trash.faq')) active @endif">
                         <a href="{{ route('admin.trash.faq') }}"> Trash</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="menu  @if(URL::current() == route('admin.custom.code') || URL::current() == route('admin.ads') || URL::current() == route('admin.control.platform')) active @endif">
+                <a href="#customize" data-toggle="collapse" @if(URL::current() == route('admin.custom.code') || URL::current() == route('admin.ads') || URL::current() == route('admin.control.platform')) aria-expanded="true" @endif class="dropdown-toggle">
+                    <div class="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder-plus"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path><line x1="12" y1="11" x2="12" y2="17"></line><line x1="9" y1="14" x2="15" y2="14"></line></svg>
+                        <span>CUSTOMIZATION</span>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </div>
+                </a>
+                <ul class="collapse submenu list-unstyled" id="customize" data-parent="#accordionExample">
+                    <li class="@if(URL::current() == route('admin.custom.code') ) active @endif">
+                        <a href="{{ route('admin.custom.code') }}"> CUSTOM CODING</a>
+                    </li>
+                    <li class="@if(URL::current() == route('admin.ads')) active @endif">
+                        <a href="{{ route('admin.ads') }}"> ADS PROGRAM</a>
+                    </li>
+                    <li class="@if(URL::current() == route('admin.control.platform')) active @endif">
+                        <a href="{{ route('admin.control.platform') }}"> PLATFORM CONTROL</a>
+                    </li>
+                    <li class="@if(URL::current() == route('admin.tools.site')) active @endif">
+                        <a href="{{ route('admin.tools.site') }}"> MORE TOOLS</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="menu  @if(URL::current() == route('admin.sitemap.list')) active @endif">
+                <a href="#sitemap" data-toggle="collapse" @if(URL::current() == route('admin.sitemap.list')) aria-expanded="true" @endif class="dropdown-toggle">
+                    <div class="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder-plus"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path><line x1="12" y1="11" x2="12" y2="17"></line><line x1="9" y1="14" x2="15" y2="14"></line></svg>
+                        <span>SITEMAP</span>
+                    </div>
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </div>
+                </a>
+                <ul class="collapse submenu list-unstyled" id="sitemap" data-parent="#accordionExample">
+                    <li class="@if(URL::current() == route('admin.sitemap.list') ) active @endif">
+                        <a href="{{ route('admin.sitemap.list') }}"> SITEMAP LIST</a>
+                    </li>
+                    <li class="@if(URL::current() == route('sitemap') ) active @endif">
+                        <a href="{{ route('sitemap') }}" target="_blank"> SITEMAP UPDATE</a>
                     </li>
                 </ul>
             </li>
@@ -767,7 +957,7 @@
             </li>
 
             <li class="menu @if(URL::current() == route('admin.setting')) active @endif">
-                <a href="{{ route('admin.setting') }}" @if(URL::current() == route('admin.setting')) aria-expanded="true" @endif class="dropdown-toggle">
+                <a href="{{ route('admin.setting') }}" aria-expanded="true" class="dropdown-toggle">
                     <div class="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
                         <span>INFORMATION SETUP</span>

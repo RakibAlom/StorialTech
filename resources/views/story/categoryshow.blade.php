@@ -1,19 +1,20 @@
 @php
-    $setting = App\Models\Admin\Setting::first();
-    $replace = array('<p>','</p>','<br>','</br>','<h1>','</h1>','<h2>','</h2>','<h3>','</h3>');
+    $seo = App\Models\Seo\SeoStory::first();
+    $replace = array('<p>','</p>','<br>','</br>','<h1>','</h1>','<h2>','</h2>','<h3>','</h3>','<h4>','</h4>','<h5>','</h5>','<em>','</em>','<strong>','</strong>','<span>','</span>');
+    $ads = 0;
 @endphp
 
-@section('title', $category->name . ' | Bangla Story')
-@section('meta-title', $category->name . ' | Bangla Story')
-@section('meta-keywords', 'story, bangla story, romantic story, love story, scifi story, science fiction story, adventure story, fictional story, bengali story, funny story, crime story, mythology story, horror story, fairy tail, life story, historical story, fantasy story, detective story')
-@section('og-title', $category->name . ' | Bangla Story')
-@section('twitter-title', $category->name . ' | Bangla Story')
-@section('meta-image', asset('public/frontend/img/story-thumbnail.jpg'))
-@section('og-image', asset('public/frontend/img/story-thumbnail.jpg'))
-@section('twitter-image', asset('public/frontend/img/story-thumbnail.jpg'))
-@section('meta-description', 'You can read enjoyable stories from storialtech. Bangla romantic, adventure, funny,  Historial, and many other stories you can find and read.')
-@section('og-description', 'You can read enjoyable stories from storialtech. Bangla romantic, adventure, funny,  Historial, and many other stories you can find and read.')
-@section('twitter-description', 'You can read enjoyable stories from storialtech. Bangla romantic, adventure, funny,  Historial, and many other stories you can find and read.')
+@section('title', $category->name . ' ' . $seo->sp_title_plus)
+@section('meta-title', $category->name . ' ' . $seo->sp_title_plus)
+@section('meta-keywords', $seo->keywords)
+@section('og-title', $category->name . ' ' . $seo->sp_title_plus)
+@section('twitter-title', $category->name . ' ' . $seo->sp_title_plus)
+@section('meta-description', $seo->description)
+@section('og-description', $seo->description)
+@section('twitter-description', $seo->description)
+@section('meta-image', asset('storage/app/public/'.$seo->cover_image))
+@section('og-image', asset('storage/app/public/'.$seo->cover_image))
+@section('twitter-image', asset('storage/app/public/'.$seo->cover_image))
 
 @extends('layouts.app')
 
@@ -27,8 +28,8 @@
     <!--archive header-->
     <div class="archive-header pt-10 text-center">
         <div class="container">
-            <h1 style="display:none;">{{ $category->name }} - Bangla Story</h1>
-            @include('include.googledisplayads')
+            <h1 style="display:none;">{{ $category->name }} - {{ $seo->sp_title_plus }}</h1>
+            @include('include.ads.section_top_banner_ads')
         </div>
     </div>
     <div class="container pt-20">
@@ -47,8 +48,8 @@
                 @endif
             </div>
             <div class="row">
-                @foreach ($stories as $item)
-                <article class="col-md-4 mb-20">
+            @foreach ($stories as $item)
+                <article class="col-lg-4 col-md-6 mb-20">
                     <div class="post-card-1 border-radius-10 hover-up">
                         <div class="post-content p-20">
                             <div class="entry-meta meta-0 font-small mb-10">
@@ -57,9 +58,9 @@
                             @endforeach
                             </div>
                             <div class="d-flex post-card-content-story">
-                                <h5 class="post-title mb-20 font-weight-900" style="font-size: 1rem !important;">
+                                <h2 class="post-title mb-20 font-weight-bold" style="font-size: 1rem !important;">
                                     <a href="{{ $item->path() }}">{{ Str::words($item->title, 6)}}</a>
-                                </h5>
+                                </h2>
                                 <div class="post-excerpt mb-15 font-small text-muted">
                                     <p>{!! Str::words(str_replace($replace, ' ', $item->body), 24) !!} <a href="{{ $item->path() }}" class="text-primary">Read More</a></p>
                                 </div>
@@ -72,8 +73,26 @@
                         </div>
                     </div>
                 </article>
-
-                @endforeach
+            
+            @php $ads++; @endphp
+            @if($ads%4 == 0 && $ads != 0)
+                <article class="col-lg-4 col-md-6 mb-20">
+                    <div class="post-card-1 border-radius-10 hover-up">
+                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8183914844375779" crossorigin="anonymous"></script>
+                        <!-- Display Ads -->
+                        <ins class="adsbygoogle"
+                             style="display:block"
+                             data-ad-client="ca-pub-8183914844375779"
+                             data-ad-slot="6149709211"
+                             data-ad-format="auto"
+                             data-full-width-responsive="true"></ins>
+                        <script>
+                             (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+                </article>
+            @endif
+            @endforeach
             </div>
 
             <div class="row mt-20">
@@ -88,7 +107,7 @@
                 </div>
             </div>
             
-            @include('include.googledisplayads')
+            @include('include.ads.section_bottom_banner_ads')
 
         </div>
     </div>

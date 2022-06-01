@@ -1,17 +1,18 @@
 @php
     $id = $story->user->id;
     $author = App\Models\User::findOrFail($id);
-    $replace = array('<p>','</p>','<br>','</br>','<h1>','</h1>','<h2>','</h2>','<h3>','</h3>','<em>','</em>','<strong>','</strong>');
+    $replace = array('<p>','</p>','<br>','</br>','<h1>','</h1>','<h2>','</h2>','<h3>','</h3>','<h4>','</h4>','<h5>','</h5>','<em>','</em>','<strong>','</strong>','<span>','</span>');
+    $seo = App\Models\Seo\SeoStory::first();
 @endphp
 
-@section('title', $story->title . ' | Bangla Story')
-@section('meta-title', $story->title . ' | Bangla Story')
-@section('meta-description', Str::words(str_replace($replace, ' ', $story->body), 25))
+@section('title', $story->title . ' ' . $seo->sp_title_plus)
+@section('meta-title', $story->title . ' ' . $seo->sp_title_plus)
+@section('meta-description', Str::words(str_replace($replace, ' ', $story->body), 25,''))
 @section('meta-keywords', $story->keywords)
-@section('og-title', $story->title . ' | Bangla Story')
-@section('og-description', Str::words(str_replace($replace, ' ', $story->body), 25))
-@section('twitter-title', $story->title . ' | Bangla Story')
-@section('twitter-description', Str::words(str_replace($replace, ' ', $story->body), 25))
+@section('og-title', $story->title . ' ' . $seo->sp_title_plus)
+@section('og-description', Str::words(str_replace($replace, ' ', $story->body), 25,''))
+@section('twitter-title', $story->title . ' ' . $seo->sp_title_plus)
+@section('twitter-description', Str::words(str_replace($replace, ' ', $story->body), 25,''))
 
 @if($story->image)
 @section('meta-image', asset('storage/app/public/'.$story->image))
@@ -19,11 +20,10 @@
 @section('twitter-image', asset('storage/app/public/'.$story->image))
 @endif
 
+
 @extends('layouts.app')
 
 @section('css')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
 @endsection
 
 @section('aside')
@@ -41,19 +41,7 @@
                         @if(session('success'))
                             <p class="text-success">{{ session('success') }}</p>
                         @endif
-                        <div>
-                            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8183914844375779" crossorigin="anonymous"></script>
-                            <!-- Display Ads -->
-                            <ins class="adsbygoogle"
-                                 style="display:block"
-                                 data-ad-client="ca-pub-8183914844375779"
-                                 data-ad-slot="6149709211"
-                                 data-ad-format="auto"
-                                 data-full-width-responsive="true"></ins>
-                            <script>
-                                 (adsbygoogle = window.adsbygoogle || []).push({});
-                            </script>
-                        </div>
+                        @include('include.ads.single_post_top_ads')
                         <div class="entry-header entry-header-style-1 mb-20">
                             <h1 class="entry-title mb-30 font-weight-900">
                                 {{ $story->title }}
@@ -66,9 +54,10 @@
                                             <a class="author-avatar" href="javascript:void()"><img class="img-circle" src="{{ asset('storage/app/public/'.$author->image) }}" alt="{{ $author->username }}"></a>
                                         @endif
                                             By <a href="javascript:void(0)" class="ml-2"><span class="author-name font-weight-bold">{{ $author->fullname }}</span></a>
+                                            <br>
+                                           <span class="font-small"> Date: {{ $story->created_at->format('d F Y') }}</span>
+                                            <span class="ml-5 mr-10 font-small"><i class="fa fa-eye"></i> {{ $story->views }} views</span>
                                         </p>
-                                        <span class="mr-10"> {{ $story->created_at->format('d F Y') }}</span>
-                                        <span class="ml-5 mr-10"><i class="fa fa-eye"></i> {{ $story->views }} views</span>
                                     </div>
                                 </div>
                                 <div class="col-md-6 text-right d-none d-md-inline">
@@ -107,13 +96,13 @@
                                 @if($like)
                                     <a class="btn btn-primary btn-sm unlike" href="{{ route('unlike.story', auth()->user()->storylike->id) }}"> <i class="fa fa-heart"></i>
                                         @if($story->like)
-                                            ({{ $story->like->count() }})
+                                            You Liked ({{ $story->like->count() }})
                                         @endif
                                     </a>
                                 @else
                                     <a class="btn btn-sm like" href="{{ route('like.story', $story->id) }}" style="background: #999999; color: #fff"> <i class="fa fa-heart"></i>
                                         @if($story->like)
-                                            ({{ $story->like->count() }})
+                                            Like ({{ $story->like->count() }})
                                         @endif
                                     </a>
                                 @endif
@@ -147,6 +136,9 @@
                                     <li class="list-inline-item"><a class="social-icon pt text-xs-center" href="{{ $story->pin() }}" target="popup" onclick="window.open('{{ $story->pin() }}','popup','width=600,height=600'); return false;" rel="nofollow" title="Pin it"><i class="elegant-icon social_pinterest "></i></a></li>
                                 </ul>
                             </div>
+
+                            @include('include.ads.single_post_bottom_ads')
+
                             <!--author box-->
                             <div class="author-bio p-20 mt-50 border-radius-10 bg-white wow fadeIn animated">
                                 <div class="author-image mb-30">
@@ -168,7 +160,7 @@
                             </div>
 
                             <!--More posts-->
-                            <div class="single-more-articles border-radius-5">
+                            {{-- <div class="single-more-articles border-radius-5">
                                 <div class="widget-header-2 position-relative mb-30">
                                     <h5 class="mt-5 mb-15">You might be interested in</h5>
                                     <button class="single-more-articles-close"><i class="elegant-icon icon_close"></i></button>
@@ -193,7 +185,7 @@
                                     @endforeach
                                     </ul>
                                 </div>
-                            </div>
+                            </div> --}}
 
                             <!--Comments-->
                             <div class="comments-area">
@@ -333,17 +325,7 @@
                         <div class="sidebar-widget widget-latest-posts mb-30">
                             <div class="widget-header-2 position-relative mb-20">
                                 <h5 class="mt-5 mb-20">Related Story</h5>
-                                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8183914844375779" crossorigin="anonymous"></script>
-                                <!-- Display Ads -->
-                                <ins class="adsbygoogle"
-                                     style="display:block"
-                                     data-ad-client="ca-pub-8183914844375779"
-                                     data-ad-slot="6149709211"
-                                     data-ad-format="auto"
-                                     data-full-width-responsive="true"></ins>
-                                <script>
-                                     (adsbygoogle = window.adsbygoogle || []).push({});
-                                </script>
+                                @include('include.ads.sidebar_top_ads')
                             </div>
 
                             @foreach($story->category as $category)
@@ -371,17 +353,7 @@
                             </div>
                         </div>
                         
-                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8183914844375779" crossorigin="anonymous"></script>
-                        <!-- Display Ads -->
-                        <ins class="adsbygoogle"
-                             style="display:block"
-                             data-ad-client="ca-pub-8183914844375779"
-                             data-ad-slot="6149709211"
-                             data-ad-format="auto"
-                             data-full-width-responsive="true"></ins>
-                        <script>
-                             (adsbygoogle = window.adsbygoogle || []).push({});
-                        </script>
+                        @include('include.ads.sidebar_bottom_ads')
 
                         <div class="sidebar-widget widget-latest-posts mb-30">
                             <div class="widget-header-2 position-relative mb-20">
@@ -409,7 +381,6 @@
                             </div>
                         </div>
 
-
                     </div>
                 </div>
             </div>
@@ -419,7 +390,7 @@
 @endsection
 
 @section('js')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
 @endsection
 
 

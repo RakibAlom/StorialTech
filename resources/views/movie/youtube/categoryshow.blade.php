@@ -23,6 +23,12 @@
  <!-- Start Main content -->
  <main class="bg-grey">
     <!--archive header-->
+    <div class="archive-header pt-10 text-center">
+        <div class="container">
+            <h1 style="display:none;">{{ $category->name }} - YouTube Movie World</h1>
+            @include('include.ads.section_top_banner_ads')
+        </div>
+    </div>
     <div class="container">
         <div class="loop-grid mb-30">
             @csrf
@@ -74,6 +80,8 @@
                     </div>
                 </div>
             </div>
+
+            @include('include.ads.section_bottom_banner_ads')
 
         </div>
     </div>

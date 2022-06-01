@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\URL;
 use App\Models\Blog\Blog;
 use App\Models\Blog\BlogCategory;
+use App\Models\Movie\Movie;
 use App\Models\Template\Template;
 use App\Models\Template\TemplateCategory;
 use App\Models\Tutorial\Tutorial;
@@ -17,7 +18,8 @@ use App\Models\Pdf\PdfAuthor;
 use App\Models\Source\PreemiumFree;
 use App\Models\Story\Story;
 use App\Models\Story\StoryCategory;
-
+use App\Models\Tools\ToolSiteLink;
+use App\Models\Tools\WebStory;
 
 class SitemapController extends Controller
 {
@@ -29,7 +31,7 @@ class SitemapController extends Controller
         
         // Blog Sitemap
         $sitemap->add(URL::to('/blog'), '2021-04-27T06:54:36+00:00', '1.0', 'daily');
-        $blogs = Blog::latest()->get();
+        $blogs = Blog::orderBy('id','desc')->where('status',1)->get();
         $blogcounter = 0;
         $blogSitemapCounter = 1;
         
@@ -59,7 +61,7 @@ class SitemapController extends Controller
 
         // Template Sitemap
         $sitemap->add(URL::to('/template'), '2021-04-27T06:54:36+00:00', '1.0', 'daily');
-        $templates = Template::latest()->get();
+        $templates = Template::orderBy('id','desc')->where('status',1)->get();
         $templatecounter = 0;
         $templateSitemapCounter = 1;
     
@@ -75,7 +77,7 @@ class SitemapController extends Controller
                 ['url' => URL::to('storage/app/public/'.$template->image), 'title' => $template->title, 'caption' => $template->title],
             ];
 
-            $sitemap->add(URL::to('template') .'/' . $template->slug, $template->created_at, 0.4, 'daily', $templateImages);
+            $sitemap->add(URL::to('template') .'/' . $template->slug, $template->created_at, 0.6, 'daily', $templateImages);
             $templatecounter++;
         }
     
@@ -88,7 +90,7 @@ class SitemapController extends Controller
 
         // Tutorial Sitemap
         $sitemap->add(URL::to('/tutorial'), '2021-04-27T06:54:36+00:00', '1.0', 'daily');
-        $tutorials = Tutorial::latest()->get();
+        $tutorials = Tutorial::orderBy('id','desc')->where('status',1)->get();
         $tutorialcounter = 0;
         $tutorialSitemapCounter = 1;
     
@@ -104,7 +106,7 @@ class SitemapController extends Controller
                 ['url' => URL::to('storage/app/public/'.$tutorial->image), 'title' => $tutorial->title, 'caption' => $tutorial->title],
             ];
 
-            $sitemap->add(URL::to('tutorial') .'/' . $tutorial->slug, $tutorial->created_at, 0.6, 'daily', $tutorialImages);
+            $sitemap->add(URL::to('tutorial') .'/' . $tutorial->slug, $tutorial->created_at, 0.8, 'daily', $tutorialImages);
             $tutorialcounter++;
         }
     
@@ -117,7 +119,7 @@ class SitemapController extends Controller
 
         // Pdf Sitemap
         $sitemap->add(URL::to('/pdf'), '2021-04-27T06:54:36+00:00', '1.0', 'daily');
-        $pdfs = Pdf::latest()->get();
+        $pdfs = Pdf::orderBy('id','desc')->where('status',1)->get();
         $pdfcounter = 0;
         $pdfSitemapCounter = 1;
     
@@ -133,7 +135,7 @@ class SitemapController extends Controller
                 ['url' => URL::to('storage/app/public/'.$pdf->image), 'title' => $pdf->title, 'caption' => 'Book: ' . $pdf->name],
             ];
 
-            $sitemap->add(URL::to('pdf') .'/' . $pdf->slug, $pdf->created_at, 0.6, 'daily', $pdfImages);
+            $sitemap->add(URL::to('pdf') .'/' . $pdf->slug, $pdf->created_at, 0.8, 'daily', $pdfImages);
             $pdfcounter++;
         }
     
@@ -146,7 +148,7 @@ class SitemapController extends Controller
         
         // PreFree Sitemap
         $sitemap->add(URL::to('/premium-free-source'), '2021-04-27T06:54:36+00:00', '1.0', 'daily');
-        $prefrees = PreemiumFree::latest()->get();
+        $prefrees = PreemiumFree::orderBy('id','desc')->where('status',1)->get();
         $prefreecounter = 0;
         $prefreeSitemapCounter = 1;
 
@@ -159,7 +161,7 @@ class SitemapController extends Controller
                 $prefreeSitemapCounter++;
             }
 
-            $sitemap->add(URL::to('premium-free-source') .'/' . $prefree->slug, $prefree->created_at, 0.6, 'daily');
+            $sitemap->add(URL::to('premium-free-source') .'/' . $prefree->slug, $prefree->created_at, 0.8, 'daily');
             $prefreecounter++;
         }
     
@@ -172,7 +174,7 @@ class SitemapController extends Controller
 
         // Story Sitemap
         $sitemap->add(URL::to('/story'), '2021-04-27T06:54:36+00:00', '1.0', 'daily');
-        $stories = Story::latest()->get();
+        $stories = Story::orderBy('id','desc')->where('status',1)->get();
         $storycounter = 0;
         $storySitemapCounter = 1;
 
@@ -185,7 +187,7 @@ class SitemapController extends Controller
                 $storySitemapCounter++;
             }
 
-            $sitemap->add(URL::to('story') .'/' . $story->slug, $story->created_at, 0.6, 'daily');
+            $sitemap->add(URL::to('story') .'/' . $story->slug, $story->created_at, 0.8, 'daily');
             $storycounter++;
         }
     
@@ -195,9 +197,52 @@ class SitemapController extends Controller
             $sitemap->model->resetItems();
         }
 
+        // Web Stories Sitemap
+        $sitemap->add(URL::to('/web-stories'), '2021-04-27T06:54:36+00:00', '1.0', 'daily');
+        $webstories = WebStory::orderBy('id','desc')->where('status',1)->get();
+        $webstorycounter = 0;
+        $webstorySitemapCounter = 1;
+        
+        foreach ($webstories as $webstory) {
+            if ($webstorycounter == 1000) {
+                $sitemap->store('xml', '../web-story-sitemap' . $webstorySitemapCounter);
+                $sitemap->addSitemap(secure_url('web-story-sitemap' . $webstorySitemapCounter . '.xml'));
+                $sitemap->model->resetItems();
+                $webstorycounter = 0;
+                $webstorySitemapCounter++;
+            }
+            $webstoryImages = [
+                ['url' => URL::to('storage/app/public/'.$webstory->image), 'title' => $webstory->title, 'caption' => $webstory->title],
+            ];
+
+            $sitemap->add(URL::to('web-stories') .'/' . $webstory->slug, $webstory->created_at, 0.4, 'daily', $webstoryImages);
+            $webstorycounter++;
+        }
+    
+        if (!empty($sitemap->model->getItems())) {
+            $sitemap->store('xml', '../web-story-sitemap' . $blogSitemapCounter);
+            $sitemap->addSitemap(secure_url('web-story-sitemap' . $blogSitemapCounter . '.xml'));
+            $sitemap->model->resetItems();
+        }
+
 
         $sitemap->store('sitemapindex', '../sitemap');
         return redirect('sitemap.xml');
+    }
+
+
+    public function sitemapList()
+    {
+        $blogs = Blog::where('status', 1)->latest()->get();
+        $tutorials = Tutorial::where('status', 1)->latest()->get();
+        $stories = Story::where('status', 1)->latest()->get();
+        $pdfs = Pdf::where('status', 1)->latest()->get();
+        $templates = Template::where('status', 1)->latest()->get();
+        $sources = PreemiumFree::where('status', 1)->latest()->get();
+        $tools = ToolSiteLink::where('status', 1)->orderBy('tool_name', 'asc')->get();
+        $movies = Movie::where('status', 1)->latest()->get();
+
+        return view ('admin.tools.sitemaplist', compact('blogs','tutorials','stories','pdfs','templates','sources','tools','movies'));
     }
 
 }

@@ -1,10 +1,10 @@
 @php
-    $bcates = App\Models\Category\CategoryBlog::where('status', 1)->orderBy('name', 'asc')->get();
-    $tucates = App\Models\Category\CategoryTutorial::where('status', 1)->orderBy('name', 'asc')->get();
-    $temcates = App\Models\Category\CategoryTemplate::where('status', 1)->orderBy('name', 'asc')->get();
-    $mcates = App\Models\Category\CategoryMovie::where('status', 1)->orderBy('name', 'asc')->get();
-    $scates = App\Models\Category\CategoryStory::where('status', 1)->orderBy('name', 'asc')->get();
-    $pcates = App\Models\Category\CategoryPdf::where('status', 1)->orderBy('name', 'asc')->get();
+    $bcates = App\Models\Category\CategoryBlog::with('blog')->where('status', 1)->orderBy('name', 'asc')->get();
+    // $tucates = App\Models\Category\CategoryTutorial::where('status', 1)->orderBy('name', 'asc')->get();
+    // $temcates = App\Models\Category\CategoryTemplate::where('status', 1)->orderBy('name', 'asc')->get();
+    // $mcates = App\Models\Category\CategoryMovie::where('status', 1)->orderBy('name', 'asc')->get();
+    // $scates = App\Models\Category\CategoryStory::where('status', 1)->orderBy('name', 'asc')->get();
+    // $pcates = App\Models\Category\CategoryPdf::where('status', 1)->orderBy('name', 'asc')->get();
 @endphp
 <!--Offcanvas sidebar-->
 <aside id="sidebar-wrapper" class="custom-scrollbar off-canvas-sidebar">
@@ -29,7 +29,7 @@
         </div>
         
         <!--Categories-->
-        <div class="sidebar-widget widget_categories mb-20 mt-30">
+        {{-- <div class="sidebar-widget widget_categories mb-20 mt-30">
             <div class="widget-header-2 position-relative">
                 <h5 class="mt-5 mb-15">Tutorial Category</h5>
             </div>
@@ -50,10 +50,10 @@
                 @endforeach
                 </ul>
             </div>
-        </div>
+        </div> --}}
         
         <!--Categories-->
-        <div class="sidebar-widget widget_categories mb-20 mt-30">
+        {{-- <div class="sidebar-widget widget_categories mb-20 mt-30">
             <div class="widget-header-2 position-relative">
                 <h5 class="mt-5 mb-15">Website Template Category</h5>
             </div>
@@ -75,7 +75,7 @@
                 @endforeach
                 </ul>
             </div>
-        </div>
+        </div> --}}
 
 
         <!--Categories-->
@@ -95,7 +95,7 @@
         </div> --}}
         
         <!--Categories-->
-        <div class="sidebar-widget widget_categories mb-20 mt-30">
+        {{-- <div class="sidebar-widget widget_categories mb-20 mt-30">
             <div class="widget-header-2 position-relative">
                 <h5 class="mt-5 mb-15">Story Category</h5>
             </div>
@@ -109,10 +109,10 @@
                 @endforeach
                 </ul>
             </div>
-        </div>
+        </div> --}}
         
         <!--Categories-->
-        <div class="sidebar-widget widget_categories mb-20 mt-30">
+        {{-- <div class="sidebar-widget widget_categories mb-20 mt-30">
             <div class="widget-header-2 position-relative">
                 <h5 class="mt-5 mb-15">PDF Category</h5>
             </div>
@@ -126,7 +126,7 @@
                 @endforeach
                 </ul>
             </div>
-        </div>
+        </div> --}}
         
         <!--Ads-->
         <!--<div class="sidebar-widget widget-ads">-->

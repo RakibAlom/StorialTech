@@ -1,6 +1,9 @@
 <div class="template-section bg-grey">
     <div class="container">
-        <div class="hot-tags pt-30 pb-20 font-small align-self-center">
+        <div class="pt-10">
+            @include('include.ads.section_top_banner_ads')
+        </div>
+        <div class="hot-tags pt-20 pb-20 font-small align-self-center">
             <div class="widget-header-3">
                 <div class="row align-self-center">
                     <div class="col-md-4 align-self-center">
@@ -23,7 +26,7 @@
         <div class="loop-grid">
             <div class="row">
             @php
-                $movies = App\Models\Movie\Movie::where('status', 1)->whereNotNull('thumbnail')->latest()->take(8)->get();
+                $movies = App\Models\Movie\Movie::with('categorymovie')->where('status', 1)->whereNotNull('thumbnail')->latest()->take(8)->get();
              @endphp
             @foreach($movies as $item)
                 <article class="col-lg-3 col-md-4 mb-20">
@@ -38,7 +41,7 @@
                             @endforeach
                             </div>
                             <div class="d-flex post-card-content-movie">
-                                <h5 class="post-title font-weight-900" style="font-size: 1rem !important;">
+                                <h5 class="post-title font-weight-bold" style="font-size: 1rem !important;">
                                     <a href="{{ $item->path() }}">{{ Str::words($item->name, 7)}}</a>
                                 </h5>
                             </div>

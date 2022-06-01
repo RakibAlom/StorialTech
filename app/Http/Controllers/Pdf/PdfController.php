@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Pdf;
 
+
 use App\Http\Controllers\Controller;
 use App\Models\Author\AuthorPdf;
 use App\Models\Category\CategoryPdf;
@@ -13,6 +14,7 @@ use App\Models\Pdf\Pdfseries;
 use App\Models\Series\SeriesPdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+
 
 class PdfController extends Controller
 {

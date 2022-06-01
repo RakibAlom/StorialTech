@@ -1,7 +1,6 @@
 @php
-    $bcates = App\Models\Category\CategoryBlog::where('status', 1)->orderBy('snumber')->get();
-    $setting = App\Models\Admin\Setting::first();
-
+    $bcates = App\Models\Category\CategoryBlog::with('blog')->where('status', 1)->orderBy('name')->get();
+    $platform = App\Models\Custom\PlatformControl::first();
 @endphp
 
 <!--Offcanvas sidebar-->
@@ -21,14 +20,8 @@
                 </ul>
             </div>
         </div>
-
-        <!--Ads-->
-        <!--<div class="sidebar-widget widget-ads">-->
-        <!--    <div class="widget-header-2 position-relative mb-30">-->
-        <!--        <h5 class="mt-5 mb-30">Advertise banner</h5>-->
-        <!--    </div>-->
-        <!--</div>-->
-        
+    
+    @if($platform->youtube_status == 1)
         <div class="sidebar-widget widget_categories mb-20 mt-30">
             <div class="widget-header-2 position-relative mb-20">
                 <h5 class="mt-5 mb-30">YouTube Cahnnel <i class=" text-danger fa fa-youtube-play "></i></h5>
@@ -47,6 +40,7 @@
             </a>
         @endforeach
         </div>
+    @endif
 
     </div>
 </aside>

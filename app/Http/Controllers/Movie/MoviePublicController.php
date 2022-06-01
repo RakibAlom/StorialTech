@@ -12,14 +12,14 @@ class MoviePublicController extends Controller
     // MOVIE FUNCTION
     public function index()
     {
-        $movies = Movie::where('status', 1)->latest()->paginate(20);
+        $movies = Movie::with('moviecategory')->where('status', 1)->orderBy('id','desc')->paginate(20);
         $count = 1;
         return view('movie.index', compact('movies','count'));
     }
 
     public function latest()
     {
-        $movies = Movie::where('status', 1)->latest()->paginate(20);
+        $movies = Movie::with('moviecategory')->where('status', 1)->orderBy('id','desc')->paginate(20);
         $count = 1;
         return view('movie.latest', compact('movies','count'));
     }
@@ -30,7 +30,7 @@ class MoviePublicController extends Controller
         $category->update([
             'views' => $category->views + 1,
         ]);
-        $movies = $category->movie()->where('status', 1)->latest()->paginate(20);
+        $movies = $category->movie()->with('moviecategory')->where('status', 1)->latest()->paginate(20);
         return view('movie.categoryshow', compact('movies','category'));
     }
 

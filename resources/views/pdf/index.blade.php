@@ -1,19 +1,19 @@
 @php
-    $setting = App\Models\Admin\Setting::first();
-    $replace = array('<p>','</p>','<br>','</br>','<h1>','</h1>','<h2>','</h2>','<h3>','</h3>');
+    $seo = App\Models\Seo\SeoPdf::first();
+    $replace = array('<p>','</p>','<br>','</br>','<h1>','</h1>','<h2>','</h2>','<h3>','</h3>','<h4>','</h4>','<h5>','</h5>','<em>','</em>','<strong>','</strong>','<span>','</span>');
 @endphp
 
-@section('title', 'Bangla PDF Book Download | Bangla eBook Free Collection | StorialTech')
-@section('meta-title', 'Bangla PDF Books Download | Bangla eBook Free Collection | StorialTech')
-@section('meta-keywords', 'pdf, bangla pdf, ebook download, western bangla pdf, pdf download, bengali free pdf download, onubad book free download, free ebook download, story book pdf download, pdf books world, free pdf books bestsellers, google drive pdf books, google drive pdf books, pdf books library')
-@section('og-title', 'Bangla PDF Books Download | Bangla eBook Free Collection | StorialTech')
-@section('twitter-title', 'Bangla PDF Books Download | Bangla eBook Free Collection | StorialTech')
-@section('meta-image', asset('public/frontend/img/pdf-thumbnail.jpg'))
-@section('og-image', asset('public/frontend/img/pdf-thumbnail.jpg'))
-@section('twitter-image', asset('public/frontend/img/pdf-thumbnail.jpg'))
-@section('meta-description', "StorialTech is the largest library of eBooks. You can download bangla, onubad, and various types of pdf. So let's visit and download your favorite book.")
-@section('og-description', "StorialTech is the largest library of eBooks. You can download bangla, onubad, and various types of pdf. So let's visit and download your favorite book.")
-@section('twitter-description', "StorialTech is the largest library of eBooks. You can download bangla, onubad, and various types of pdf. So let's visit and download your favorite book.")
+@section('title', $seo->title)
+@section('meta-title', $seo->title)
+@section('meta-keywords', $seo->keywords)
+@section('og-title', $seo->title)
+@section('twitter-title', $seo->title)
+@section('meta-description', $seo->description)
+@section('og-description', $seo->description)
+@section('twitter-description', $seo->description)
+@section('meta-image', asset('storage/app/public/'.$seo->cover_image))
+@section('og-image', asset('storage/app/public/'.$seo->cover_image))
+@section('twitter-image', asset('storage/app/public/'.$seo->cover_image))
 
 
 @extends('layouts.app')
@@ -28,15 +28,14 @@
     <!--archive header-->
     <div class="archive-header pt-10 text-center">
         <div class="container">
-            <h1 style="display:none;">Bangla PDF Book Download | Bangla eBook Free Collection Download | StorialTech</h1>
-            @include('include.googledisplayads')
+            <h1 style="display:none;">{{ $seo->title }}</h1>
+            @include('include.ads.section_top_banner_ads')
         </div>
     </div>
     
     <div class="container pt-20">
         <div class="loop-grid">
         @csrf
-
         @if($pdfs->count() > 0)
             <div class="hot-tags pb-10 font-small align-self-center">
                 <div class="widget-header-3">
@@ -60,7 +59,7 @@
                                     </a>
                                 </div>
                                 <div class="post-content media-body">
-                                    <h6 class="post-title mb-10 mt-10 text-limit-2-row font-medium"><a href="{{ $item->path() }}">{{ Str::words($item->name, 5) }}</a></h6>
+                                    <h2 class="post-title mb-10 mt-10 text-limit-2-row font-medium"><a href="{{ $item->path() }}">{{ Str::words($item->name, 5) }}</a></h2>
                                     <div class="entry-meta meta-1 float-left font-x-small text-uppercase">
                                         <span class="post-on">size: {{ $item->size }}</span>
                                         <span class="post-by">{{ $item->views }} views</span>
@@ -87,7 +86,7 @@
             </div>
         </div>
         
-        @include('include.googledisplayads')
+        @include('include.ads.section_bottom_banner_ads')
 
         </div>
 

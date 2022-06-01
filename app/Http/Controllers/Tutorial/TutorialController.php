@@ -133,9 +133,6 @@ class TutorialController extends Controller
             'keywords' => request('keywords'),
             'preview_code' => request('preview_code'),
         ]);
-
-        $update_date = $tutorial->updated_at;
-        $tutorial->update(['created_at' => $update_date]);
         
         $this->storeImage($tutorial);
 

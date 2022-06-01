@@ -14,7 +14,7 @@ class PdfPublicController extends Controller
     // PDF FUNCTION
     public function index()
     {
-         $pdfs = Pdf::where('status', 1)->latest()->paginate(24);
+         $pdfs = Pdf::where('status', 1)->orderBy('id','desc')->paginate(24);
          return view('pdf.index', compact('pdfs'));
     }
    
@@ -24,7 +24,7 @@ class PdfPublicController extends Controller
         $category->update([
             'views' => $category->views + 1,
         ]);
-        $pdfs = $category->pdf()->where('status', 1)->latest()->paginate(24);
+        $pdfs = $category->pdf()->where('status', 1)->orderBy('id','desc')->paginate(24);
         return view('pdf.categoryshow', compact('pdfs','category'));
     }
 
@@ -34,7 +34,7 @@ class PdfPublicController extends Controller
         $author->update([
             'views' => $author->views + 1,
         ]);
-        $pdfs = $author->pdf()->where('status', 1)->latest()->paginate(24);
+        $pdfs = $author->pdf()->where('status', 1)->orderBy('id','desc')->paginate(24);
         return view('pdf.authorshow', compact('pdfs','author'));
     }
 
@@ -44,7 +44,7 @@ class PdfPublicController extends Controller
         $series->update([
             'views' => $series->views + 1,
         ]);
-        $pdfs = $series->pdf()->where('status', 1)->latest()->paginate(24);
+        $pdfs = $series->pdf()->where('status', 1)->orderBy('id','desc')->paginate(24);
         return view('pdf.seriesshow', compact('pdfs','series'));
     }
 

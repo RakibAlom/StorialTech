@@ -1,19 +1,21 @@
+
 @php
-    $setting = App\Models\Admin\Setting::first();
-    $replace = array('<p>','</p>','<br>','</br>','<h1>','</h1>','<h2>','</h2>','<h3>','</h3>');
+    $seo = App\Models\Seo\SeoTutorial::first();
+    $replace = array('<p>','</p>','<br>','</br>','<h1>','</h1>','<h2>','</h2>','<h3>','</h3>','<h4>','</h4>','<h5>','</h5>','<em>','</em>','<strong>','</strong>','<span>','</span>');
+    $ads = 0;
 @endphp
 
-@section('title', $tag->name . ' | Tutorial | Learn and Improve Your Skill')
-@section('meta-title', $tag->name . ' | Tutorial | Learn and Improve Your Skill')
-@section('meta-keywords', 'tutorial, web desing, web development, html, css, javascript php, laravel, mysql, react, python, graphic design, office application, networking, fullstack, fronend, backend, bangla tutorial')
-@section('og-title', $tag->name . ' | Tutorial | Learn and Improve Your Skill')
-@section('twitter-title', $tag->name . ' | Tutorial | Learn and Improve Your Skill')
-@section('meta-image', asset('public/frontend/img/tutorial-thumbnail.jpg'))
-@section('og-image', asset('public/frontend/img/tutorial-thumbnail.jpg'))
-@section('twitter-image', asset('public/frontend/img/tutorial-thumbnail.jpg'))
-@section('meta-description', 'StorialTech is a place to learn tutorials and gain skills. You can learn from here various types of technology-related tutorials. We want to share knowledge and skill with you.')
-@section('og-description', 'StorialTech is a place to learn tutorials and gain skills. You can learn from here various types of technology-related tutorials. We want to share knowledge and skill with you.')
-@section('twitter-description', 'StorialTech is a place to learn tutorials and gain skills. You can learn from here various types of technology-related tutorials. We want to share knowledge and skill with you.')
+@section('title', $tag->name . ' ' . $seo->sp_title_plus)
+@section('meta-title', $tag->name . ' ' . $seo->sp_title_plus)
+@section('meta-keywords', $seo->keywords)
+@section('og-title', $tag->name . ' ' . $seo->sp_title_plus)
+@section('twitter-title', $tag->name . ' ' . $seo->sp_title_plus)
+@section('meta-description', $seo->description)
+@section('og-description', $seo->description)
+@section('twitter-description', $seo->description)
+@section('meta-image', asset('storage/app/public/'.$seo->cover_image))
+@section('og-image', asset('storage/app/public/'.$seo->cover_image))
+@section('twitter-image', asset('storage/app/public/'.$seo->cover_image))
 
 @extends('layouts.app')
 
@@ -27,8 +29,8 @@
     <!--archive header-->
     <div class="archive-header pt-10 text-center">
         <div class="container">
-            <h1 style="display:none;">{{ $tag->name }} Tutorial - Learn and Improve Your Skill</h1>
-            @include('include.googledisplayads')
+            <h1 style="display:none;">{{ $tag->name }} {{ $seo->sp_title_plus }}</h1>
+            @include('include.ads.section_top_banner_ads')
         </div>
     </div>
     <div class="container pt-20">
@@ -69,9 +71,9 @@
                                     @endforeach
                                 </div>
                                 <div class="d-flex post-card-content-tutorial">
-                                    <h5 class="post-title mb-20 font-weight-900" style="font-size: 1rem !important;">
+                                    <h2 class="post-title mb-20 font-weight-bold" style="font-size: 1rem !important;">
                                         <a href="{{ $item->path() }}">{{ $item->title }}</a>
-                                    </h5>
+                                    </h2>
                                     <div class="entry-meta meta-1 float-left font-x-small text-uppercase">
                                         <span class="post-on">{{ $item->created_at->format('d F Y') }}</span>
                                         <span class="time-reading has-dot"><a href="javascript:void(0)">{{ $item->user->fullname }}</a></span>
@@ -81,7 +83,25 @@
                             </div>
                         </div>
                     </article>
-
+                    
+                @php $ads++; @endphp
+                @if($ads%3 == 0 && $ads != 0)
+                    <article class="col-lg-4 col-md-6 mb-30">
+                        <div class="post-card-1 border-radius-10 hover-up">
+                            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8183914844375779" crossorigin="anonymous"></script>
+                            <!-- Display Ads -->
+                            <ins class="adsbygoogle"
+                                 style="display:block"
+                                 data-ad-client="ca-pub-8183914844375779"
+                                 data-ad-slot="6149709211"
+                                 data-ad-format="auto"
+                                 data-full-width-responsive="true"></ins>
+                            <script>
+                                 (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+                        </div>
+                    </article>
+                @endif
                 @endforeach
             </div>
 
@@ -97,7 +117,7 @@
                 </div>
             </div>
             
-            @include('include.googledisplayads')
+            @include('include.ads.section_bottom_banner_ads')
 
         </div>
     </div>

@@ -23,7 +23,14 @@
 @section('content')
  <!-- Start Main content -->
  <main class="bg-grey">
+    
     <!--archive header-->
+    <div class="archive-header pt-10 text-center">
+        <div class="container">
+            <h1 style="display:none;">YouTube Movie World</h1>
+            @include('include.ads.section_top_banner_ads')
+        </div>
+    </div>
 
     <div class="container pt-20">
         <div class="loop-grid">
@@ -77,11 +84,9 @@
             </div>
         </div>
 
-            {{-- <div id="getData"></div> --}}
+        @include('include.ads.section_bottom_banner_ads')
+        
         </div>
-
-
-
     </div>
 </main>
 <!-- End Main content -->

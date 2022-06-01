@@ -20,10 +20,10 @@
     <main class="bg-grey pb-30">
         <!--archive header-->
         <div class="entry-header entry-header-style-1 mb-30 pt-50 text-center">
-            <h1 class="entry-title mb-20 font-weight-900 ">
+            <h1 class="entry-title mb-20 font-weight-900">
                 About StorialTech
             </h1>
-            <p class="text-muted"><span class="typewrite d-inline" data-period="2000" data-type='[ "Learn From Tutorial. ", "Read Story. ", "Download Premium Template. ", "Donwload PDF Book. ", "Download Your Favourite Movie. ", "Download Premium Source. ", "Watch Youtube Movie" ]'></span></p>
+            <p class="text-muted"><span class="typewrite d-inline" data-period="2000" data-type='[ "Learn From Tutorial. ", "Read Story. ", "Download Premium Template. ", "Donwload PDF Book. ", "Download Premium Source. " ]'></span></p>
         </div>
         <div class="container single-content">
             <div class="entry-header entry-header-style-1 mb-50 pt-30">

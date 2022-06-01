@@ -95,6 +95,7 @@
                                             <a href="{{ route('admin.profile.user',$item->slug) }}" class="btn btn-info btn-sm">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
                                             </a>
+                                
                                             <button type="button" class="btn btn-dark btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">
                                               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                                             </button>
@@ -103,7 +104,7 @@
                                             @if($item->utype == 0)
                                               <a class="dropdown-item unblock-alert" href="{{ route('admin.unblock.user', $item->id) }}">Unblock</a>
                                             @else
-                                              <a class="dropdown-item block-alert" href="{{ route('admin.block.user', $item->id) }}">Block</a>
+                                                <a class="dropdown-item block-alert" href="{{ route('admin.block.user', $item->id) }}">Block</a>
                                             @endif
                                               <div class="dropdown-divider"></div>
                                               <a class="dropdown-item trash-alert" href="{{ route('admin.soft-delete.user', $item->id) }}">Delete</a>

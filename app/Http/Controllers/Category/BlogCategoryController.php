@@ -41,9 +41,9 @@ class BlogCategoryController extends Controller
 
         if($category)
         {
-            return redirect()->back()->with('success', 'New Category Publish!');
+            return back()->with('success', 'New Category Publish!');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 
@@ -63,9 +63,9 @@ class BlogCategoryController extends Controller
 
         if($category)
         {
-            return redirect()->back()->with('success', 'Category Updated!');
+            return back()->with('success', 'Category Updated!');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 
@@ -75,9 +75,9 @@ class BlogCategoryController extends Controller
 
         if($category)
         {
-            return redirect()->back()->with('success', 'Category Deactived!');
+            return back()->with('success', 'Category Deactived!');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 
@@ -87,9 +87,9 @@ class BlogCategoryController extends Controller
 
         if($category)
         {
-            return redirect()->back()->with('success', 'Category Activated!');
+            return back()->with('success', 'Category Activated!');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 
@@ -99,9 +99,9 @@ class BlogCategoryController extends Controller
 
         if($category)
         {
-            return redirect()->back()->with('delete', 'Category moved to trash!');
+            return back()->with('delete', 'Category moved to trash!');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 
@@ -111,9 +111,9 @@ class BlogCategoryController extends Controller
 
         if($category)
         {
-            return redirect()->back()->with('delete', 'Category Has Been Deleted Permanently!');
+            return back()->with('delete', 'Category Has Been Deleted Permanently!');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 }

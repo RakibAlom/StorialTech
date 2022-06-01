@@ -13,14 +13,14 @@ class TutorialPublicController extends Controller
    // TUTORIAL FUNCTION
    public function index()
    {
-        $tutorials = Tutorial::where('status', 1)->latest()->paginate(12);
+        $tutorials = Tutorial::with('categorytutorial','tagtutorial','user')->where('status', 1)->orderBy('id','desc')->paginate(9);
         return view('tutorial.index', compact('tutorials'));
    }
    public function loadmore(Request $request)
    {
         if($request->ajax()){
             if($request->id){
-                $tutorials = Tutorial::where('status', 1)->latest()->where('id', '<', $request->id)->take(12)->get();
+                $tutorials = Tutorial::where('status', 1)->latest()->where('id', '<', $request->id)->take(9)->get();
             }else{
                 $tutorials = Tutorial::where('status', 1)->latest()->skip(3)->take(12)->get();
             }
@@ -34,7 +34,7 @@ class TutorialPublicController extends Controller
        $category->update([
             'views' => $category->views + 1,
         ]);
-       $tutorials = $category->tutorial()->where('status', 1)->latest()->paginate(12);
+       $tutorials = $category->tutorial()->with('categorytutorial','tagtutorial','user')->where('status', 1)->orderBy('id','desc')->paginate(9);
        return view('tutorial.categoryshow', compact('tutorials','category'));
    }
 
@@ -44,7 +44,7 @@ class TutorialPublicController extends Controller
        $tag->update([
             'views' => $tag->views + 1,
         ]);
-       $tutorials = $tag->tutorial()->where('status', 1)->latest()->paginate(12);
+       $tutorials = $tag->tutorial()->with('categorytutorial','tagtutorial','user')->where('status', 1)->orderBy('id','desc')->paginate(9);
        return view('tutorial.tagshow', compact('tutorials','tag'));
    }
 

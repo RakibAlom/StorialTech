@@ -1,16 +1,17 @@
 @php
     $id = $blog->user->id;
     $author = App\Models\User::findOrFail($id);
-    $replace = array('<p>','</p>','<br>','</br>','<h1>','</h1>','<h2>','</h2>','<h3>','</h3>','<em>','</em>','<strong>','</strong>');
+    $replace = array('<p>','</p>','<br>','</br>','<h1>','</h1>','<h2>','</h2>','<h3>','</h3>','<h4>','</h4>','<h5>','</h5>','<em>','</em>','<strong>','</strong>','<span>','</span>');
+    $seo = App\Models\Seo\SeoBlog::first();
 @endphp
 
-@section('title', $blog->title . ' | StorialTech')
-@section('meta-title', $blog->title . ' | StorialTech')
+@section('title', $blog->title . ' ' . $seo->sp_title_plus)
+@section('meta-title', $blog->title . ' ' . $seo->sp_title_plus)
 @section('meta-description', Str::words(str_replace($replace, ' ', $blog->body), 25,''))
 @section('meta-keywords', $blog->keywords)
-@section('og-title', $blog->title . ' | StorialTech')
+@section('og-title', $blog->title . ' ' . $seo->sp_title_plus)
 @section('og-description', Str::words(str_replace($replace, ' ', $blog->body), 25,''))
-@section('twitter-title', $blog->title . ' | StorialTech')
+@section('twitter-title', $blog->title . ' ' . $seo->sp_title_plus)
 @section('twitter-description', Str::words(str_replace($replace, ' ', $blog->body), 25,''))
 
 @if($blog->image)
@@ -22,8 +23,6 @@
 @extends('layouts.app')
 
 @section('css')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
 @endsection
 
 @section('aside')
@@ -41,7 +40,7 @@
                         @if(session('success'))
                             <p class="text-success">{{ session('success') }}</p>
                         @endif
-                        @include('include.googledisplayads')
+                        @include('include.ads.single_post_top_ads')
                         <div class="entry-header entry-header-style-1 mb-20 mt-10">
                             <h1 class="entry-title mb-30 font-weight-900">
                                 {{ $blog->title }}
@@ -53,10 +52,11 @@
                                         @if($author->image)
                                             <a class="author-avatar" href="javascript:void()"><img class="img-circle" src="{{ asset('storage/app/public/'.$author->image) }}" alt="{{ $author->username }}"></a>
                                         @endif
-                                            By <a href="javascript:void(0)" class="ml-2"><span class="author-name font-weight-bold">{{ $author->fullname }}</span></a>
+                                           By <a href="javascript:void(0)" class="ml-2"><span class="author-name font-weight-bold">{{ $author->fullname }}</span></a>
+                                           <br>
+                                           <span class="font-small"> Date: {{ $blog->created_at->format('d F Y') }}</span>
+                                            <span class="ml-5 mr-10 font-small"><i class="fa fa-eye"></i> {{ $blog->views }} views</span>
                                         </p>
-                                        <span class="mr-10"> Update {{ $blog->created_at->format('d F Y') }}</span>
-                                        <span class="ml-5 mr-10"><i class="fa fa-eye"></i> {{ $blog->views }} views</span>
                                     </div>
                                 </div>
                                 <div class="col-md-6 text-right d-none d-md-inline">
@@ -95,13 +95,13 @@
                                 @if($like)
                                     <a class="btn btn-primary btn-sm unlike" href="{{ route('unlike.blog', auth()->user()->bloglike->id) }}"> <i class="fa fa-heart"></i>
                                         @if($blog->like)
-                                            ({{ $blog->like->count() }})
+                                            You Liked ({{ $blog->like->count() }})
                                         @endif
                                     </a>
                                 @else
                                     <a class="btn btn-sm like" href="{{ route('like.blog', $blog->id) }}" style="background: #999999; color: #fff"> <i class="fa fa-heart"></i>
                                         @if($blog->like)
-                                            ({{ $blog->like->count() }})
+                                            Like ({{ $blog->like->count() }})
                                         @endif
                                     </a>
                                 @endif
@@ -156,7 +156,7 @@
                             </div>
 
                             <!--More posts-->
-                            <div class="single-more-articles border-radius-5">
+                            {{-- <div class="single-more-articles border-radius-5">
                                 <div class="widget-header-2 position-relative mb-30">
                                     <h5 class="mt-5 mb-15">You might be interested in</h5>
                                     <button class="single-more-articles-close"><i class="elegant-icon icon_close"></i></button>
@@ -186,7 +186,9 @@
                                     @endforeach
                                     </ul>
                                 </div>
-                            </div>
+                            </div> --}}
+
+                            @include('include.ads.single_post_bottom_ads')
 
                             <!--Comments-->
                             <div class="comments-area">
@@ -313,7 +315,6 @@
 
                                 </div>
                             </div>
-
                         </article>
                     </div>
                 </div>
@@ -324,7 +325,7 @@
                         <div class="sidebar-widget widget-latest-posts mb-30">
                             <div class="widget-header-2 position-relative mb-20">
                                 <h5 class="mt-5 mb-20">Popular Blog</h5>
-                                @include('include.googledisplayads')
+                                @include('include.ads.sidebar_top_ads')
                             </div>
                                 @php
                                     $pblog =  App\Models\Blog\Blog::where('status', 1)->inRandomOrder()->orderBy('views', 'desc')->limit(6)->get();
@@ -346,12 +347,10 @@
                                 @endforeach
                                 </ul>
                             </div>
-                            
-                            @include('include.googledisplayads')
-                            
+
+                            @include('include.ads.sidebar_bottom_ads')
+
                         </div>
-
-
                     </div>
                 </div>
             </div>

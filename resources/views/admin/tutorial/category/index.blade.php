@@ -23,7 +23,7 @@
 
         <div class="page-header">
             <div class="page-title">
-                <h3>tutorial Category</h3>
+                <h3>Tutorial Category</h3>
             </div>
         </div>
 

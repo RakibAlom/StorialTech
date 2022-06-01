@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Message From StorialTech</title>
+    <title>Message From {{ $contact->email }}</title>
 </head>
 <body>
     <h5>NAME: {{ $contact->name }}</h5>

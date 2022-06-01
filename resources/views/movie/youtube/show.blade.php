@@ -38,6 +38,7 @@
                         @if(session('success'))
                             <p class="text-success">{{ session('success') }}</p>
                         @endif
+                        @include('include.ads.single_post_top_ads')
                         <div class="entry-header entry-header-style-1 mb-20">
                             <h1 class="entry-title mb-30 font-weight-900">
                                 {{ $movie->name }}
@@ -153,6 +154,7 @@
                         <div class="sidebar-widget widget-latest-posts mb-30">
                             <div class="widget-header-2 position-relative mb-20">
                                 <h5 class="mt-5 mb-20">Related movie</h5>
+                                @include('include.ads.sidebar_top_ads')
                             </div>
 
                             @foreach($movie->category as $category)
@@ -185,6 +187,9 @@
                                 @endforeach
                                 </ul>
                             </div>
+
+                            @include('include.ads.sidebar_bottom_ads')
+
                         </div>
 
                     </div>

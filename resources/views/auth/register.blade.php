@@ -52,7 +52,7 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <input type="text" required="" class="form-control @error('phone') is-invalid @enderror" name="phone" placeholder="Phone Number (optional)">
+                                <input type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" placeholder="Phone Number (optional)">
                                 @error('phone')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

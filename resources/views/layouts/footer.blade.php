@@ -1,3 +1,6 @@
+@php
+    $platform = App\Models\Custom\PlatformControl::first();
+@endphp
 <!-- Footer Start-->
 <hr style="margin:0px">
 <footer class="pt-50 pb-20 bg-grey">
@@ -35,6 +38,7 @@
                         <li class="cat-item cat-item-5"><a href="{{ route('privacy') }}">Privacy Policy</a></li>
                         <li class="cat-item cat-item-6"><a href="{{ route('terms') }}">Terms & Condition</a></li>
                         <li class="cat-item cat-item-7"><a href="{{ route('faq') }}">FAQ</a></li>
+                        <li class="cat-item cat-item-7"><a href="{{ route('feed') }}">RSS Feed</a></li>
                     </ul>
                 </div>
             </div>
@@ -44,34 +48,25 @@
                         <h5 class="mt-5 mb-30">Tagcloud</h5>
                     </div>
                     @php
-                        $scates = App\Models\Category\CategoryStory::where('status', 1)->orderBy('views', 'desc')->take(1)->get();
-                        $tucates = App\Models\Category\CategoryTutorial::where('status', 1)->orderBy('views', 'desc')->take(1)->get();
-                        $pcates = App\Models\Category\CategoryPdf::where('status', 1)->orderBy('views', 'desc')->take(1)->get();
-                        $temcates = App\Models\Category\CategoryTemplate::where('status', 1)->orderBy('views', 'desc')->take(1)->get();
-                        $mcates = App\Models\Category\CategoryMovie::where('status', 1)->orderBy('views', 'desc')->take(1)->get();
+                        $bcates = App\Models\Category\CategoryBlog::where('status', 1)->orderBy('views', 'desc')->take(3)->get();
+                        $tucates = App\Models\Category\CategoryTutorial::where('status', 1)->orderBy('views', 'desc')->take(3)->get();
                     @endphp
                     <div class="tagcloud mt-20">
-                    @foreach($scates as $item)
+                        
+                @if($platform->blog_status == 1)
+                    @foreach($bcates as $item)
                         <a class="tag-cloud-link" href="{{ $item->path() }}" title="{{ $item->name }}">{{ Str::words($item->name,2,'') }}</a>
                     @endforeach
-                    @foreach($pcates as $item)
-                        <a class="tag-cloud-link" href="{{ $item->path() }}" title="{{ $item->name }}">{{ Str::words($item->name,2,'') }}</a>
-                    @endforeach
-                    @foreach($temcates as $item)
-                        <a class="tag-cloud-link" href="{{ $item->path() }}" title="{{ $item->name }}">{{ Str::words($item->name,2,'') }} Template</a>
-                    @endforeach
-                    @foreach($mcates as $item)
-                        <a class="tag-cloud-link" href="{{ $item->path() }}" title="{{ $item->name }}">{{ Str::words($item->name,2,'') }}</a>
-                    @endforeach
+                @endif
+                @if($platform->tutorial_status == 1)
                     @foreach($tucates as $item)
                         <a class="tag-cloud-link" href="{{ $item->path() }}" title="{{ $item->name }}">{{ Str::words($item->name,2,'') }}</a>
                     @endforeach
-                    <a class="tag-cloud-link" href="{{ route('source') }}" title="Source and Course">Free Source</a>
-                    <a class="tag-cloud-link" href="{{ route('blog') }}" title="Source and Course">Blog</a>
+                @endif
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
+            </div> 
+            <div class="col-lg-3 col-md-6">
                 <div class="sidebar-widget widget_newsletter mb-30" data-wow-delay="0.3s">
                     <div class="widget-header-2 position-relative mb-30">
                         <h5 class="mt-5 mb-30">Newsletter</h5>
@@ -91,12 +86,13 @@
                         </form>
                     </div>
                 </div>
+                
             </div>
         </div>
         <div class="footer-copy-right pt-10 wow fadeInUp animated">
             <p class="float-md-left font-small text-muted">{{ $setting->copyright }}</p>
             <p class="float-md-right font-small text-muted">
-                Develop By <a href="https://storialtech.com" class="text-primary">StorialTech</a> | All rights reserved
+                Develop By <a href="https://facebook.com/rakibalomprogrammer" class="text-primary">Rakib Alom</a> | All rights reserved
             </p>
         </div>
     </div>

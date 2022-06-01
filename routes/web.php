@@ -2,18 +2,22 @@
 
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\CustomCodeController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\HelpController;
 use App\Http\Controllers\Admin\NoticeController;
+use App\Http\Controllers\Admin\PlatformController;
 use App\Http\Controllers\Admin\PrivacyCotroller;
 use App\Http\Controllers\Admin\ResetController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SubscriberController;
 use App\Http\Controllers\Admin\TermsController;
+use App\Http\Controllers\Admin\ToolSiteController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PremiumFreeController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Ads\AdsController;
 use App\Http\Controllers\Author\PdfAuthorController;
 use App\Http\Controllers\Blog\BlogController;
 use App\Http\Controllers\Blog\BlogLikeController;
@@ -36,6 +40,14 @@ use App\Http\Controllers\Other\BasicController;
 use App\Http\Controllers\Pdf\PdfController;
 use App\Http\Controllers\Pdf\PdfPublicController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\Seo\BlogSeoController;
+use App\Http\Controllers\Seo\MovieSeoController;
+use App\Http\Controllers\Seo\PdfSeoController;
+use App\Http\Controllers\Seo\PrefreeSeoController;
+use App\Http\Controllers\Seo\StorySeoController;
+use App\Http\Controllers\Seo\TemplateSeoController;
+use App\Http\Controllers\Seo\TutorialSeoController;
+use App\Http\Controllers\Seo\WebstorySeoController;
 use App\Http\Controllers\Series\PdfSeriesController;
 use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\Story\StoryCommentController;
@@ -46,6 +58,11 @@ use App\Http\Controllers\Tag\TemplateTagController;
 use App\Http\Controllers\Tag\TutorialTagController;
 use App\Http\Controllers\Template\TemplateController;
 use App\Http\Controllers\Template\TemplatePublicController;
+use App\Http\Controllers\Tool\Backlink\BacklinkListController;
+use App\Http\Controllers\Tool\Backlink\BacklinkPageDetailsController;
+use App\Http\Controllers\Tool\FeedController;
+use App\Http\Controllers\Tool\WebStory\WebStoryController;
+use App\Http\Controllers\Tool\WebStory\WebStoryPublicController;
 use App\Http\Controllers\Tutorial\TutorialCommentController;
 use App\Http\Controllers\Tutorial\TutorialController;
 use App\Http\Controllers\Tutorial\TutorialLikeController;
@@ -64,6 +81,273 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+// 5xx Redirect Route Are Here
+Route::get('/movie/dolittle-2020-bluray-dual-audio-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/pdf/113-Himu-Ebong-Harvard-Ph.D.-Boltu-Bhai-PDF-Book-Himu-Series-Free-Download', [ResetController::class, 'redirect']);
+Route::get('/pdf/9-Jhansir-Rani-Bangla-Comics-eBook', [ResetController::class, 'redirect']);
+Route::get('/movie/alita-battle-angel-2019', [ResetController::class, 'redirect']);
+Route::get('/pdf/15-Atongko-By-Rawshon-Jamil-eBook-Download', [ResetController::class, 'redirect']);
+Route::get('/movie/john-wick-chapter-3-parabellum-2019-bluray-dual-audio-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/first-man-2018-dual-audio-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/the-amazing-spider-man-2-2014-bluray-dual-audio-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/pdf/84-Se-Ase-Dheere-PDF-Book-Himu-Series-Free-Download', [ResetController::class, 'redirect']);
+Route::get('/movie/the-mechanic-2011-dual-audio-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/pdf/1-Nishongotar-Eksho-Bochhor-by-Gabrial-Garcia-Marquez-%7C-StorialTech', [ResetController::class, 'redirect']);
+Route::get('/movie/category/mystery', [ResetController::class, 'redirect']);
+Route::get('/pdf/6-Eshop-Er-Golpo-Guccho-Bangla-Onobad-eBook-StorialTech', [ResetController::class, 'redirect']);
+Route::get('/movie/wrong-turn-2021-bluray', [ResetController::class, 'redirect']);
+Route::get('/movie/moana-2016-dual-audio-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/premium-free-source/2', [ResetController::class, 'redirect']);
+Route::get('/pdf/73-Himur-Roopalee-Ratri-PDF-Book-Himu-Series-Free-Download', [ResetController::class, 'redirect']);
+Route::get('/movie/spider-man-homecoming-2017-bluray-dual-audio-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/pdf/99-Akranto-Dutabash-By-Masud-Rana-PDF-Book', [ResetController::class, 'redirect']);
+Route::get('/movie/fantastic-four-2005-dual-audio-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/pdf/79-Night-of-The-Vampire-By-Anish-Das-Apu-PDF-Book', [ResetController::class, 'redirect']);
+Route::get('/blog/%C2%A010-important-cryptocurrencies-after-that-bitcoin', [ResetController::class, 'redirect']);
+Route::get('/movie/guardians-2017', [ResetController::class, 'redirect']);
+Route::get('/movie/category/japanese-chinese', [ResetController::class, 'redirect']);
+Route::get('/movie/pogaru-2021-hindi-dubbed-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/pdf/16-Protighat-by-Sanowarul-Haque-Rizvi-eBook-Download', [ResetController::class, 'redirect']);
+Route::get('/movie/sulthan-2021-tamil-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/category/animation-movie', [ResetController::class, 'redirect']);
+Route::get('/movie/jack-the-giant-slayer-2013-daul-audio-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/pdf/39-Rupantor-&-Cokranta-Bengali-PDF-Book-Download', [ResetController::class, 'redirect']);
+Route::get('/pdf/26-Danger-Girl-O-Noroker-Soytan-3-Bangla-Comics-eBook-Download', [ResetController::class, 'redirect']);
+Route::get('/movie/spider-man-2-2004-bluray-dual-audio-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/enai-noki-paayum-thota-2019-dual-audio-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/pdf/14-Tipu-Sultan-Bangla-Comics-eBook-Download', [ResetController::class, 'redirect']);
+Route::get('/movie/category/super-hero-movie', [ResetController::class, 'redirect']);
+Route::get('/pdf/35-Bonduke-Bichar-eBook-Download-On-StorialTech-PDF', [ResetController::class, 'redirect']);
+Route::get('/movie/category/thriller-movie', [ResetController::class, 'redirect']);
+Route::get('/movie/spider-man-2002-dual-audio-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/category/horror-movie', [ResetController::class, 'redirect']);
+Route::get('/movie/saina-2021-hindi-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/pdf/61-Dawnload-Bangla-Western-eBook-Masul', [ResetController::class, 'redirect']);
+Route::get('/pdf/category/7-Science-Fiction-Book', [ResetController::class, 'redirect']);
+Route::get('/movie/category/telegu-movie', [ResetController::class, 'redirect']);
+Route::get('/movie/category/hindi-dubbed-movie', [ResetController::class, 'redirect']);
+Route::get('/movie/occupation-2018-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/pdf/testing-pdf', [ResetController::class, 'redirect']);
+Route::get('/movie/night-in-paradise-2020-korean-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/pdf/39-Rupantor-&-Cokranta-Bengali-PDF-Book-Download', [ResetController::class, 'redirect']);
+Route::get('/movie/x-men-origins-wolverine-2009-dual-audio-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/padi-padi-leche-manasu-2018-hindi-dubbbed-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/the-last-airbender-2010-dual-audio-hindi-english-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/the-last-airbender-2010-dual-audio-hindi-english-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/spider-man-2-2004-bluray-dual-audio-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/war-2019-hindi-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/master-2016-dual-audio-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/pdf/98-Oshuvo-Chaya-Bangla-PDF-Book', [ResetController::class, 'redirect']);
+Route::get('/pdf/98-Oshuvo-Chaya-Bangla-PDF-Book', [ResetController::class, 'redirect']);
+Route::get('/movie/moana-2016-dual-audio-bluray', [ResetController::class, 'redirect']);
+Route::get('/pdf/category/6-Horror-Book', [ResetController::class, 'redirect']);
+Route::get('/movie/riddick-2013-dual-audio-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/great-white-2021-movie-480p-720p-download', [ResetController::class, 'redirect']);
+Route::get('/pdf/21-Hangama-Bangla-PDF-Download', [ResetController::class, 'redirect']);
+Route::get('/pdf/category/1-Onubad-Boi', [ResetController::class, 'redirect']);
+Route::get('/pdf/17-Dussahos-Shodh-Trash-By-Golam-Mawla-Nayeem-eBook-Download', [ResetController::class, 'redirect']);
+Route::get('/pdf/81-Bhautik-Golpo-Samagra-PDF-Book', [ResetController::class, 'redirect']);
+Route::get('/premium-free-source/3388-premium-movie-watch-giveaway', [ResetController::class, 'redirect']);
+Route::get('/pdf/77-Ekjon-Himu-Kaekti-Jhin-Jhin-Poka-PDF-Book-Himu-Series-Free-Download', [ResetController::class, 'redirect']);
+Route::get('/movie/24-time-story-2016-hindi-dubbed-hdrip-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/saamy-square-2018-tamil-hindi-dubbed-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/template/frost-coming-soon--under-construction-bootstrap-4-template', [ResetController::class, 'redirect']);
+Route::get('/movie/x-men-2000-dual-audio-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/pdf/aynay-kar-mukh-bangla-pdf-book-download-60b4cf71e596f', [ResetController::class, 'redirect']);
+Route::get('/movie/enai-noki-paayum-thota-2019-dual-audio-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/spider-man-far-from-home-2019-dual-audio-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/pdf/7-Che-Gueverar-Diary-Bangla-Onobad-eBook', [ResetController::class, 'redirect']);
+Route::get('/movie/shivaay-2016', [ResetController::class, 'redirect']);
+Route::get('/pdf/106-Andhokarer-Bondhu-PDF-Book', [ResetController::class, 'redirect']);
+Route::get('/movie/black-water-abyss-2020-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/mission-impossible-ghost-protocol-2011-dual-audio-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/nerkonda-paarvai-2019-hindi-dubbed-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/skylines-2020', [ResetController::class, 'redirect']);
+Route::get('/pdf/23-Angulima-Bangla-Comics-Pdf-Book-By-StorialTech', [ResetController::class, 'redirect']);
+Route::get('/youtube-movie/boy-hindi-dubbed', [ResetController::class, 'redirect']);
+Route::get('/movie/don-2006-hindi-movie-bluray-480p-and-720p', [ResetController::class, 'redirect']);
+Route::get('/pdf/102-Akromon-89-By-Masun-Rana-Series-Bangla-PDF-Book', [ResetController::class, 'redirect']);
+Route::get('/pdf/49-Poton-PDF-Book-Download-Free-on-SotrialTech', [ResetController::class, 'redirect']);
+Route::get('/movie/the-amazing-spider-man-2-2014-bluray-dual-audio-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/space-sweepers-2021', [ResetController::class, 'redirect']);
+Route::get('/movie/jolly-llb-2-movie', [ResetController::class, 'redirect']);
+Route::get('/movie/mission-impossible-5-rogue-nation-2015-dual-audio-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/pirates-of-the-caribbean-dead-men-tell-no-tales-2017-bluray-dual-audio-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/pdf/35-Bonduke-Bichar-eBook-Download-On-StorialTech-PDF', [ResetController::class, 'redirect']);
+Route::get('/pdf/nctb-books-of-class-5--2020--%7C-bgs-free-download-pdf-book', [ResetController::class, 'redirect']);
+Route::get('/pdf/67-Rakter-Nesha-Bangla-Western-eBook-Dawnload', [ResetController::class, 'redirect']);
+Route::get('/movie/kaappaan-2019-hindi-dubbed-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/mission-impossible-fallout-2018-dual-audio-imax-bluray-hevc-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/blog/best-laptop-for-2022-15-best-laptops-you-can-purchase', [ResetController::class, 'redirect']);
+Route::get('/movie/sultha-2021-tamil-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/sketch-2018-dual-audio-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/pdf/49-Poton-PDF-Book-Download-Free-on-SotrialTech', [ResetController::class, 'redirect']);
+Route::get('/pdf/114-Dipu-Number-2-eBook-free-download-.', [ResetController::class, 'redirect']);
+Route::get('/pdf/72-Kartuj-Bangla-Western-eBook-Dawnload', [ResetController::class, 'redirect']);
+Route::get('/pdf/93-Rat-Dostar-Train-Eshechilo-Bangla-eBook', [ResetController::class, 'redirect']);
+Route::get('/pdf/93-Rat-Dostar-Train-Eshechilo-Bangla-eBook', [ResetController::class, 'redirect']);
+Route::get('/pdf/1-Nishongotar-Eksho-Bochhor-by-Gabrial-Garcia-Marquez-%7C-StorialTech', [ResetController::class, 'redirect']);
+Route::get('/pdf/107-Aaj-Himur-Biye-PDF-Book-Himu-Series-Free-Download', [ResetController::class, 'redirect']);
+Route::get('/pdf/105-Andes-Er-Bondi-Bangla-PDF-Book', [ResetController::class, 'redirect']);
+Route::get('/movie/pirates-of-the-caribbean-dead-man%E2%80%99s-chest-2006-bluray-dual-audio-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/action-2019-hindi-dubbed-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/transformers-2007-dual-audio-hindi-english-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/the-last-airbender-2010-dual-audio-hindi-english-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/pdf/69-Himur-Hate-Kaekti-Neelpadmo-PDF-Book-Himu-Series-Free-Download', [ResetController::class, 'redirect']);
+Route::get('/youtube-movie/category/action-movie', [ResetController::class, 'redirect']);
+Route::get('/youtube-movie/category/action-movie', [ResetController::class, 'redirect']);
+Route::get('/youtube-movie/category/korean-movie', [ResetController::class, 'redirect']);
+Route::get('/youtube-movie/category/hindi-dubbed-movie', [ResetController::class, 'redirect']);
+Route::get('/youtube-movie/category/drama-series', [ResetController::class, 'redirect']);
+Route::get('/youtube-movie/category/comedy-movie', [ResetController::class, 'redirect']);
+Route::get('/movie/100-2019-hindi-dubbed-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/captain-marvel-2019', [ResetController::class, 'redirect']);
+Route::get('/movie/category/fantasy-movie?page=3', [ResetController::class, 'redirect']);
+Route::get('/movie/fantastic-4-rise-of-the-silver-surfer-2007-dual-audio-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/category/action-movie?page=7', [ResetController::class, 'redirect']);
+Route::get('/latest-movie?page=7', [ResetController::class, 'redirect']);
+Route::get('/latest-movie?page=8', [ResetController::class, 'redirect']);
+Route::get('/template/discy-v4-5-1--social-questions-and-answers-wordpress-theme', [ResetController::class, 'redirect']);
+Route::get('/pdf/31-Game-of-Thrones-1-Comics-eBook-Download', [ResetController::class, 'redirect']);
+Route::get('/latest-movie?page=4', [ResetController::class, 'redirect']);
+Route::get('/template/phox-hosting-wordpress---whmcs-theme', [ResetController::class, 'redirect']);
+Route::get('/movie/pacific-rim-uprising-2018-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/pdf/long-walk-to-freedom-bangla-pdf', [ResetController::class, 'redirect']);
+Route::get('/pdf/long-walk-to-freedom-bangla-pdf', [ResetController::class, 'redirect']);
+Route::get('/pdf/the-magician', [ResetController::class, 'redirect']);
+Route::get('/movie/ava-2020-bluray-movie-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/template/wilm', [ResetController::class, 'redirect']);
+Route::get('/pdf/vutera-sob-eikhane-bhuter-golpo-pdf-', [ResetController::class, 'redirect']);
+Route::get('/movie/jai-lava-kusa-2017-hindi-dubbed-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/pdf/harry-potter-and-the-philosopher', [ResetController::class, 'redirect']);
+Route::get('/pdf/4-A-Tale-Of-Two-Cities-Bangla-Onobad-eBook-By-Charles-Dickens', [ResetController::class, 'redirect']);
+Route::get('/movie/a-writer%E2%80%99s-odyssey-2021-chinese-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/pdf/28-Bonkonna-Bangla-Comics-eBook-Download-On-StorialTech', [ResetController::class, 'redirect']);
+Route::get('/pdf/12-Asterix-o-cleopatra-Bangla-Comics-eBook-Download', [ResetController::class, 'redirect']);
+Route::get('/pdf/32-Game-of-Thrones-2-Bangla-Comics-eBook-Download', [ResetController::class, 'redirect']);
+Route::get('/pdf/57-Dorjar-Opashe-PDF-Book-Himu-Series-Free-Download', [ResetController::class, 'redirect']);
+Route::get('/blog/in-2021-apple-ceo-tim-cook-will-earn-more-than-1-400-times-the-average-worker-at-the-company-', [ResetController::class, 'redirect']);
+Route::get('/pdf/60-Dawnload-Bangla-Western-eBook-Mukhosh', [ResetController::class, 'redirect']);
+Route::get('/movie/category/adventure-movie?page=2', [ResetController::class, 'redirect']);
+Route::get('/pdf/94-Monalisar-Shesh-Rat-Bangla-PDF-Book', [ResetController::class, 'redirect']);
+Route::get('/movie/category/romantic', [ResetController::class, 'redirect']);
+Route::get('/pdf/18-Bipak-by-Masud-Anwar-Bangla-Ebook-Download', [ResetController::class, 'redirect']);
+Route::get('/pdf/33-Hanan-PDF-Book-Free-Download-on-StorialTech', [ResetController::class, 'redirect']);
+Route::get('/pdf/57-Dorjar-Opashe-PDF-Book-Himu-Series-Free-Download', [ResetController::class, 'redirect']);
+Route::get('/movie/category/mystery', [ResetController::class, 'redirect']);
+Route::get('/pdf/category/1-Onubad-Boi', [ResetController::class, 'redirect']);
+Route::get('/pdf/113-Himu-Ebong-Harvard-Ph.D.-Boltu-Bhai-PDF-Book-Himu-Series-Free-Download', [ResetController::class, 'redirect']);
+Route::get('/movie/alita-battle-angel-2019', [ResetController::class, 'redirect']);
+Route::get('/pdf/15-Atongko-By-Rawshon-Jamil-eBook-Download', [ResetController::class, 'redirect']);
+Route::get('/movie/john-wick-chapter-3-parabellum-2019-bluray-dual-audio-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/woochi-the-demon-slayer-2009-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/first-man-2018-dual-audio-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/the-amazing-spider-man-2-2014-bluray-dual-audio-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/pdf/84-Se-Ase-Dheere-PDF-Book-Himu-Series-Free-Download', [ResetController::class, 'redirect']);
+Route::get('/movie/the-mechanic-2011-dual-audio-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/pdf/1-Nishongotar-Eksho-Bochhor-by-Gabrial-Garcia-Marquez-|-StorialTech', [ResetController::class, 'redirect']);
+Route::get('/pdf/6-Eshop-Er-Golpo-Guccho-Bangla-Onobad-eBook-StorialTech', [ResetController::class, 'redirect']);
+Route::get('/movie/moana-2016-dual-audio-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/premium-free-source/2', [ResetController::class, 'redirect']);
+Route::get('/pdf/73-Himur-Roopalee-Ratri-PDF-Book-Himu-Series-Free-Download', [ResetController::class, 'redirect']);
+Route::get('/movie/spider-man-homecoming-2017-bluray-dual-audio-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/pdf/99-Akranto-Dutabash-By-Masud-Rana-PDF-Book', [ResetController::class, 'redirect']);
+Route::get('/movie/fantastic-four-2005-dual-audio-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/blog/ 10-important-cryptocurrencies-after-that-bitcoin', [ResetController::class, 'redirect']);
+Route::get('/movie/guardians-2017', [ResetController::class, 'redirect']);
+Route::get('/movie/category/japanese-chinese', [ResetController::class, 'redirect']);
+Route::get('/movie/pogaru-2021-hindi-dubbed-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/pdf/16-Protighat-by-Sanowarul-Haque-Rizvi-eBook-Download', [ResetController::class, 'redirect']);
+Route::get('/movie/sulthan-2021-tamil-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/category/animation-movie', [ResetController::class, 'redirect']);
+Route::get('/movie/jack-the-giant-slayer-2013-daul-audio-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/pdf/39-Rupantor-&-Cokranta-Bengali-PDF-Book-Download', [ResetController::class, 'redirect']);
+Route::get('/pdf/26-Danger-Girl-O-Noroker-Soytan-3-Bangla-Comics-eBook-Download', [ResetController::class, 'redirect']);
+Route::get('/movie/enai-noki-paayum-thota-2019-dual-audio-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/pdf/14-Tipu-Sultan-Bangla-Comics-eBook-Download', [ResetController::class, 'redirect']);
+Route::get('/movie/category/super-hero-movie', [ResetController::class, 'redirect']);
+Route::get('/pdf/35-Bonduke-Bichar-eBook-Download-On-StorialTech-PDF', [ResetController::class, 'redirect']);
+Route::get('/movie/category/thriller-movie', [ResetController::class, 'redirect']);
+Route::get('/movie/spider-man-2002-dual-audio-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/category/horror-movie', [ResetController::class, 'redirect']);
+Route::get('/movie/saina-2021-hindi-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/pdf/61-Dawnload-Bangla-Western-eBook-Masul', [ResetController::class, 'redirect']);
+Route::get('/movie/the-unity-of-heroes-2018-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/pdf/category/7-Science-Fiction-Book', [ResetController::class, 'redirect']);
+Route::get('/movie/category/telegu-movie', [ResetController::class, 'redirect']);
+Route::get('/movie/category/hindi-dubbed-movie', [ResetController::class, 'redirect']);
+Route::get('/movie/occupation-2018-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/pdf/testing-pdf', [ResetController::class, 'redirect']);
+Route::get('/movie/night-in-paradise-2020-korean-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/pdf/39-Rupantor-&-Cokranta-Bengali-PDF-Book-Download', [ResetController::class, 'redirect']);
+Route::get('/movie/x-men-origins-wolverine-2009-dual-audio-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/padi-padi-leche-manasu-2018-hindi-dubbbed-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/the-last-airbender-2010-dual-audio-hindi-english-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/spider-man-2-2004-bluray-dual-audio-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/war-2019-hindi-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/master-2016-dual-audio-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/pdf/98-Oshuvo-Chaya-Bangla-PDF-Book', [ResetController::class, 'redirect']);
+Route::get('/movie/moana-2016-dual-audio-bluray', [ResetController::class, 'redirect']);
+Route::get('/pdf/category/6-Horror-Book', [ResetController::class, 'redirect']);
+Route::get('/movie/riddick-2013-dual-audio-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/great-white-2021-movie-480p-720p-download', [ResetController::class, 'redirect']);
+Route::get('/pdf/17-Dussahos-Shodh-Trash-By-Golam-Mawla-Nayeem-eBook-Download', [ResetController::class, 'redirect']);
+Route::get('/pdf/81-Bhautik-Golpo-Samagra-PDF-Book', [ResetController::class, 'redirect']);
+Route::get('/premium-free-source/3388-premium-movie-watch-giveaway', [ResetController::class, 'redirect']);
+Route::get('/pdf/77-Ekjon-Himu-Kaekti-Jhin-Jhin-Poka-PDF-Book-Himu-Series-Free-Download', [ResetController::class, 'redirect']);
+Route::get('/movie/24-time-story-2016-hindi-dubbed-hdrip-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/saamy-square-2018-tamil-hindi-dubbed-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/template/frost-coming-soon--under-construction-bootstrap-4-template', [ResetController::class, 'redirect']);
+Route::get('/movie/x-men-2000-dual-audio-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/pdf/aynay-kar-mukh-bangla-pdf-book-download-60b4cf71e596f', [ResetController::class, 'redirect']);
+Route::get('/movie/enai-noki-paayum-thota-2019-dual-audio-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/spider-man-far-from-home-2019-dual-audio-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/pdf/7-Che-Gueverar-Diary-Bangla-Onobad-eBook', [ResetController::class, 'redirect']);
+Route::get('/movie/shivaay-2016', [ResetController::class, 'redirect']);
+Route::get('/pdf/106-Andhokarer-Bondhu-PDF-Book', [ResetController::class, 'redirect']);
+Route::get('/movie/black-water-abyss-2020-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/mission-impossible-ghost-protocol-2011-dual-audio-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/nerkonda-paarvai-2019-hindi-dubbed-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/skylines-2020', [ResetController::class, 'redirect']);
+Route::get('/pdf/23-Angulima-Bangla-Comics-Pdf-Book-By-StorialTech', [ResetController::class, 'redirect']);
+Route::get('/youtube-movie/boy-hindi-dubbed', [ResetController::class, 'redirect']);
+Route::get('/movie/don-2006-hindi-movie-bluray-480p-and-720p', [ResetController::class, 'redirect']);
+Route::get('/pdf/102-Akromon-89-By-Masun-Rana-Series-Bangla-PDF-Book', [ResetController::class, 'redirect']);
+Route::get('/movie/the-amazing-spider-man-2-2014-bluray-dual-audio-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/jolly-llb-2-movie', [ResetController::class, 'redirect']);
+Route::get('/movie/mission-impossible-5-rogue-nation-2015-dual-audio-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/pirates-of-the-caribbean-dead-men-tell-no-tales-2017-bluray-dual-audio-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/pdf/35-Bonduke-Bichar-eBook-Download-On-StorialTech-PDF', [ResetController::class, 'redirect']);
+Route::get('/pdf/nctb-books-of-class-5--2020--|-bgs-free-download-pdf-book', [ResetController::class, 'redirect']);
+Route::get('/pdf/67-Rakter-Nesha-Bangla-Western-eBook-Dawnload', [ResetController::class, 'redirect']);
+Route::get('/movie/kaappaan-2019-hindi-dubbed-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/mission-impossible-fallout-2018-dual-audio-imax-bluray-hevc-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/mission-impossible-ii-2000-dual-audio-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/blog/best-laptop-for-2022-15-best-laptops-you-can-purchase', [ResetController::class, 'redirect']);
+Route::get('/movie/sultha-2021-tamil-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/sketch-2018-dual-audio-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/pdf/49-Poton-PDF-Book-Download-Free-on-SotrialTech', [ResetController::class, 'redirect']);
+Route::get('/pdf/114-Dipu-Number-2-eBook-free-download-.', [ResetController::class, 'redirect']);
+Route::get('/pdf/72-Kartuj-Bangla-Western-eBook-Dawnload', [ResetController::class, 'redirect']);
+Route::get('/pdf/93-Rat-Dostar-Train-Eshechilo-Bangla-eBook', [ResetController::class, 'redirect']);
+Route::get('/pdf/1-Nishongotar-Eksho-Bochhor-by-Gabrial-Garcia-Marquez-|-StorialTech', [ResetController::class, 'redirect']);
+Route::get('/pdf/107-Aaj-Himur-Biye-PDF-Book-Himu-Series-Free-Download', [ResetController::class, 'redirect']);
+Route::get('/pdf/105-Andes-Er-Bondi-Bangla-PDF-Book', [ResetController::class, 'redirect']);
+Route::get('/movie/pirates-of-the-caribbean-dead-man’s-chest-2006-bluray-dual-audio-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/action-2019-hindi-dubbed-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/transformers-2007-dual-audio-hindi-english-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/movie/the-last-airbender-2010-dual-audio-hindi-english-bluray-480p-720p', [ResetController::class, 'redirect']);
+Route::get('/pdf/69-Himur-Hate-Kaekti-Neelpadmo-PDF-Book-Himu-Series-Free-Download', [ResetController::class, 'redirect']);
+Route::get('/youtube-movie/category/action-movie', [ResetController::class, 'redirect']);
+Route::get('/youtube-movie/category/korean-movie', [ResetController::class, 'redirect']);
+Route::get('/youtube-movie/category/hindi-dubbed-movie', [ResetController::class, 'redirect']);
+Route::get('/youtube-movie/category/drama-series', [ResetController::class, 'redirect']);
+Route::get('/youtube-movie/category/comedy-movie', [ResetController::class, 'redirect']);
+Route::get('/movie/100-2019-hindi-dubbed-480p-720p', [ResetController::class, 'redirect']);
+
+
 
 Route::get('/', [OpenController::class, 'index'])->name('site');
 Route::get('/about', [OpenController::class, 'about'])->name('about');
@@ -84,6 +368,7 @@ Route::post('/contact', [ContactController::class, 'store'])->name('store.contac
 Route::post('/subscribe', [SubscriberController::class, 'store'])->name('store.subscribe');
 
 Auth::routes();
+
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/logout', [LoginController::class, 'logout'])->name('auth.logout');
 
@@ -166,10 +451,19 @@ Route::post('/update-blog-comment-reply/{comment}', [BlogCommentController::clas
 Route::get('/delete-blog-comment-reply/{comment}', [BlogCommentController::class, 'deleteReply'])->name('delete-reply-comment.blog');
 
 
-// AUTH ROUTE ARE HERE
-Route::middleware(['auth'])->group(function () {
+// RSS FEED ROUTE ARE HERE
+Route::get('/feed', [FeedController::class, 'feed'])->name('feed');
+Route::get('/feed/news', [FeedController::class, 'feedNews'])->name('feed.news');
+Route::get('/feed/tutorial', [FeedController::class, 'feedTutorial'])->name('feed.tutorial');
+Route::get('/feed/story', [FeedController::class, 'feedStory'])->name('feed.story');
 
-});
+// WEB STORY ROUTE ARE HERE
+Route::get('/web-stories', [WebStoryPublicController::class, 'index'])->name('web-stories');
+Route::get('/web-stories/{slug}', [WebStoryPublicController::class, 'show'])->name('show.webstory');
+
+// BACKLINKS PUBLIC ROUTE ARE HERE
+Route::get('/seo/backlinks-list', [BacklinkListController::class, 'publicIndex'])->name('backlinks.list');
+
 
 // ADMIN ROUTE ARE HERE
 Route::get('/admin/login', [LoginController::class, 'adminLogin'])->name('admin.login');
@@ -542,6 +836,106 @@ Route::middleware(['auth','admin'])->prefix('admin')->name('admin.')->group(func
     Route::get('/soft-delete-blog/{blog}', [BlogController::class, 'softDelete'])->name('soft-delete.blog');
     Route::get('/permanent-delete-blog/{blog}', [BlogController::class, 'permanentDelete'])->name('permanent-delete.blog');
 
+    // WEB STORY ROUTE ARE HERE
+    Route::get('/web-stories-list', [WebStoryController::class, 'index'])->name('web-stories');
+    Route::get('/web-stories-grid-list', [WebStoryController::class, 'indexGrid'])->name('web-stories.grid');
+    Route::get('/pending-web-stories-list', [WebStoryController::class, 'pending'])->name('pending-list.web-stories');
+    Route::get('/deactive-web-stories-list', [WebStoryController::class, 'deactiveList'])->name('deactive-list.web-stories');
+    Route::get('/web-stories-trash-list', [WebStoryController::class, 'trash'])->name('trash.web-stories');
+    Route::get('/web-story/{slug}', [WebStoryController::class, 'show'])->name('show.web-story');
+    Route::get('/create-web-story', [WebStoryController::class, 'create'])->name('create.web-story');
+    Route::post('/store-web-story', [WebStoryController::class, 'store'])->name('store.web-story');
+    Route::get('/edit-web-story/{webstory}', [WebStoryController::class, 'edit'])->name('edit.web-story');
+    Route::post('/update-web-story/{webstory}', [WebStoryController::class, 'update'])->name('update.web-story');
+    Route::get('/approve-web-story/{webstory}', [WebStoryController::class, 'approve'])->name('approve.web-story');
+    Route::get('/active-web-story/{webstory}', [WebStoryController::class, 'active'])->name('active.web-story');
+    Route::get('/deactive-web-story/{webstory}', [WebStoryController::class, 'deactive'])->name('deactive.web-story');
+    Route::get('/soft-delete-web-story/{webstory}', [WebStoryController::class, 'softDelete'])->name('soft-delete.web-story');
+    Route::get('/permanent-delete-web-story/{webstory}', [WebStoryController::class, 'permanentDelete'])->name('permanent-delete.web-story');
+
+    // SEO ROUTE ARE HERE
+    // BLOG SEO
+    Route::get('/seo-blog', [BlogSeoController::class, 'index'])->name('seo.blog');
+    Route::post('/seo-blog-store', [BlogSeoController::class, 'store'])->name('seo.blog.store');
+    Route::post('/seo-blog-update', [BlogSeoController::class, 'update'])->name('seo.blog.update');
+
+    // TUTORIAL SEO
+    Route::get('/seo-tutorial', [TutorialSeoController::class, 'index'])->name('seo.tutorial');
+    Route::post('/seo-tutorial-store', [TutorialSeoController::class, 'store'])->name('seo.tutorial.store');
+    Route::post('/seo-tutorial-update', [TutorialSeoController::class, 'update'])->name('seo.tutorial.update');
+
+    // TEMPLATE SEO
+    Route::get('/seo-template', [TemplateSeoController::class, 'index'])->name('seo.template');
+    Route::post('/seo-template-store', [TemplateSeoController::class, 'store'])->name('seo.template.store');
+    Route::post('/seo-template-update', [TemplateSeoController::class, 'update'])->name('seo.template.update');
+
+    // PDF SEO
+    Route::get('/seo-pdf', [PdfSeoController::class, 'index'])->name('seo.pdf');
+    Route::post('/seo-pdf-store', [PdfSeoController::class, 'store'])->name('seo.pdf.store');
+    Route::post('/seo-pdf-update', [PdfSeoController::class, 'update'])->name('seo.pdf.update');
+
+    // STORY SEO
+    Route::get('/seo-story', [StorySeoController::class, 'index'])->name('seo.story');
+    Route::post('/seo-story-store', [StorySeoController::class, 'store'])->name('seo.story.store');
+    Route::post('/seo-story-update', [StorySeoController::class, 'update'])->name('seo.story.update');
+
+    // PREMIUM FREE SEO
+    Route::get('/seo-premium-source-free', [PrefreeSeoController::class, 'index'])->name('seo.source');
+    Route::post('/seo-premium-source-free', [PrefreeSeoController::class, 'store'])->name('seo.source.store');
+    Route::post('/seo-premium-source-free', [PrefreeSeoController::class, 'update'])->name('seo.source.update');
+
+    // MOVIE SEO
+    Route::get('/seo-movie', [MovieSeoController::class, 'index'])->name('seo.movie');
+    Route::post('/seo-movie-store', [MovieSeoController::class, 'store'])->name('seo.movie.store');
+    Route::post('/seo-movie-update', [MovieSeoController::class, 'update'])->name('seo.movie.update');
+
+    // WEB STORY SEO
+    Route::get('/seo-web-story', [WebstorySeoController::class, 'index'])->name('seo.web-story');
+    Route::post('/seo-web-story-store', [WebstorySeoController::class, 'store'])->name('seo.web-story.store');
+    Route::post('/seo-web-story-update', [WebstorySeoController::class, 'update'])->name('seo.web-story.update');
+
+    // CUSTOM CODE
+    Route::get('/custom-code', [CustomCodeController::class, 'index'])->name('custom.code');
+    Route::post('/custom-code-store', [CustomCodeController::class, 'store'])->name('custom.code.store');
+    Route::post('/custom-code-update', [CustomCodeController::class, 'update'])->name('custom.code.update');
+
+    // ADS PROGRAM 
+    Route::get('/ads-program', [AdsController::class, 'index'])->name('ads');
+    Route::post('/ads-store', [AdsController::class, 'store'])->name('ads.store');
+    Route::post('/ads-update', [AdsController::class, 'update'])->name('ads.update');
+
+    // CONTROL ROUTE ARE HERE
+    Route::get('/platform-control', [PlatformController::class, 'index'])->name('control.platform');
+    Route::post('/platform-control-store', [PlatformController::class, 'store'])->name('control.platform.store');
+    Route::post('/platform-control-update', [PlatformController::class, 'update'])->name('control.platform.update');
+
+    // MORE TOOL SITE ROUTE ARE HERE
+    Route::get('/more-tools-site', [ToolSiteController::class, 'index'])->name('tools.site');
+    Route::post('/new-tool-site-store', [ToolSiteController::class, 'store'])->name('tools.store');
+    Route::get('/delete-tool-site/{tool}', [ToolSiteController::class, 'delete'])->name('tools.delete');
+
+    // BACKLINKS PAGE ROUTE ARE HERE
+    Route::get('/backlinks-page-details', [BacklinkPageDetailsController::class, 'index'])->name('backlinks.page');
+    Route::post('/backlinks-page-details-store', [BacklinkPageDetailsController::class, 'store'])->name('backlinks.page.store');
+    Route::post('/backlinks-page-details-update', [BacklinkPageDetailsController::class, 'update'])->name('backlinks.page.update');
+
+    // BACKLINKS ROUTE ARE HERE
+    Route::get('/backlinks', [BacklinkListController::class, 'index'])->name('backlinks');
+    Route::get('/backlinks-trash', [BacklinkListController::class, 'trash'])->name('trash-backlinks');
+    Route::get('/create-backlinks', [BacklinkListController::class, 'create'])->name('create-backlinks');
+    Route::post('/store-backlinks', [BacklinkListController::class, 'store'])->name('store-backlinks');
+    Route::get('/edit-backlinks/{backlinks}', [BacklinkListController::class, 'edit'])->name('edit-backlinks');
+    Route::post('/backlinks-update/{backlinks}', [BacklinkListController::class, 'update'])->name('update-backlinks');
+    Route::get('/backlinks-active/{backlinks}', [BacklinkListController::class, 'active'])->name('active-backlinks');
+    Route::get('/backlinks-deactive/{backlinks}', [BacklinkListController::class, 'deactive'])->name('deactive-backlinks');
+    Route::get('/backlinks-soft-delete/{backlinks}', [BacklinkListController::class, 'softDelete'])->name('soft-delete-backlinks');
+    Route::get('/backlinks-permanent-delete/{backlinks}', [BacklinkListController::class, 'permanentDelete'])->name('permanent-delete-backlinks');
+
+
+    
+    // SITEMAP LIST
+    Route::get('/sitemap/list', [SitemapController::class, 'sitemapList'])->name('sitemap.list');
+
 });
 
 Route::middleware(['auth','moderator'])->prefix('moderator')->name('moderator.')->group(function() {
@@ -640,6 +1034,19 @@ Route::middleware(['auth','moderator'])->prefix('moderator')->name('moderator.')
     Route::get('/deactive-blog/{mblog}', [BlogController::class, 'mdeactive'])->name('deactive.blog');
     Route::get('/soft-delete-blog/{mblog}', [BlogController::class, 'msoftDelete'])->name('soft-delete.blog');
 
+    // WEB STORY ROUTE ARE HERE
+    Route::get('/web-stories-list', [WebStoryController::class, 'mindex'])->name('web-stories');
+    Route::get('/deactive-web-stories-list', [WebStoryController::class, 'mdeactiveList'])->name('deactive-list.web-stories');
+    Route::get('/web-story/{slug}', [WebStoryController::class, 'show'])->name('show.web-story');
+    Route::get('/create-web-story', [WebStoryController::class, 'create'])->name('create.web-story');
+    Route::post('/store-web-story', [WebStoryController::class, 'store'])->name('store.web-story');
+    Route::get('/edit-web-story/{mwebstory}', [WebStoryController::class, 'medit'])->name('edit.web-story');
+    Route::post('/update-web-story/{mwebstory}', [WebStoryController::class, 'mupdate'])->name('update.web-story');
+    Route::get('/approve-web-story/{mwebstory}', [WebStoryController::class, 'mapprove'])->name('approve.web-story');
+    Route::get('/active-web-story/{webstory}', [WebStoryController::class, 'mactive'])->name('active.web-story');
+    Route::get('/deactive-web-story/{mwebstory}', [WebStoryController::class, 'mdeactive'])->name('deactive.web-story');
+    Route::get('/soft-delete-web-story/{mwebstory}', [WebStoryController::class, 'msoftDelete'])->name('soft-delete.web-story');
+
 });
 
 
@@ -651,3 +1058,6 @@ Route::get('get/template-category/{id}', [BasicController::class, 'getTemplateCa
 
 // SITEMAP GENERATOR ROUTE ARE HERE
 Route::get('sitemap', [SitemapController::class, 'Sitemap'])->name('sitemap');
+
+
+

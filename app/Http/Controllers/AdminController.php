@@ -23,6 +23,9 @@ use App\Models\Source\PreemiumFree;
 use App\Models\Tag\TagTemplate;
 use App\Models\Tag\TagTutorial;
 use App\Models\Template\Template;
+use App\Models\Tools\BacklinkList;
+use App\Models\Tools\BacklinkPageDetails;
+use App\Models\Tools\WebStory;
 use App\Models\Tutorial\Tutorial;
 use App\Models\User;
 use App\Models\Youtube\Youtube;
@@ -82,7 +85,9 @@ class AdminController extends Controller
         $vprivacy = Privacy::sum('views');
         $vhelp = Help::sum('views');
 
-        $totalvisits = $pdfvisits + $storyvisits + $templatevisits + $tutorialvisits + $blogvisits + $sourcevisits + $vyoutube + $vnotice + $vprivacy + $vhelp;
+        $backlinksviews = BacklinkPageDetails::sum('views');
+
+        $totalvisits = $pdfvisits + $storyvisits + $templatevisits + $tutorialvisits + $blogvisits + $sourcevisits + $vyoutube + $vnotice + $vprivacy + $vhelp + $backlinksviews;
 
         $story = Story::where('status', 1)->get();
         $tutorial = Tutorial::where('status', 1)->get();
@@ -92,13 +97,16 @@ class AdminController extends Controller
         $ymovie = Youtubemovie::where('status', 1)->get();
         $source = PreemiumFree::where('status', 1)->get();
         $blog = Blog::where('status', 1)->get();
+        $backlinks = BacklinkList::where('status', 1)->get();
         $users = User::where('utype', 1)->get();
+        $webstories = WebStory::where('status', 1)->get();
+        
         
         $admins = User::where('utype', 5)->orWhere('utype', 2)->get();
         $moderators = User::where('utype', 2)->get();
         $count = 1;
 
-        return view('admin.index', compact('users','admins','moderators','story','tutorial','template','pdf','movie','blog','ymovie','source','totalvisits','pdfvisits','movievisits','storyvisits','templatevisits','tutorialvisits','blogvisits','sourcevisits','count'));
+        return view('admin.index', compact('users','admins','moderators','story','tutorial','template','pdf','movie','blog','ymovie','source','backlinks','totalvisits','pdfvisits','movievisits','storyvisits','templatevisits','tutorialvisits','blogvisits','sourcevisits','backlinksviews','webstories','count'));
     }
 
 }

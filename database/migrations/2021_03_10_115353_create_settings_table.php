@@ -37,11 +37,12 @@ class CreateSettingsTable extends Migration
             $table->string('logo')->nullable();
             $table->string('favicon')->nullable();
             $table->string('cover_image')->nullable();
+            $table->string('donate_image')->nullable();
             $table->timestamps();
         });
 
         Setting::create([
-            'title' => 'StorialTech | Story Tutorial Technology'
+            'title' => 'StorialTech - Blog of Story Tutorial Technology'
         ]);
     }
 

@@ -73,4 +73,9 @@ class ResetController extends Controller
         Artisan::class('storage:link');
         return 'Storage linked!';
     }
+    
+    public function redirect()
+    {
+        return redirect('/');
+    }
 }

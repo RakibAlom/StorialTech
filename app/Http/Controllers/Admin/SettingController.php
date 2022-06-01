@@ -66,6 +66,7 @@ class SettingController extends Controller
             'favicon' => 'sometimes|file|image|max:20',
             'logo' => 'sometimes|file|image|max:50',
             'cover_image' => 'sometimes|file|image|max:120',
+            'donate_image' => 'sometimes|file|image|max:120',
         ]);
     }
 
@@ -95,6 +96,15 @@ class SettingController extends Controller
             }
             $setting->update([
                 'cover_image' => request()->cover_image->store('image/setting', 'public'),
+            ]);
+        }
+
+        if(request()->has('donate_image')){
+            if(request()->olddonateimage){
+                unlink('storage/app/public/'.request()->oldcover);
+            }
+            $setting->update([
+                'donate_image' => request()->donate_image->store('image/setting', 'public'),
             ]);
         }
     }

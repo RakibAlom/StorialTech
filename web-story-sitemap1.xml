@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="vendor/sitemap/styles/xml.xsl" type="text/xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+	<url>
+	<loc>https://www.storialtech.com/web-stories</loc>
+		<priority>1.0</priority>
+		<lastmod>2021-04-27T06:54:36+00:00</lastmod>
+		<changefreq>daily</changefreq>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/web-stories/best-digital-marketing-tools</loc>
+		<priority>0.4</priority>
+		<lastmod>2022-02-06T18:49:01+00:00</lastmod>
+		<changefreq>daily</changefreq>
+		<image:image>
+			<image:loc>https://www.storialtech.com/storage/app/public/image/webstory/KoLSe1Kr2872i4NweLuEmAw4syBvhhONC01BGmk3.jpg</image:loc>
+			<image:title>Best Digital Marketing Tools For 2022</image:title>
+			<image:caption>Best Digital Marketing Tools For 2022</image:caption>
+		</image:image>
+	</url>
+	<url>
+	<loc>https://www.storialtech.com/web-stories/social-media-image-sizes-2022</loc>
+		<priority>0.4</priority>
+		<lastmod>2022-02-05T15:41:26+00:00</lastmod>
+		<changefreq>daily</changefreq>
+		<image:image>
+			<image:loc>https://www.storialtech.com/storage/app/public/image/webstory/lCs7UPP3yJkM1Kr0xirpl1hraDhGZYR6OF5dImjM.jpg</image:loc>
+			<image:title>Social Media Image Sizes 2022</image:title>
+			<image:caption>Social Media Image Sizes 2022</image:caption>
+		</image:image>
+	</url>
+</urlset>
+

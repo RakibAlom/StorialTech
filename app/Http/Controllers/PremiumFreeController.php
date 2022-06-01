@@ -11,7 +11,7 @@ class PremiumFreeController extends Controller
 {
     public function index()
     {
-        $sources = PreemiumFree::where('status', 1)->latest()->get();
+        $sources = PreemiumFree::where('status', 1)->orderBy('id','desc')->get();
         $count = 1;
 
         $autodelete = PreemiumFree::all();
@@ -32,14 +32,14 @@ class PremiumFreeController extends Controller
 
     public function deactiveList()
     {
-        $sources = PreemiumFree::where('status', 2)->latest()->get();
+        $sources = PreemiumFree::where('status', 2)->orderBy('id','desc')->get();
         $count = 1;
         return view('admin.source.index', compact('sources','count'));
     }
 
     public function trash()
     {
-        $sources = PreemiumFree::where('status', 9)->latest()->get();
+        $sources = PreemiumFree::where('status', 9)->orderBy('id','desc')->get();
         $count = 1;
         return view('admin.source.trash', compact('sources','count'));
     }
@@ -87,9 +87,9 @@ class PremiumFreeController extends Controller
 
         if($source)
         {
-            return redirect()->back()->with('success', 'Source Publish Successfully!');
+            return back()->with('success', 'Source Publish Successfully!');
         }else{
-            return redirect()->back()->with('error', 'Something Went Wrong!');
+            return back()->with('error', 'Something Went Wrong!');
         }
     }
 
@@ -109,9 +109,9 @@ class PremiumFreeController extends Controller
 
         if($source)
         {
-            return redirect()->back()->with('success', 'Source Updated Successfully!');
+            return back()->with('success', 'Source Updated Successfully!');
         }else{
-            return redirect()->back()->with('error', 'Something Went Wrong!');
+            return back()->with('error', 'Something Went Wrong!');
         }
     }
 
@@ -121,9 +121,9 @@ class PremiumFreeController extends Controller
 
         if($source)
         {
-            return redirect()->back()->with('success', 'Source Deactived!');
+            return back()->with('success', 'Source Deactived!');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 
@@ -133,9 +133,9 @@ class PremiumFreeController extends Controller
 
         if($source)
         {
-            return redirect()->back()->with('success', 'Source Activated!');
+            return back()->with('success', 'Source Activated!');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 
@@ -145,9 +145,9 @@ class PremiumFreeController extends Controller
 
         if($source)
         {
-            return redirect()->back()->with('delete', 'Source moved to trash!');
+            return back()->with('delete', 'Source moved to trash!');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 
@@ -157,9 +157,9 @@ class PremiumFreeController extends Controller
 
         if($source)
         {
-            return redirect()->back()->with('delete', 'Source Deleted Permanently!');
+            return back()->with('delete', 'Source Deleted Permanently!');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 
@@ -190,7 +190,7 @@ class PremiumFreeController extends Controller
     public function mindex()
     {
         $aid = Auth::id();
-        $sources = PreemiumFree::where('status', 1)->where('user_id', $aid)->latest()->get();
+        $sources = PreemiumFree::where('status', 1)->where('user_id', $aid)->orderBy('id','desc')->get();
         $count = 1;
         $autodelete = PreemiumFree::all();
         return view('admin.source.index', compact('sources','count'));
@@ -199,7 +199,7 @@ class PremiumFreeController extends Controller
     public function mdeactiveList()
     {
         $aid = Auth::id();
-        $sources = PreemiumFree::where('status', 2)->where('user_id', $aid)->latest()->get();
+        $sources = PreemiumFree::where('status', 2)->where('user_id', $aid)->orderBy('id','desc')->get();
         $count = 1;
         return view('admin.source.index', compact('sources','count'));
     }
@@ -230,9 +230,9 @@ class PremiumFreeController extends Controller
 
         if($source)
         {
-            return redirect()->back()->with('success', 'Source Updated Successfully!');
+            return back()->with('success', 'Source Updated Successfully!');
         }else{
-            return redirect()->back()->with('error', 'Something Went Wrong!');
+            return back()->with('error', 'Something Went Wrong!');
         }
     }
 
@@ -245,9 +245,9 @@ class PremiumFreeController extends Controller
 
         if($source)
         {
-            return redirect()->back()->with('success', 'Source Deactived!');
+            return back()->with('success', 'Source Deactived!');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 
@@ -260,9 +260,9 @@ class PremiumFreeController extends Controller
 
         if($source)
         {
-            return redirect()->back()->with('success', 'Source Activated!');
+            return back()->with('success', 'Source Activated!');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 
@@ -275,16 +275,16 @@ class PremiumFreeController extends Controller
 
         if($source)
         {
-            return redirect()->back()->with('delete', 'Source Deleted!');
+            return back()->with('delete', 'Source Deleted!');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 
-    // SOURCE PUBLICE FUNCTION
+    // SOURCE PUBLIC FUNCTION
    public function source()
    {
-        $sources = PreemiumFree::where('status', 1)->latest()->paginate(15);
+        $sources = PreemiumFree::with('prefreecategory')->where('status', 1)->orderBy('id','desc')->paginate(15);
         return view('source.index', compact('sources'));
    }
    
@@ -292,9 +292,9 @@ class PremiumFreeController extends Controller
    {
         if($request->ajax()){
             if($request->id){
-                $sources = PreemiumFree::where('status', 1)->latest()->where('id', '<', $request->id)->take(15)->get();
+                $sources = PreemiumFree::where('status', 1)->orderBy('id','desc')->where('id', '<', $request->id)->take(15)->get();
             }else{
-                $sources = PreemiumFree::where('status', 1)->latest()->skip(6)->take(9)->get();
+                $sources = PreemiumFree::where('status', 1)->orderBy('id','desc')->skip(6)->take(9)->get();
             }
         }
        return view('source.get_data', compact('sources'));
@@ -306,7 +306,7 @@ class PremiumFreeController extends Controller
        $category->update([
             'views' => $category->views + 1,
         ]);
-       $sources = PreemiumFree::where('category_id', $category->id)->where('status', 1)->latest()->paginate(15);
+       $sources = PreemiumFree::where('category_id', $category->id)->where('status', 1)->orderBy('id','desc')->paginate(15);
        return view('source.categoryshow', compact('sources','category'));
    }
    public function sourceshow($slug)

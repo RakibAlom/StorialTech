@@ -184,7 +184,7 @@
     // SELECT 2
     $(".tagging").select2({
         tags: true,
-        maximumSelectionLength: 3
+        maximumSelectionLength: 5
     });
 
     // IMAGE SHOW SCRIPT

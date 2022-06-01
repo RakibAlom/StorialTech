@@ -1,29 +1,5 @@
 /*** Styling for widgets ***/
 
-/*Custom Css*/
-input[type=button]{
-    display: inline-block;
-    background-color: #5869da;
-    color: #ffffff;
-    font-weight: 700;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    border: 1px solid transparent;
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    border-radius: .15rem;
-    cursor: pointer;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-}
-input[type=button]:hover{
-    background-color: #29bb89;
-}
 
 /*Widget header*/
 .widget-header-1 h5,
@@ -105,8 +81,8 @@ span.has-dot::before{content:"";width:3px;height:3px;background:#999;border-radi
 
 /*featured-slider-1*/
 .featured-1{padding:80px 0;background:#f1f2f3;}
-.featured-1 h3{font-size:42px;font-weight:900;}
-.featured-1 h2{font-size:50px;font-weight:900;}
+.featured-1 h3{font-size:36px;font-weight:900;}
+.featured-1 h2{font-size:42px;font-weight:900;}
 .featured-1 h2 span{color:var(--color-primary);}
 .tags{letter-spacing:0.5px}
 
@@ -147,7 +123,7 @@ span.has-dot::before{content:"";width:3px;height:3px;background:#999;border-radi
 .post-module-1 .post-thumb:hover .post-content-overlay{bottom:5px;}
 .post-module-1 .post-content-overlay .entry-meta{line-height:1;}
 .post-module-1 .post-content-overlay .entry-meta span.post-cat,
-.entry-meta.meta-0 span.post-cat{padding-right:7px;margin-right:10px;font-weight:bold;color:#666;}
+.entry-meta.meta-0 span.post-cat{padding-right:7px;margin-right:10px;font-weight:500;color:#666;}
 .post-module-1 .post-content-overlay .entry-meta span.post-cat::after,
 .entry-meta.meta-0 span.post-cat::after{content:"";width:3px;height:3px;background:#999;position:absolute;right:0;bottom:3px;border-radius:50%}
 .post-module-1 .post-content-overlay .entry-meta.text-white span.post-cat::after{background:#fff;}

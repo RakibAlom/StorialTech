@@ -13,6 +13,7 @@ use App\Models\Template\Template;
 use App\Models\Movie\Movie;
 use App\Models\Movie\Youtubemovie;
 use App\Models\Source\PreemiumFree;
+use App\Models\Tools\WebStory;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -118,6 +119,11 @@ class User extends Authenticatable
     public function bloglike()
     {
         return $this->hasOne(Bloglike::class);
+    }
+
+    public function webstories()
+    {
+        return $this->hasMany(WebStory::class);
     }
 
     public function path()

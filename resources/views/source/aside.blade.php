@@ -1,7 +1,7 @@
 @php
-    $pfcates = App\Models\Category\CategoryPrefree::where('status', 1)->orderBy('snumber')->get();
+    $pfcates = App\Models\Category\CategoryPrefree::with('prefree')->where('status', 1)->orderBy('name')->get();
     $setting = App\Models\Admin\Setting::first();
-
+    $platform = App\Models\Custom\PlatformControl::first();
 @endphp
 
 <!--Offcanvas sidebar-->
@@ -52,15 +52,26 @@
             </div>
         </div> --}}
         <!--Ads-->
-
-        <div class="sidebar-widget">
-            <div class="widget-header-2 position-relative mb-30">
-                <h5 class="mt-5 mb-30">Advertise banner</h5>
+    @if($platform->youtube_status == 1)
+        <div class="sidebar-widget widget_categories mb-20 mt-30">
+            <div class="widget-header-2 position-relative mb-20">
+                <h5 class="mt-5 mb-30">YouTube Cahnnel <i class=" text-danger fa fa-youtube-play "></i></h5>
             </div>
-            <a href="{{ url('/') }}" target="_blank">
-                <img class="advertise-img border-radius-5" src="{{ asset('storage/app/public/'.$setting->cover_image) }}" alt="{{ $setting->title }}">
+        @php
+            $youtubes = App\Models\Youtube\Youtube::where('status', 1)->get();
+        @endphp
+        @foreach($youtubes as $item)
+            <a href="{{ $item->clink }}" target="_blank">
+                <img class="advertise-img border-radius-5" src="{{ asset('storage/app/public/'.$item->image) }}" alt="{{ $item->name }}">
             </a>
+            <a href="{{ $item->clink }}" target="_blank">
+                <div class="mb-30">
+                    <h6 class="mt-5 mb-30 text-success">{{ $item->name }}</h6>
+                </div>
+            </a>
+        @endforeach
         </div>
+    @endif
 
     </div>
 </aside>

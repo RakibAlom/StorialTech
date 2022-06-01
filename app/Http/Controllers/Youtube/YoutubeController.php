@@ -50,9 +50,9 @@ class YoutubeController extends Controller
 
         if($youtube)
         {
-            return redirect()->back()->with('success', 'New YouTube Channel Publish!');
+            return back()->with('success', 'New YouTube Channel Publish!');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 
@@ -82,9 +82,9 @@ class YoutubeController extends Controller
 
         if($youtube)
         {
-            return redirect()->back()->with('success', 'YouTube Channel Updated!');
+            return back()->with('success', 'YouTube Channel Updated!');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 
@@ -94,9 +94,9 @@ class YoutubeController extends Controller
 
         if($youtube)
         {
-            return redirect()->back()->with('success', 'YouTube Channel Deactived.');
+            return back()->with('success', 'YouTube Channel Deactived.');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 
@@ -106,9 +106,9 @@ class YoutubeController extends Controller
 
         if($youtube)
         {
-            return redirect()->back()->with('success', 'YouTube Channel Activated.');
+            return back()->with('success', 'YouTube Channel Activated.');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 
@@ -118,9 +118,9 @@ class YoutubeController extends Controller
 
         if($youtube)
         {
-            return redirect()->back()->with('delete', 'YouTube Channel moved to trash.');
+            return back()->with('delete', 'YouTube Channel moved to trash.');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 
@@ -134,9 +134,9 @@ class YoutubeController extends Controller
 
         if($youtube)
         {
-            return redirect()->back()->with('delete', 'Youtube Channel Has Been Deleted Permanently.');
+            return back()->with('delete', 'Youtube Channel Has Been Deleted Permanently.');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 

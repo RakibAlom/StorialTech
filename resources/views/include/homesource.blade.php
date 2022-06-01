@@ -1,5 +1,8 @@
 <div class="template-section">
     <div class="container">
+        <div class="pt-10">
+            @include('include.ads.section_top_banner_ads')
+        </div>
         <div class="hot-tags pt-30 pb-20 font-small align-self-center">
             <div class="widget-header-3">
                 <div class="row align-self-center">
@@ -23,7 +26,7 @@
         <div class="loop-grid">
             <div class="row">
             @php
-                $sources = App\Models\Source\PreemiumFree::where('status', 1)->latest()->take(6)->get();
+                $sources = App\Models\Source\PreemiumFree::with('prefreecategory')->where('status', 1)->orderBy('id','desc')->take(6)->get();
              @endphp
             @foreach($sources as $item)
                 <article class="col-lg-4 col-md-6 mb-20">
@@ -33,9 +36,9 @@
                                 <a href="{{ $item->prefreecategory->path() }}"><span class="post-cat text-success">{{ Str::words($item->prefreecategory->name, 1,'') }}</span></a>
                             </div>
                             <div class="d-flex post-card-content-source">
-                                <h6>
+                                <h2>
                                     <a href="{{ $item->path() }}">{{ Str::words($item->title, 11)}}</a>
-                                </h6>
+                                </h2>
                                 <div class="entry-meta meta-1 float-left font-x-small text-uppercase">
                                     <span class="post-by">{{ $item->views }} views</span>
                                 @if($item->delete_time)

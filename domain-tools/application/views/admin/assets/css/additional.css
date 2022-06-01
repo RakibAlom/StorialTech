@@ -1,0 +1,119 @@
+.product-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 3px;
+    background: #2f3d4d;
+    padding: 6px 12px;
+}
+
+.form-check-input {
+  clear: left;
+}
+
+.form-switch.form-switch-sm {
+  margin-bottom: 0.5rem; /* JUST FOR STYLING PURPOSE */
+}
+
+.form-switch.form-switch-sm .form-check-input {
+  height: 1rem;
+  width: calc(1rem + 0.75rem);
+  border-radius: 2rem;
+}
+
+.form-switch.form-switch-md {
+  margin-bottom: 1rem; /* JUST FOR STYLING PURPOSE */
+}
+
+.form-switch.form-switch-md .form-check-input {
+  height: 1.5rem;
+  width: calc(2rem + 0.75rem);
+  border-radius: 3rem;
+}
+
+.form-switch.form-switch-lg {
+  margin-bottom: 1.5rem; /* JUST FOR STYLING PURPOSE */
+}
+
+.form-switch.form-switch-lg .form-check-input {
+  height: 2rem;
+  width: calc(3rem + 0.75rem);
+  border-radius: 4rem;
+}
+
+.form-switch.form-switch-xl {
+  margin-bottom: 2rem; /* JUST FOR STYLING PURPOSE */
+}
+
+.form-switch.form-switch-xl .form-check-input {
+  height: 2.5rem;
+  width: calc(4rem + 0.75rem);
+  border-radius: 5rem;
+}
+
+.card.theme-card .card-header {
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.card.theme-card .card-body {
+  padding: 0;
+}
+
+.card.theme-card .card-footer {
+  border-top: 1px solid #f1f1f1;
+}
+
+form .image-preview {
+  padding: 15px 25px;
+  background: #0d3985;
+  border-radius: 5px;
+  display: block;
+  margin: 5px 0px 10px 0;
+}
+
+form .image-preview img {
+  max-height: 200px;
+}
+
+.repeater-blocks-container {
+  margin-top: 15px;
+}
+
+.repeater-blocks-container .options {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.repeater-block-header .options a {
+  margin-right: 10px;
+}
+
+.repeater-blocks-container .options a svg {
+  margin-right: 5px;
+}
+
+.repeater-block {
+  background: #f2f8ff;
+  border: 2px solid #787b7d;
+  border-radius: 3px;
+  margin-top: 20px;
+}
+
+.repeater-block-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.repeater-block-content {
+  border-top: 1px solid #788da7;
+}
+
+.repeater-block-header, .repeater-block-content {
+  padding: 10px 15px;
+}
+
+.sidebar-content {
+  height: 100%;
+}

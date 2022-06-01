@@ -1,27 +1,30 @@
 @php
     $id = $pdf->user->id;
-    $count = 1;
     $author = App\Models\User::findOrFail($id);
-    $replace = array('<p>','</p>','<br>','</br>','<h1>','</h1>','<h2>','</h2>','<h3>','</h3>','<em>','</em>','<strong>','</strong>');
+    $replace = array('<p>','</p>','<br>','</br>','<h1>','</h1>','<h2>','</h2>','<h3>','</h3>','<h4>','</h4>','<h5>','</h5>','<em>','</em>','<strong>','</strong>','<span>','</span>');
+    $seo = App\Models\Seo\SeoPdf::first();
+    $count = 1;
 @endphp
 
-@section('title', $pdf->title)
-@section('meta-title', $pdf->title)
+@section('title', $pdf->title . ' ' . $seo->sp_title_plus)
+@section('meta-title', $pdf->title . ' ' . $seo->sp_title_plus)
 @section('meta-description', Str::words(str_replace($replace, ' ', $pdf->body), 25,''))
 @section('meta-keywords', $pdf->keywords)
-@section('meta-image', asset('storage/app/public/'.$pdf->image))
-@section('og-title', $pdf->name)
+@section('og-title', $pdf->title . ' ' . $seo->sp_title_plus)
 @section('og-description', Str::words(str_replace($replace, ' ', $pdf->body), 25,''))
-@section('og-image', asset('storage/app/public/'.$pdf->image))
-@section('twitter-title', $pdf->name)
+@section('twitter-title', $pdf->title . ' ' . $seo->sp_title_plus)
 @section('twitter-description', Str::words(str_replace($replace, ' ', $pdf->body), 25,''))
+
+@if($pdf->image)
+@section('meta-image', asset('storage/app/public/'.$pdf->image))
+@section('og-image', asset('storage/app/public/'.$pdf->image))
 @section('twitter-image', asset('storage/app/public/'.$pdf->image))
+@endif
 
 
 @extends('layouts.app')
 
 @section('css')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 @endsection
 
 @section('aside')
@@ -40,7 +43,7 @@
                             <p class="text-success">{{ session('success') }}</p>
                         @endif
                         
-                        @include('include.googledisplayads')
+                        @include('include.ads.single_post_top_ads')
                                     
                         <div class="entry-header entry-header-style-1 mb-20">
                             <h1 class="entry-title mb-30 font-weight-900">
@@ -54,9 +57,10 @@
                                             <a class="author-avatar" href="javascript:void()"><img class="img-circle" src="{{ asset('storage/app/public/'.$author->image) }}" alt="{{ $author->username }}"></a>
                                         @endif
                                             By <a href="javascript:void(0)" class="ml-2"><span class="author-name font-weight-bold">{{ $author->fullname }}</span></a>
+                                            <br>
+                                           <span class="font-small"> Date: {{ $pdf->created_at->format('d F Y') }}</span>
+                                            <span class="ml-5 mr-10 font-small"><i class="fa fa-eye"></i> {{ $pdf->views }} views</span>
                                         </p>
-                                        <span class="mr-10"> {{ $pdf->created_at->format('d F Y') }}</span>
-                                        <span class="ml-5 mr-10"><i class="fa fa-eye"></i> {{ $pdf->views }} views</span>
                                     </div>
                                 </div>
                                 <div class="col-md-6 text-right d-none d-md-inline">
@@ -134,7 +138,7 @@
                             <div class="mt-50">
                                 <div class="text-center">
                                     
-                                    @include('include.googledisplayads')
+                                    @include('include.ads.single_post_top_ads')
                                     
                                     <h4 class="mb-20 mt-20 font-weight-bold text-success"><u>Downlaod Section</u></h4>
                                 @if($pdf->file)
@@ -153,11 +157,10 @@
                                         </div>
                                     </div>
                                     
-                                   @include('include.googledisplayads')
+                                   @include('include.ads.single_post_bottom_ads')
                                     
                                     <div class="mt-50 mb-30">
                                         <span>(If download link not working then <a href={{ route('contact') }}>contact with us</a> and report for update!)</span> <br>
-                                        <span>(যদি ডাউনলোড লিঙ্ক কাজ না করে তাহলে আমাদের কে <a href={{ route('contact') }}>মেসেজ</a> দিয়ে জানিয়ে দিন। আমরা লিঙ্কটি  ঠিক করে দিবো!)</span>
                                     </div>
                                 </div>
                             </div>
@@ -189,7 +192,7 @@
 
 
                             <!--More posts-->
-                            <div class="single-more-articles border-radius-5">
+                            {{-- <div class="single-more-articles border-radius-5">
                                 <div class="widget-header-2 position-relative mb-30">
                                     <h5 class="mt-5 mb-15">You might be interested in</h5>
                                     <button class="single-more-articles-close"><i class="elegant-icon icon_close"></i></button>
@@ -219,7 +222,7 @@
                                     @endforeach
                                     </ul>
                                 </div>
-                            </div>
+                            </div> --}}
 
                         </article>
                     </div>
@@ -233,13 +236,13 @@
                         <div class="sidebar-widget widget-latest-posts mb-30">
                             <div class="widget-header-2 position-relative mb-20">
                                 <h5 class="mt-5 mb-20">Related PDF</h5>
-                                @include('include.googledisplayads')
+                                @include('include.ads.sidebar_top_ads')
                             </div>
 
                             @foreach($pdf->category as $category)
                                 @php
                                     $tucates1 =  App\Models\Category\Categorypdf::where('id', $category->category_id)->first();
-                                    $related = $tucates1->pdf()->where('status',1)->inRandomOrder()->latest()->limit(5)->get();
+                                    $related = $tucates1->pdf()->where('status',1)->inRandomOrder()->orderBy('id','desc')->limit(5)->get();
                                 @endphp
                             @endforeach
                             <div class="post-block-list post-module-1">
@@ -269,7 +272,7 @@
                                 </ul>
                             </div>
                             
-                            @include('include.googledisplayads')
+                            @include('include.ads.sidebar_bottom_ads')
                         </div>
 
                     </div>

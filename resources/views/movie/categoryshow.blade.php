@@ -1,19 +1,19 @@
 @php
-    $setting = App\Models\Admin\Setting::first();
-    $replace = array('<p>','</p>','<br>','</br>','<h1>','</h1>','<h2>','</h2>','<h3>','</h3>');
+    $seo = App\Models\Seo\SeoMovie::first();
+    $replace = array('<p>','</p>','<br>','</br>','<h1>','</h1>','<h2>','</h2>','<h3>','</h3>','<h4>','</h4>','<h5>','</h5>','<em>','</em>','<strong>','</strong>','<span>','</span>');
 @endphp
 
-@section('title', $category->name . ' | Movie Download World | StorialTech')
-@section('meta-title', $category->name . ' | Movie Download World | StorialTech')
-@section('meta-description', 'You can download free movies from StorialTech. Free movie downloads like hollywood, hindi, adventure, mystery, horror, comedy, and others movie.')
-@section('og-description', 'You can download free movies from StorialTech. Free movie downloads like hollywood, hindi, adventure, mystery, horror, comedy, and others movie.')
-@section('twitter-description', 'You can download free movies from StorialTech. Free movie downloads like hollywood, hindi, adventure, mystery, horror, comedy, and others movie.')
-@section('meta-keywords', 'movie, movie download, dowload movie, hindi movie, hindi dubbed move, comedy movie, bollywood movie, hollywood movie, bangla subtitle movie, korean movie, chinese movie, free movie download, south indian movie, movie series, series, drama series, dc movie, marvel movie')
-@section('og-title', $category->name . ' | Movie Download World | StorialTech')
-@section('twitter-title', $category->name . ' | Movie Download World | StorialTech')
-@section('meta-image', asset('public/frontend/img/movie-thumbnail.jpg'))
-@section('og-image', asset('public/frontend/img/movie-thumbnail.jpg'))
-@section('twitter-image', asset('public/frontend/img/movie-thumbnail.jpg'))
+@section('title', $category->name . ' ' . $seo->sp_title_plus)
+@section('meta-title', $category->name . ' ' . $seo->sp_title_plus)
+@section('meta-keywords', $seo->keywords)
+@section('og-title', $category->name . ' ' . $seo->sp_title_plus)
+@section('twitter-title', $category->name . ' ' . $seo->sp_title_plus)
+@section('meta-description', $seo->description)
+@section('og-description', $seo->description)
+@section('twitter-description', $seo->description)
+@section('meta-image', asset('storage/app/public/'.$seo->cover_image))
+@section('og-image', asset('storage/app/public/'.$seo->cover_image))
+@section('twitter-image', asset('storage/app/public/'.$seo->cover_image))
 
 @extends('layouts.app')
 
@@ -27,7 +27,8 @@
     <!--archive header-->
     <div class="archive-header pt-10 text-center">
         <div class="container">
-            <h1 style="display:none;">{{ $category->name }} Movie Free Download in HD</h1>
+            <h1 style="display:none;">{{ $category->name }} {{ $seo->sp_title_plus }}</h1>
+            @include('include.ads.section_top_banner_ads')
         </div>
     </div>
     <div class="container pt-20">
@@ -50,7 +51,7 @@
             @foreach ($movies as $item)
                 <article class="col-lg-3 col-md-4 mb-20">
                     <div class="post-card-1 hover-up">
-                        <div class="post-thumb thumb-overlay-movie img-hover-slide position-relative" @if($item->thumbnail) style="background-image: url({{ asset('storage/app/public/'. $item->thumbnail) }})" @else style="background-image: url({{ asset('storage/app/public/'.$setting->cover_image) }})" @endif>
+                        <div class="post-thumb thumb-overlay-movie img-hover-slide position-relative" @if($item->thumbnail) style="background-image: url({{ asset('storage/app/public/'. $item->thumbnail) }})" @else style="background-image: url({{ asset('storage/app/public/'.$seo->cover_image) }})" @endif>
                             <a class="img-link" href="{{ $item->path() }}" rel="nofollow"></a>
                             <ul class="social-share">
                                 <li><a href="javascript:void(0)"><i class="elegant-icon social_share"></i></a></li>
@@ -66,9 +67,9 @@
                             @endforeach
                             </div>
                             <div class="d-flex post-card-content-movie">
-                                <h5 class="post-title font-weight-900" style="font-size: 1rem !important;">
+                                <h2 class="post-title font-weight-900" style="font-size: 1rem !important;">
                                     <a href="{{ $item->path() }}" rel="nofollow">{{ Str::words($item->name, 7)}}</a>
-                                </h5>
+                                </h2>
                             </div>
                         </div>
                     </div>
@@ -88,6 +89,7 @@
                 </div>
             </div>
             
+            @include('include.ads.section_bottom_banner_ads')
 
         </div>
     </div>

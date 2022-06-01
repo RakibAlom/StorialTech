@@ -1,19 +1,19 @@
 @php
-    $setting = App\Models\Admin\Setting::first();
-    $replace = array('<p>','</p>','<br>','</br>','<h1>','</h1>','<h2>','</h2>','<h3>','</h3>');
+    $seo = App\Models\Seo\SeoPrefree::first();
+    $replace = array('<p>','</p>','<br>','</br>','<h1>','</h1>','<h2>','</h2>','<h3>','</h3>','<h4>','</h4>','<h5>','</h5>','<em>','</em>','<strong>','</strong>','<span>','</span>');
 @endphp
 
-@section('title', 'Premium Free Source | ' . $setting->title)
-@section('meta-title', 'Premium Free Source | ' . $setting->title)
-@section('meta-keywords', 'premuim course, free source, premium free source download, download, software free download, free theme download, free course, udemy course, course cupon, download course')
-@section('og-title', 'Premium Free Source | ' . $setting->title)
-@section('twitter-title', 'Premium Free Source | ' . $setting->title)
-@section('meta-image', asset('public/frontend/img/source-thumbnail.jpg'))
-@section('og-image', asset('public/frontend/img/source-thumbnail.jpg'))
-@section('twitter-image', asset('public/frontend/img/source-thumbnail.jpg'))
-@section('meta-description', "Download Premium Source and Course For Free. You can find your course and necessary file source here. Let's visit and download free.")
-@section('og-description', "Download Premium Source and Course For Free. You can find your course and necessary file source here. Let's visit and download free.")
-@section('twitter-description', "Download Premium Source and Course For Free. You can find your course and necessary file source here. Let's visit and download free.")
+@section('title', $seo->title)
+@section('meta-title', $seo->title)
+@section('meta-keywords', $seo->keywords)
+@section('og-title', $seo->title)
+@section('twitter-title', $seo->title)
+@section('meta-description', $seo->description)
+@section('og-description', $seo->description)
+@section('twitter-description', $seo->description)
+@section('meta-image', asset('storage/app/public/'.$seo->cover_image))
+@section('og-image', asset('storage/app/public/'.$seo->cover_image))
+@section('twitter-image', asset('storage/app/public/'.$seo->cover_image))
 
 @extends('layouts.app')
 
@@ -27,8 +27,8 @@
     <!--archive header-->
     <div class="archive-header pt-10 text-center">
         <div class="container">
-            <h1 style="display:none;">Get & Download Premium Source</h1>
-            @include('include.googledisplayads')
+            <h1 style="display:none;">{{ $seo->title }}</h1>
+            @include('include.ads.section_top_banner_ads')
         </div>
     </div>
     <div class="container pt-20">
@@ -58,9 +58,9 @@
                                 <a href={{$item->prefreecategory->path()}}><span class="post-cat text-success">{{ Str::words($item->prefreecategory->name, 1,'') }}</span></a>
                             </div>
                             <div class="d-flex post-card-content-source">
-                                <h6>
+                                <h2 style="font-size: 1rem !important;">
                                     <a href="{{ $item->path() }}">{{ Str::words($item->title, 11) }}</a>
-                                </h6>
+                                </h2>
                                 <div class="entry-meta meta-1 float-left font-x-small text-uppercase">
                                     <span class="post-by">{{ $item->views }} views</span>
                                 @if($item->delete_time)
@@ -88,7 +88,7 @@
                 </div>
             </div>
             
-            @include('include.googledisplayads')
+            @include('include.ads.section_bottom_banner_ads')
             
             
         </div>

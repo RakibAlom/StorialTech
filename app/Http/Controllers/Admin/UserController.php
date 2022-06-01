@@ -153,14 +153,18 @@ class UserController extends Controller
 
     public function block(User $user)
     {
-        $user->update(['utype' => 0]);
-
-        if($user)
-        {
-            return redirect()->back()->with('success', 'User Blocked!');
+        if(!$user->utype === 5) {
+            $user->update(['utype' => 0]);
+            if($user)
+            {
+                return redirect()->back()->with('success', 'User Blocked!');
+            }else{
+                return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            }
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return redirect()->back()->with('error', 'Please, Try Manually From Database!');
         }
+        
     }
 
     public function unblock(User $user)
@@ -177,13 +181,17 @@ class UserController extends Controller
 
     public function softDelete(User $user)
     {
-        $user->update(['utype' => 9]);
+        if(!$user->utype === 5) {
+            $user->update(['utype' => 9]);
 
-        if($user)
-        {
-            return redirect()->back()->with('delete', 'User moved to Recycle Bin!');
+            if($user)
+            {
+                return redirect()->back()->with('delete', 'User moved to Recycle Bin!');
+            }else{
+                return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            }
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return redirect()->back()->with('error', 'Please, Try Manually From Database!');
         }
     }
 

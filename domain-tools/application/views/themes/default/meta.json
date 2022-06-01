@@ -1,0 +1,11 @@
+{
+    "name": "Default Theme",
+    "version": 1.0,
+    
+    "author": {
+        "name": "Bitflan",
+        "url": "https://bitflan.com"
+    },
+
+    "preview": "assets/_preview.png"
+}

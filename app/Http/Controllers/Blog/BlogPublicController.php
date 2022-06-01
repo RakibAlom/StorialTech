@@ -12,7 +12,7 @@ class BlogPublicController extends Controller
     // Blog FUNCTION
    public function index()
    {
-        $blogs = Blog::where('status', 1)->latest()->paginate(12);
+        $blogs = Blog::with('categoryblog','user')->where('status', 1)->orderBy('id', 'desc')->paginate(9);
         return view('blog.index', compact('blogs'));
    }
 
@@ -22,7 +22,7 @@ class BlogPublicController extends Controller
        $category->update([
             'views' => $category->views + 1,
         ]);
-       $blogs = $category->blog()->where('status', 1)->latest()->paginate(12);
+       $blogs = $category->blog()->with('categoryblog','user')->where('status', 1)->orderBy('id', 'desc')->paginate(9);
        return view('blog.categoryshow', compact('blogs','category'));
    }
 

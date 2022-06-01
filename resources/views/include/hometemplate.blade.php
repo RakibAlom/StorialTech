@@ -1,7 +1,7 @@
 <div class="template-section bg-grey">
     <div class="container">
         <div class="pt-10">
-            @include('include.googledisplayads')
+            @include('include.ads.section_top_banner_ads')
         </div>
         <div class="hot-tags pt-20 pb-20 font-small align-self-center">
             <div class="widget-header-3">
@@ -26,7 +26,7 @@
         <div class="loop-grid">
             <div class="row">
             @php
-                $templates1 = App\Models\Template\Template::where('status', 1)->whereNotNull('image')->latest()->take(6)->get();
+                $templates1 = App\Models\Template\Template::with('categorytemplate','user')->where('status', 1)->whereNotNull('image')->latest()->take(6)->get();
              @endphp
             @foreach($templates1 as $item)
                 <article class="col-lg-4 col-md-6 mb-20">
@@ -44,9 +44,9 @@
                             @endforeach
                             </div>
                             <div class="d-flex post-card-content-template">
-                                <h5 class="post-title font-weight-900" style="font-size: 1rem !important;">
+                                <h2 class="post-title font-weight-bold" style="font-size: 1rem !important;">
                                     <a href="{{ $item->path() }}">{{ Str::words($item->title, 9)}}</a>
-                                </h5>
+                                </h2>
                                 <div class="entry-meta meta-1 float-left font-x-small text-uppercase">
                                     <span class="post-on">{{ $item->created_at->format('d F Y') }}</span>
                                     <span class="time-reading has-dot">{{ $item->user->fullname }}</span>

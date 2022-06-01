@@ -14,7 +14,7 @@ class MovieController extends Controller
 {
     public function index()
     {
-        $movies = Movie::where('status', 1)->latest()->get();
+        $movies = Movie::where('status', 1)->where('id','desc')->get();
         $count = 1;
         return view('admin.movie.index', compact('movies','count'));
     }
@@ -108,9 +108,9 @@ class MovieController extends Controller
 
         if($movie)
         {
-            return redirect()->back()->with('success', 'Movie Publish Successfully!');
+            return back()->with('success', 'Movie Publish Successfully!');
         }else{
-            return redirect()->back()->with('error', 'Something Went Wrong!');
+            return back()->with('error', 'Something Went Wrong!');
         }
     }
 
@@ -163,9 +163,9 @@ class MovieController extends Controller
 
         if($movie)
         {
-            return redirect()->back()->with('success', 'Movie Updated Successfully!');
+            return back()->with('success', 'Movie Updated Successfully!');
         }else{
-            return redirect()->back()->with('error', 'Something Went Wrong!');
+            return back()->with('error', 'Something Went Wrong!');
         }
     }
 
@@ -175,9 +175,9 @@ class MovieController extends Controller
 
         if($movie)
         {
-            return redirect()->back()->with('success', 'Movie Deactived!');
+            return back()->with('success', 'Movie Deactived!');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 
@@ -187,9 +187,9 @@ class MovieController extends Controller
 
         if($movie)
         {
-            return redirect()->back()->with('success', 'Movie Activated!');
+            return back()->with('success', 'Movie Activated!');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 
@@ -201,9 +201,9 @@ class MovieController extends Controller
 
         if($movie)
         {
-            return redirect()->back()->with('delete', 'Movie moved to trash!');
+            return back()->with('delete', 'Movie moved to trash!');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 
@@ -216,9 +216,9 @@ class MovieController extends Controller
 
         if($movie)
         {
-            return redirect()->back()->with('delete', 'Movie Deleted Permanently!');
+            return back()->with('delete', 'Movie Deleted Permanently!');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 

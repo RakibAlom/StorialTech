@@ -13,16 +13,17 @@ class TemplatePublicController extends Controller
     // TEMPLATE FUNCTION
     public function index()
     {
-         $templates = Template::where('status', 1)->latest()->paginate(12);
+         $templates = Template::with('categorytemplate','tagtemplate','user')->where('status', 1)->orderBy('id','desc')->paginate(18);
          return view('template.index', compact('templates'));
     }
+
     public function loadmore(Request $request)
     {
          if($request->ajax()){
              if($request->id){
-                 $templates = Template::where('status', 1)->latest()->where('id', '<', $request->id)->take(12)->get();
+                 $templates = Template::where('status', 1)->orderBy('id','desc')->where('id', '<', $request->id)->take(18)->get();
              }else{
-                 $templates = Template::where('status', 1)->latest()->skip(3)->take(6)->get();
+                 $templates = Template::where('status', 1)->orderBy('id','desc')->skip(3)->take(6)->get();
              }
          }
         return view('template.get_data', compact('templates'));
@@ -34,7 +35,7 @@ class TemplatePublicController extends Controller
         $category->update([
             'views' => $category->views + 1,
         ]);
-        $templates = $category->template()->where('status', 1)->latest()->paginate(12);
+        $templates = $category->template()->with('categorytemplate','tagtemplate','user')->where('status', 1)->orderBy('id','desc')->paginate(18);
         return view('template.categoryshow', compact('templates','category'));
     }
 
@@ -44,7 +45,7 @@ class TemplatePublicController extends Controller
         $tag->update([
             'views' => $tag->views + 1,
         ]);
-        $templates = $tag->template()->where('status', 1)->latest()->paginate(12);
+        $templates = $tag->template()->with('categorytemplate','tagtemplate','user')->where('status', 1)->orderBy('id','desc')->paginate(18);
         return view('template.tagshow', compact('templates','tag'));
     }
 

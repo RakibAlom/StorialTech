@@ -2,8 +2,8 @@
 
 @section('css')
 <!--  END CUSTOM STYLE FILE  -->
+<link href="{{ asset('public/backend/assets/css/users/account-setting.css') }}" rel="stylesheet" type="text/css" />
 <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
-
 @endsection
 
 {{-- @section('loader')

@@ -1,27 +1,29 @@
 @php
     $id = $template->user->id;
-    $count = 1;
     $author = App\Models\User::findOrFail($id);
-    $replace = array('<p>','</p>','<br>','</br>','<h1>','</h1>','<h2>','</h2>','<h3>','</h3>','<em>','</em>','<strong>','</strong>');
-    $setting = App\Models\Admin\Setting::first();
+    $replace = array('<p>','</p>','<br>','</br>','<h1>','</h1>','<h2>','</h2>','<h3>','</h3>','<h4>','</h4>','<h5>','</h5>','<em>','</em>','<strong>','</strong>','<span>','</span>');
+    $seo = App\Models\Seo\SeoTemplate::first();
 @endphp
 
-@section('title', $template->title . ' | StorialTech')
-@section('meta-title', $template->title . ' | StorialTech')
+@section('title', $template->title . ' ' . $seo->sp_title_plus)
+@section('meta-title', $template->title . ' ' . $seo->sp_title_plus)
 @section('meta-description', Str::words(str_replace($replace, ' ', $template->body), 25,''))
 @section('meta-keywords', $template->keywords)
-@section('meta-image', asset('storage/app/public/'.$template->image))
-@section('og-title', $template->title . ' | StorialTech')
+@section('og-title', $template->title . ' ' . $seo->sp_title_plus)
 @section('og-description', Str::words(str_replace($replace, ' ', $template->body), 25,''))
-@section('og-image', asset('storage/app/public/'.$template->image))
-@section('twitter-title', $template->title . ' | StorialTech')
+@section('twitter-title', $template->title . ' ' . $seo->sp_title_plus)
 @section('twitter-description', Str::words(str_replace($replace, ' ', $template->body), 25,''))
+
+@if($template->image)
+@section('meta-image', asset('storage/app/public/'.$template->image))
+@section('og-image', asset('storage/app/public/'.$template->image))
 @section('twitter-image', asset('storage/app/public/'.$template->image))
+@endif
+
 
 @extends('layouts.app')
 
 @section('css')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 @endsection
 
 @section('aside')
@@ -39,7 +41,7 @@
                         @if(session('success'))
                             <p class="text-success">{{ session('success') }}</p>
                         @endif
-                        @include('include.googledisplayads')
+                        @include('include.ads.single_post_top_ads')
                                 
                         <div class="entry-header entry-header-style-1 mb-20">
                             <h1 class="entry-title mb-30 font-weight-900">
@@ -53,9 +55,10 @@
                                             <a class="author-avatar" href="javascript:void()"><img class="img-circle" src="{{ asset('storage/app/public/'.$author->image) }}" alt="{{ $author->username }}"></a>
                                         @endif
                                             By <a href="javascript:void(0)" class="ml-2"><span class="author-name font-weight-bold">{{ $author->fullname }}</span></a>
+                                            <br>
+                                           <span class="font-small"> Date: {{ $template->created_at->format('d F Y') }}</span>
+                                            <span class="ml-5 mr-10 font-small"><i class="fa fa-eye"></i> {{ $template->views }} views</span>
                                         </p>
-                                        <span class="mr-10"> {{ $template->created_at->format('d F Y') }}</span>
-                                        <span class="ml-5 mr-10"><i class="fa fa-eye"></i> {{ $template->views }} views</span>
                                     </div>
                                 </div>
                                 <div class="col-md-6 text-right d-none d-md-inline">
@@ -88,7 +91,7 @@
                             <div class="mt-5">
                                 <div class="text-center">
                                     
-                                    @include('include.googledisplayads')
+                                    @include('include.ads.single_post_top_ads')
                                     
                                     <h4 class="mb-20 mt-20 font-weight-bold text-success"><u>Downlaod Section</u></h4>
                                 @if($template->file)
@@ -107,13 +110,11 @@
                                         </div>
                                     </div>
                                     
-                                    @include('include.googledisplayads')
+                                    @include('include.ads.single_post_bottom_ads')
                                     
                                     <div class="mt-50 mb-30">
                                         <span>(If download link not working then <a class="text-primary" href={{ route('contact') }}>contact with us</a> and report for update!)</span> <br>
-                                        {{--
-                                        <span>(যদি ডাউনলোড লিঙ্ক কাজ না করে তাহলে আমাদের কে <a class="text-primary" href={{ route('contact') }}>মেসেজ</a> দিয়ে জানিয়ে দিন। আমরা লিঙ্কটি  ঠিক করে দিবো!)</span>
-                                        --}}
+                                        
                                     </div>
                                     
                                 </div>
@@ -142,7 +143,7 @@
 
 
                             <!--More posts-->
-                            <div class="single-more-articles border-radius-5">
+                            {{-- <div class="single-more-articles border-radius-5">
                                 <div class="widget-header-2 position-relative mb-30">
                                     <h5 class="mt-5 mb-15">You might be interested in</h5>
                                     <button class="single-more-articles-close"><i class="elegant-icon icon_close"></i></button>
@@ -176,10 +177,12 @@
                                     @endforeach
                                     </ul>
                                 </div>
-                            </div>
+                            </div> --}}
 
                         </article>
                     </div>
+
+                    @include('include.ads.single_post_bottom_ads')
                     
                 </div>
 
@@ -191,13 +194,13 @@
                         <div class="sidebar-widget widget-latest-posts mb-30">
                             <div class="widget-header-2 position-relative mb-20">
                                 <h5 class="mt-5 mb-20">Related Template</h5>
-                                @include('include.googledisplayads')
+                                @include('include.ads.sidebar_top_ads')
                             </div>
 
                             @foreach($template->category as $category)
                                 @php
                                     $tucates1 =  App\Models\Category\CategoryTemplate::where('id', $category->category_id)->first();
-                                    $related = $tucates1->template()->where('status',1)->inRandomOrder()->latest()->limit(5)->get();
+                                    $related = $tucates1->template()->with('tagtemplate')->where('status',1)->inRandomOrder()->latest()->limit(5)->get();
                                 @endphp
                             @endforeach
                             <div class="post-block-list post-module-1">
@@ -232,6 +235,8 @@
                             </div>
                         </div>
 
+                        @include('include.ads.sidebar_bottom_ads')
+
                     </div>
                 </div>
             </div>
@@ -243,7 +248,7 @@
 @section('js')
 <script type="text/javascript">
 function DelayRedirect() {
-    var seconds = 10;
+    var seconds = 5;
     var dvCountDown = document.getElementById("dvCountDown");
     var lblCount = document.getElementById("lblCount");
     dvCountDown.style.display = "block";

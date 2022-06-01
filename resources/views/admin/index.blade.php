@@ -26,6 +26,21 @@
                             <div class="widget widget-one_hybrid widget-followers">
                                 <div class="widget-heading">
                                     <div class="w-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-award"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                                    </div>
+                                    <p class="w-value">{{ $blogvisits }}</p>
+                                    <h5 class="">Blog Visits</h5>
+                                    <br>
+                                    <h5 class="">{{ $blog->count() }} blog posts</h5>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-6 mb-3">
+                            <div class="widget widget-one_hybrid widget-followers">
+                                <div class="widget-heading">
+                                    <div class="w-icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
                                     </div>
                                     <p class="w-value">{{ $storyvisits }}</p>
@@ -95,21 +110,6 @@
                                 </div>
                             </div>
                         </div> --}}
-                        
-                        <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-6 mb-3">
-                            <div class="widget widget-one_hybrid widget-followers">
-                                <div class="widget-heading">
-                                    <div class="w-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-award"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
-                                    </div>
-                                    <p class="w-value">{{ $blogvisits }}</p>
-                                    <h5 class="">Blog Visits</h5>
-                                    <br>
-                                    <h5 class="">{{ $blog->count() }} blog posts</h5>
-
-                                </div>
-                            </div>
-                        </div>
 
                         <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-6 mb-3">
                             <div class="widget widget-one_hybrid widget-followers">
@@ -130,7 +130,22 @@
                             <div class="widget widget-one_hybrid widget-followers">
                                 <div class="widget-heading">
                                     <div class="w-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share-2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                                    </div>
+                                    <p class="w-value">{{ $backlinksviews }}</p>
+                                    <h5 class="">Backlinks Visits</h5>
+                                    <br>
+                                    <h5 class="">{{ $backlinks->count() }} backlinks site</h5>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-6 mb-3">
+                            <div class="widget widget-one_hybrid widget-followers">
+                                <div class="widget-heading">
+                                    <div class="w-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
                                     </div>
                                     <p class="w-value">{{ $totalvisits }}</p>
                                     <h5 class="">Total Visits</h5>
@@ -155,59 +170,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-6 mb-3">
-                            <div class="widget widget-one_hybrid widget-followers">
-                                <div class="widget-heading">
-                                @if(auth()->user()->utype === 5)
-                                    <a href="{{ route('admin.create.story') }}" class="btn btn-primary btn-block">New Story</a>
-                                    <br>
-                                    <a href="{{ route('admin.story') }}" class="btn btn-success btn-block">Story List ({{ $story->count() }})</a>
-                                @elseif(auth()->user()->utype === 2)
-                                    <a href="{{ route('moderator.create.story') }}" class="btn btn-primary btn-block">New Story</a>
-                                @endif
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-6 mb-3">
-                            <div class="widget widget-one_hybrid widget-followers">
-                                <div class="widget-heading">
-                                @if(auth()->user()->utype === 5)
-                                    <a href="{{ route('admin.create.tutorial') }}" class="btn btn-primary btn-block">New Tutorial</a>
-                                    <br>
-                                    <a href="{{ route('admin.tutorial') }}" class="btn btn-success btn-block">Tutorial List ({{ $tutorial->count() }})</a>
-                                @elseif(auth()->user()->utype === 2)
-                                <a href="{{ route('moderator.create.tutorial') }}" class="btn btn-primary btn-block">New Tutorial</a>
-                                @endif
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-6 mb-3">
-                            <div class="widget widget-one_hybrid widget-followers">
-                                <div class="widget-heading">
-                                @if(auth()->user()->utype === 5)
-                                    <a href="{{ route('admin.create.pdf') }}" class="btn btn-primary btn-block">New PDF</a>
-                                    <br>
-                                    <a href="{{ route('admin.pdf') }}" class="btn btn-success btn-block">PDF List ({{ $pdf->count() }})</a>
-                                @elseif(auth()->user()->utype === 2)
-                                    <a href="{{ route('moderator.create.pdf') }}" class="btn btn-primary btn-block">New PDF</a>
-                                @endif
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-6 mb-3">
-                            <div class="widget widget-one_hybrid widget-followers">
-                                <div class="widget-heading">
-                                @if(auth()->user()->utype === 5)
-                                    <a href="{{ route('admin.create.template') }}" class="btn btn-primary btn-block">New Template</a>
-                                    <br>
-                                    <a href="{{ route('admin.template') }}" class="btn btn-success btn-block">Template List ({{ $template->count() }})</a>
-                                @elseif(auth()->user()->utype === 2)
-                                    <a href="{{ route('moderator.create.template') }}" class="btn btn-primary btn-block">New Template</a>
-                                @endif
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-6 mb-3">
+                        <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-3">
                             <div class="widget widget-one_hybrid widget-followers">
                                 <div class="widget-heading">
                                 @if(auth()->user()->utype === 5)
@@ -220,7 +183,72 @@
                                 </div>
                             </div>
                         </div>
-                        {{-- <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-6 mb-3">
+                        <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-3">
+                            <div class="widget widget-one_hybrid widget-followers">
+                                <div class="widget-heading">
+                                @if(auth()->user()->utype === 5)
+                                    <a href="{{ route('admin.create.tutorial') }}" class="btn btn-primary btn-block">New Tutorial</a>
+                                    <br>
+                                    <a href="{{ route('admin.tutorial') }}" class="btn btn-success btn-block">Tutorial List ({{ $tutorial->count() }})</a>
+                                @elseif(auth()->user()->utype === 2)
+                                <a href="{{ route('moderator.create.tutorial') }}" class="btn btn-primary btn-block">New Tutorial</a>
+                                @endif
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-3">
+                            <div class="widget widget-one_hybrid widget-followers">
+                                <div class="widget-heading">
+                                @if(auth()->user()->utype === 5)
+                                    <a href="{{ route('admin.create.story') }}" class="btn btn-primary btn-block">New Story</a>
+                                    <br>
+                                    <a href="{{ route('admin.story') }}" class="btn btn-success btn-block">Story List ({{ $story->count() }})</a>
+                                @elseif(auth()->user()->utype === 2)
+                                    <a href="{{ route('moderator.create.story') }}" class="btn btn-primary btn-block">New Story</a>
+                                @endif
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-3">
+                            <div class="widget widget-one_hybrid widget-followers">
+                                <div class="widget-heading">
+                                @if(auth()->user()->utype === 5)
+                                    <a href="{{ route('admin.create.web-story') }}" class="btn btn-primary btn-block">New Web Story</a>
+                                    <br>
+                                    <a href="{{ route('admin.web-stories') }}" class="btn btn-success btn-block">Web Stories List ({{ $webstories->count() }})</a>
+                                @elseif(auth()->user()->utype === 2)
+                                    <a href="{{ route('moderator.create.web-story') }}" class="btn btn-primary btn-block">New Web Story</a>
+                                @endif
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-3">
+                            <div class="widget widget-one_hybrid widget-followers">
+                                <div class="widget-heading">
+                                @if(auth()->user()->utype === 5)
+                                    <a href="{{ route('admin.create.pdf') }}" class="btn btn-primary btn-block">New PDF</a>
+                                    <br>
+                                    <a href="{{ route('admin.pdf') }}" class="btn btn-success btn-block">PDF List ({{ $pdf->count() }})</a>
+                                @elseif(auth()->user()->utype === 2)
+                                    <a href="{{ route('moderator.create.pdf') }}" class="btn btn-primary btn-block">New PDF</a>
+                                @endif
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-3">
+                            <div class="widget widget-one_hybrid widget-followers">
+                                <div class="widget-heading">
+                                @if(auth()->user()->utype === 5)
+                                    <a href="{{ route('admin.create.template') }}" class="btn btn-primary btn-block">New Template</a>
+                                    <br>
+                                    <a href="{{ route('admin.template') }}" class="btn btn-success btn-block">Template List ({{ $template->count() }})</a>
+                                @elseif(auth()->user()->utype === 2)
+                                    <a href="{{ route('moderator.create.template') }}" class="btn btn-primary btn-block">New Template</a>
+                                @endif
+                                </div>
+                            </div>
+                        </div>
+                        {{-- <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-3">
                             <div class="widget widget-one_hybrid widget-followers">
                                 <div class="widget-heading">
                                     <a href="{{ route('admin.create.movie') }}" class="btn btn-primary btn-block">New Movie</a>
@@ -231,7 +259,7 @@
                                 </div>
                             </div>
                         </div> --}}
-                        {{-- <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-6 mb-3">
+                        {{-- <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-3">
                             <div class="widget widget-one_hybrid widget-followers">
                                 <div class="widget-heading">
                                     <a href="{{ route('admin.create.youtube-movie') }}" class="btn btn-primary btn-block">New YT Movie</a>
@@ -243,7 +271,7 @@
                             </div>
                         </div> --}}
 
-                        <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-6 mb-3">
+                        <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-3">
                             <div class="widget widget-one_hybrid widget-followers">
                                 <div class="widget-heading">
                                 @if(auth()->user()->utype === 5)
@@ -256,6 +284,20 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="col-lg-2 col-md-4 col-sm-4 col-6 mb-3">
+                            <div class="widget widget-one_hybrid widget-followers">
+                                <div class="widget-heading">
+                                @if(auth()->user()->utype === 5)
+                                    <a href="{{ route('admin.create-backlinks') }}" class="btn btn-primary btn-block">New Backlink</a>
+                                    <br>
+                                    <a href="{{ route('admin.backlinks') }}" class="btn btn-success btn-block">Backlinks List ({{ $source->count() }})</a>
+                                @elseif(auth()->user()->utype === 2)
+                                    <a href="#" class="btn btn-primary btn-block">New Backlink</a>
+                                @endif
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     
                 @if(auth()->user()->utype === 5)
@@ -264,27 +306,29 @@
                             <table class="table table-bordered table-responsive-sm">
                                 <tr class="text-white">
                                     <th>SL</th>
-                                    <th>NAME</th></th>
+                                    <th>NAME</th>
+                                    <th>BLOG</th>
                                     <th>STORY</th>
-                                    <th>TUTORIAL</th></th>
+                                    <th>TUTORIAL</th>
+                                    <th>WEB STORY</th>
                                     <th>PDF</th>
                                     <th>TEMPLATE</th>
                                     <!--<th>MOVIE</th>-->
                                     <!--<th>YTMOVIE</th>-->
-                                    <th>BLOG</th>
                                     <th>PREFREE</th>
                                 </tr>
                             @foreach($admins as $admin)
                                 <tr>
                                     <td>{{ $count++ }}</td>
                                     <td>{{ $admin->username }}</td>
+                                    <td>{{ $admin->blog->count() }}</td>
                                     <td>{{ $admin->story->count() }}</td>
                                     <td>{{ $admin->tutorial->count() }}</td>
+                                    <td>{{ $admin->webstories->count() }}</td>
                                     <td>{{ $admin->pdf->count() }}</td>
                                     <td>{{ $admin->template->count() }}</td>
                                     <!--<td>{{ $admin->movie->count() }}</td>-->
                                     <!--<td>{{ $admin->ytmovie->count() }}</td>-->
-                                    <td>{{ $admin->blog->count() }}</td>
                                     <td>{{ $admin->source->count() }}</td>
                                 </tr>
                             @endforeach

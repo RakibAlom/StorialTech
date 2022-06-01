@@ -1,6 +1,5 @@
 @php
-    $mcates = App\Models\Category\CategoryMovie::where('status', 1)->orderBy('snumber')->get();
-    $setting = App\Models\Admin\Setting::first();
+    $mcates = App\Models\Category\CategoryMovie::where('status', 1)->orderBy('name')->get();
 
 @endphp
 

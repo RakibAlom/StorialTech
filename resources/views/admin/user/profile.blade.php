@@ -1,8 +1,15 @@
+@php
+    $platform = App\Models\Custom\PlatformControl::first();
+@endphp
+
 @extends('admin.layouts.app')
 
 @section('css')
 <!--  BEGIN CUSTOM STYLE FILE  -->
 <link href="{{ asset('public/backend/assets/css/users/user-profile.css') }}" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="{{ asset('public/backend/plugins/table/datatable/datatables.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('public/backend/plugins/table/datatable/custom_dt_html5.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('public/backend/plugins/table/datatable/dt-global_style.css') }}">
 <!--  END CUSTOM STYLE FILE  -->
 @endsection
 
@@ -137,7 +144,6 @@
 
                 <div class="bio layout-spacing ">
                     <div class="widget-content widget-content-area">
-                        <h3 class=""><span class="float-left">Story</span><span class="float-right">Tutorial</span></h3>
 
                         <div class="bio-skill-box">
 
@@ -145,30 +151,95 @@
 
                                 <div class="col-md-6">
                                     <div class="col-12 mb-5 ">
-
+                                    @if($platform->blog_status == 1)
                                         <div class="d-flex b-skills">
                                             <div>
-                                            </div>
-                                            <div class="">
-                                                <h5></h5>
-                                                <p></p>
+                                                <h5 class="font-weight-bold text-dark">Blog List</h5>
+                                                <ul>
+                                                @foreach ($user->blog->where('status', 1) as $item)
+                                                    <li><a class="text-success" href="{{ $item->path() }}" target="_blank">{{ $item->title }}</a></li>
+                                                @endforeach
+                                                </ul>
                                             </div>
                                         </div>
+                                    @endif
+                                    @if($platform->story_status == 1)
+                                        <div class="d-flex b-skills mt-4">
+                                            <div>
+                                                <h5 class="font-weight-bold text-dark">Story List</h5>
+                                                <ul>
+                                                @foreach ($user->story->where('status', 1) as $item)
+                                                    <li><a class="text-success" href="{{ $item->path() }}" target="_blank">{{ $item->title }}</a></li>
+                                                @endforeach
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    @endif
+                                    @if($platform->source_status == 1)
 
+                                        <div class="d-flex b-skills mt-4">
+                                            <div>
+                                                <h5 class="font-weight-bold text-dark">Premium Free Source List</h5>
+                                                <ul>
+                                                @foreach ($user->source->where('status', 1) as $item)
+                                                    <li><a class="text-success" href="{{ $item->path() }}" target="_blank">{{ $item->title }}</a></li>
+                                                @endforeach
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    @endif
+                                    @if($platform->template_status == 1)
+                                        <div class="d-flex b-skills mt-4">
+                                            <div>
+                                                <h5 class="font-weight-bold text-dark">Template/Script List</h5>
+                                                <ul>
+                                                @foreach ($user->template->where('status', 1) as $item)
+                                                    <li><a class="text-success" href="{{ $item->path() }}" target="_blank">{{ $item->title }}</a></li>
+                                                @endforeach
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    @endif
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="col-12 mb-5 ">
-
+                                    @if($platform->tutorial_status == 1)
                                         <div class="d-flex b-skills">
                                             <div>
-                                            </div>
-                                            <div class="">
-                                                <h5></h5>
-                                                <p></p>
+                                                <h5 class="font-weight-bold text-dark">Tutorial List</h5>
+                                                <ul>
+                                                @foreach ($user->tutorial->where('status', 1) as $item)
+                                                    <li><a class="text-success" href="{{ $item->path() }}" target="_blank">{{ $item->title }}</a></li>
+                                                @endforeach
+                                                </ul>
                                             </div>
                                         </div>
-
+                                    @endif
+                                    @if($platform->pdf_status == 1)
+                                        <div class="d-flex b-skills mt-4">
+                                            <div>
+                                                <h5 class="font-weight-bold text-dark">PDF List</h5>
+                                                <ul>
+                                                @foreach ($user->pdf->where('status', 1) as $item)
+                                                    <li><a class="text-success" href="{{ $item->path() }}" target="_blank">{{ $item->name }}</a></li>
+                                                @endforeach
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    @endif
+                                    @if($platform->movie_status == 1)
+                                        <div class="d-flex b-skills mt-4">
+                                            <div>
+                                                <h5 class="font-weight-bold text-dark">Movie List</h5>
+                                                <ul>
+                                                @foreach ($user->movie->where('status', 1) as $item)
+                                                    <li><a class="text-success" href="{{ $item->path() }}" target="_blank">{{ $item->name }}</a></li>
+                                                @endforeach
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    @endif
                                     </div>
                                 </div>
 
@@ -189,6 +260,35 @@
 @endsection
 
 @section('js')
-
+<!-- BEGIN PAGE LEVEL CUSTOM SCRIPTS -->
+<script src="{{ asset('public/backend/plugins/table/datatable/datatables.js') }}"></script>
+<!-- NOTE TO Use Copy CSV Excel PDF Print Options You Must Include These Files  -->
+<script src="{{ asset('public/backend/plugins/table/datatable/button-ext/dataTables.buttons.min.js') }}"></script>
+<script src="{{ asset('public/backend/plugins/table/datatable/button-ext/jszip.min.js') }}"></script>
+<script src="{{ asset('public/backend/plugins/table/datatable/button-ext/buttons.html5.min.js') }}"></script>
+<script src="{{ asset('public/backend/plugins/table/datatable/button-ext/buttons.print.min.js') }}"></script>
+<script>
+    $('#html5-extension').DataTable( {
+        dom: '<"row"<"col-md-12"<"row"<"col-md-6"B><"col-md-6"f> > ><"col-md-12"rt> <"col-md-12"<"row"<"col-md-5"i><"col-md-7"p>>> >',
+        buttons: {
+            buttons: [
+                { extend: 'copy', className: 'btn' },
+                { extend: 'csv', className: 'btn' },
+                { extend: 'excel', className: 'btn' },
+                { extend: 'print', className: 'btn' }
+            ]
+        },
+        "oLanguage": {
+            "oPaginate": { "sPrevious": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>', "sNext": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>' },
+            "sInfo": "Showing page _PAGE_ of _PAGES_",
+            "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',
+            "sSearchPlaceholder": "Search...",
+           "sLengthMenu": "Results :  _MENU_",
+        },
+        "stripeClasses": [],
+        "lengthMenu": [20, 50, 100, 250, 500],
+        "pageLength": 20
+    } );
+</script>
 
 @endsection

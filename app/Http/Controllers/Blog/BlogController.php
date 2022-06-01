@@ -102,9 +102,9 @@ class BlogController extends Controller
 
         if($blog)
         {
-            return redirect()->back()->with('success', 'Blog Publish Successfully!');
+            return back()->with('success', 'Blog Publish Successfully!');
         }else{
-            return redirect()->back()->with('error', 'Something Went Wrong!');
+            return back()->with('error', 'Something Went Wrong!');
         }
     }
 
@@ -118,9 +118,6 @@ class BlogController extends Controller
             'body' => request('body'),
             'keywords' => request('keywords'),
         ]);
-        
-        $update_date = $blog->updated_at;
-        $blog->update(['created_at' => $update_date]);
 
         $this->storeImage($blog);
 
@@ -140,9 +137,9 @@ class BlogController extends Controller
 
         if($blog)
         {
-            return redirect()->back()->with('success', 'Blog Updated Successfully!');
+            return back()->with('success', 'Blog Updated Successfully!');
         }else{
-            return redirect()->back()->with('error', 'Something Went Wrong!');
+            return back()->with('error', 'Something Went Wrong!');
         }
     }
 
@@ -152,9 +149,9 @@ class BlogController extends Controller
 
         if($blog)
         {
-            return redirect()->back()->with('success', 'Blog Deactived!');
+            return back()->with('success', 'Blog Deactived!');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 
@@ -164,9 +161,9 @@ class BlogController extends Controller
 
         if($blog)
         {
-            return redirect()->back()->with('success', 'Blog Activated!');
+            return back()->with('success', 'Blog Activated!');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 
@@ -176,9 +173,9 @@ class BlogController extends Controller
 
         if($blog)
         {
-            return redirect()->back()->with('success', 'Blog Approved!');
+            return back()->with('success', 'Blog Approved!');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 
@@ -188,9 +185,9 @@ class BlogController extends Controller
 
         if($blog)
         {
-            return redirect()->back()->with('delete', 'Blog moved to trash!');
+            return back()->with('delete', 'Blog moved to trash!');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 
@@ -203,9 +200,9 @@ class BlogController extends Controller
 
         if($blog)
         {
-            return redirect()->back()->with('delete', 'Blog Deleted Permanently!');
+            return back()->with('delete', 'Blog Deleted Permanently!');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 
@@ -294,9 +291,9 @@ class BlogController extends Controller
 
         if($blog)
         {
-            return redirect()->back()->with('success', 'Blog Updated Successfully!');
+            return back()->with('success', 'Blog Updated Successfully!');
         }else{
-            return redirect()->back()->with('error', 'Something Went Wrong!');
+            return back()->with('error', 'Something Went Wrong!');
         }
     }
 
@@ -309,9 +306,9 @@ class BlogController extends Controller
 
         if($blog)
         {
-            return redirect()->back()->with('success', 'Blog Deactived!');
+            return back()->with('success', 'Blog Deactived!');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 
@@ -324,9 +321,9 @@ class BlogController extends Controller
 
         if($blog)
         {
-            return redirect()->back()->with('success', 'Blog Activated!');
+            return back()->with('success', 'Blog Activated!');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 
@@ -339,9 +336,9 @@ class BlogController extends Controller
 
         if($blog)
         {
-            return redirect()->back()->with('success', 'Blog Approved!');
+            return back()->with('success', 'Blog Approved!');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 
@@ -354,9 +351,9 @@ class BlogController extends Controller
 
         if($blog)
         {
-            return redirect()->back()->with('delete', 'Blog Deleted!');
+            return back()->with('delete', 'Blog Deleted!');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 }

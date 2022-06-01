@@ -1,8 +1,8 @@
 <div class="pdf-section">
     <div class="container">
         <div class="pt-10">
-                @include('include.googledisplayads')
-            </div>
+            @include('include.ads.section_top_banner_ads')
+        </div>
         <div class="hot-tags pt-20 pb-20 font-small align-self-center">
             <div class="widget-header-3">
                 <div class="row align-self-center">
@@ -28,7 +28,7 @@
             <div class="post-block-list post-module-1">
                 <ul class="list-post">
                 @php
-                    $pdfs = App\Models\Pdf\Pdf::where('status', 1)->latest()->take(12)->get();
+                    $pdfs = App\Models\Pdf\Pdf::with('categorypdf')->where('status', 1)->latest()->take(12)->get();
                 @endphp
                     <div class="row">
                     @foreach($pdfs as $item)
@@ -41,7 +41,7 @@
                                         </a>
                                     </div>
                                     <div class="post-content media-body">
-                                        <h6 class="post-title mb-15 text-limit-2-row font-medium"><a href="{{ $item->path() }}">{{ $item->name }}</a></h6>
+                                        <h2 class="post-title mb-15 text-limit-2-row font-medium"><a href="{{ $item->path() }}">{{ $item->name }}</a></h2>
                                         <div class="entry-meta meta-1 float-left font-x-small text-uppercase">
                                             <span class="post-on">size: {{ $item->size }}</span>
                                             <span class="post-by has-dot">{{ $item->views }} views</span>

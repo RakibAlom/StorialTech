@@ -12,7 +12,7 @@ class YoutubeMoviePublicController extends Controller
     // MOVIE FUNCTION
     public function index()
     {
-         $movies = Youtubemovie::where('status', 1)->latest()->paginate(20);
+         $movies = Youtubemovie::with('moviecategory')->where('status', 1)->latest()->paginate(20);
          return view('movie.youtube.index', compact('movies'));
     }
     
@@ -22,7 +22,7 @@ class YoutubeMoviePublicController extends Controller
         $category->update([
             'views' => $category->views + 1,
         ]);
-        $movies = $category->ytmovie()->where('status', 1)->latest()->paginate(30);
+        $movies = $category->ytmovie()->with('moviecategory')->where('status', 1)->latest()->paginate(30);
         return view('movie.youtube.categoryshow', compact('movies','category'));
     }
 

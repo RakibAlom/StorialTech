@@ -67,7 +67,7 @@
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="name">BOOK NAME</label>
-                                                        <input type="text" class="form-control mb-4 @error('name') is-invalid @enderror" name="name" id="name" placeholder="ex: book-url-name" id="name" value="{{ old('name') }}" required>
+                                                        <input type="text" class="form-control mb-4 @error('name') is-invalid @enderror" name="name" id="name" placeholder="ex: book name" id="name" value="{{ old('name') }}" required>
                                                         @error('name')
                                                             <span class="invalid-feedback" role="alert">
                                                                 <strong>{{ $message }}</strong>

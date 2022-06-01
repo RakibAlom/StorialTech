@@ -1,5 +1,6 @@
 @php
-    $setting = App\Models\Admin\Setting::first()
+    $setting = App\Models\Admin\Setting::first();
+    $custom = App\Models\Custom\CustomCode::first();
 @endphp
 
 <!DOCTYPE html>
@@ -18,7 +19,7 @@
 	<link rel="apple-touch-icon" sizes="152x152" href="{{ asset('storage/app/public/'.$setting->favicon) }}" />
 @endif
     
-    @yield('canonical')
+    <link rel="canonical" href="{{ URL::current() }}" />
     
     <!-- Primary Meta Tags -->
     <title>@yield('title')</title>
@@ -38,34 +39,25 @@
     <meta property="twitter:title" content="@yield('twitter-title')">
     <meta property="twitter:description" content="@yield('twitter-description')">
     <meta property="twitter:image" content="@yield('twitter-image')">
-    
-    <!--FaceBook Instantarticles-->
-    <meta property="fb:pages" content="405838296887850" />
-
 
     <!-- CSS SECTION  -->
     <link rel="stylesheet" href="{{ asset('public/frontend/css/storialtech.css') }}">
     <link rel="stylesheet" href="{{ asset('public/frontend/css/widgets.css') }}">
     <link rel="stylesheet" href="{{ asset('public/frontend/css/responsive.css') }}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ asset('public/frontend/css/vendor/font-awesome/css/font-awesome.min.css') }}">
 
     {{-- TOASTR CSS --}}
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" /> -->
+    <link rel="stylesheet" href="{{ asset('public/frontend/css/vendor/toastr.css') }}">
 
     @yield('css')
-    
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-157563620-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'UA-157563620-1');
-    </script>
-    
-    <!--Google Adsense-->
-    <script data-ad-client="ca-pub-8183914844375779" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    @if($custom)
+      {!! $custom->header_custom_code !!}
+
+      <style>
+        {!! $custom->header_custom_css !!}
+      </style>
+    @endif
 
 
 </head>
@@ -107,7 +99,7 @@
     <!-- JS SECTION -->
     <script src="{{ asset('public/frontend/js/main.js') }}"></script>
     {{-- TOASTR JS --}}
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script> -->
+    <script src="{{ asset('public/frontend/js/vendor/toastr.min.js') }}"></script>
 
     @yield('js')
 
@@ -167,9 +159,12 @@
                 });
             });
     </script>
-    <!-- Cloudflare Web Analytics -->
-    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2d6e1db653284a71843a00c85923fc31"}'></script>
-    <!-- End Cloudflare Web Analytics -->
+
+    @if ($custom)
+      {!! $custom->footer_custom_code !!}
+
+      {!! $custom->footer_custom_js !!}
+    @endif
 
 </body>
 

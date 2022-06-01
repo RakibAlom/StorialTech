@@ -102,9 +102,9 @@ class StoryController extends Controller
 
         if($story)
         {
-            return redirect()->back()->with('success', 'Story Publish Successfully!');
+            return back()->with('success', 'Story Publish Successfully!');
         }else{
-            return redirect()->back()->with('error', 'Something Went Wrong!');
+            return back()->with('error', 'Something Went Wrong!');
         }
     }
 
@@ -120,9 +120,6 @@ class StoryController extends Controller
         ]);
 
         $this->storeImage($story);
-        
-        $update_date = $story->updated_at;
-        $story->update(['created_at' => $update_date]);
 
         if(request()->category_id){
             foreach($story->category as $item){
@@ -140,9 +137,9 @@ class StoryController extends Controller
 
         if($story)
         {
-            return redirect()->back()->with('success', 'Story Updated Successfully!');
+            return back()->with('success', 'Story Updated Successfully!');
         }else{
-            return redirect()->back()->with('error', 'Something Went Wrong!');
+            return back()->with('error', 'Something Went Wrong!');
         }
     }
 
@@ -152,9 +149,9 @@ class StoryController extends Controller
 
         if($story)
         {
-            return redirect()->back()->with('success', 'Story Deactived!');
+            return back()->with('success', 'Story Deactived!');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 
@@ -164,9 +161,9 @@ class StoryController extends Controller
 
         if($story)
         {
-            return redirect()->back()->with('success', 'Story Activated!');
+            return back()->with('success', 'Story Activated!');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 
@@ -176,9 +173,9 @@ class StoryController extends Controller
 
         if($story)
         {
-            return redirect()->back()->with('success', 'Story Approved!');
+            return back()->with('success', 'Story Approved!');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 
@@ -188,9 +185,9 @@ class StoryController extends Controller
 
         if($story)
         {
-            return redirect()->back()->with('delete', 'Story moved to trash!');
+            return back()->with('delete', 'Story moved to trash!');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 
@@ -203,9 +200,9 @@ class StoryController extends Controller
 
         if($story)
         {
-            return redirect()->back()->with('delete', 'Story Deleted Permanently!');
+            return back()->with('delete', 'Story Deleted Permanently!');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 
@@ -292,9 +289,9 @@ class StoryController extends Controller
 
         if($story)
         {
-            return redirect()->back()->with('success', 'Story Updated Successfully!');
+            return back()->with('success', 'Story Updated Successfully!');
         }else{
-            return redirect()->back()->with('error', 'Something Went Wrong!');
+            return back()->with('error', 'Something Went Wrong!');
         }
     }
 
@@ -306,9 +303,9 @@ class StoryController extends Controller
 
         if($story)
         {
-            return redirect()->back()->with('success', 'Story Deactived!');
+            return back()->with('success', 'Story Deactived!');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 
@@ -320,9 +317,9 @@ class StoryController extends Controller
 
         if($story)
         {
-            return redirect()->back()->with('success', 'Story Activated!');
+            return back()->with('success', 'Story Activated!');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 
@@ -333,9 +330,9 @@ class StoryController extends Controller
         $story->update(['status' => 1]);
         if($story)
         {
-            return redirect()->back()->with('success', 'Story Approved!');
+            return back()->with('success', 'Story Approved!');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 
@@ -347,9 +344,9 @@ class StoryController extends Controller
 
         if($story)
         {
-            return redirect()->back()->with('delete', 'Story Deleted!');
+            return back()->with('delete', 'Story Deleted!');
         }else{
-            return redirect()->back()->with('error', 'Error, Something Went Wrong!');
+            return back()->with('error', 'Error, Something Went Wrong!');
         }
     }
 }

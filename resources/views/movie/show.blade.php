@@ -1,26 +1,29 @@
 @php
     $id = $movie->user->id;
-    $count = 1;
     $author = App\Models\User::findOrFail($id);
-    $replace = array('<p>','</p>','<br>','</br>','<h1>','</h1>','<h2>','</h2>','<h3>','</h3>','<em>','</em>','<strong>','</strong>');
+    $replace = array('<p>','</p>','<br>','</br>','<h1>','</h1>','<h2>','</h2>','<h3>','</h3>','<h4>','</h4>','<h5>','</h5>','<em>','</em>','<strong>','</strong>','<span>','</span>');
+    $seo = App\Models\Seo\SeoMovie::first();
 @endphp
 
-@section('title', $movie->name . ' | Movie')
-@section('meta-title', $movie->name . ' | Movie')
-@section('meta-description', Str::words(str_replace($replace, ' ', $movie->details), 25,''))
+@section('title', $movie->title . ' ' . $seo->sp_title_plus)
+@section('meta-title', $movie->title . ' ' . $seo->sp_title_plus)
+@section('meta-description', Str::words(str_replace($replace, ' ', $movie->body), 25,''))
 @section('meta-keywords', $movie->keywords)
-@section('meta-image', asset('storage/app/public/'.$movie->thumbnail))
-@section('og-title', $movie->name . ' | Movie')
-@section('og-description', Str::words(str_replace($replace, ' ', $movie->details), 25,''))
-@section('og-image', asset('storage/app/public/'.$movie->thumbnail))
-@section('twitter-title', $movie->name . ' | Movie')
-@section('twitter-description', Str::words(str_replace($replace, ' ', $movie->details), 25,''))
-@section('twitter-image', asset('storage/app/public/'.$movie->thumbnail))
+@section('og-title', $movie->title . ' ' . $seo->sp_title_plus)
+@section('og-description', Str::words(str_replace($replace, ' ', $movie->body), 25,''))
+@section('twitter-title', $movie->title . ' ' . $seo->sp_title_plus)
+@section('twitter-description', Str::words(str_replace($replace, ' ', $movie->body), 25,''))
+
+@if($movie->image)
+@section('meta-image', asset('storage/app/public/'.$movie->image))
+@section('og-image', asset('storage/app/public/'.$movie->image))
+@section('twitter-image', asset('storage/app/public/'.$movie->image))
+@endif
+
 
 @extends('layouts.app')
 
 @section('css')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 @endsection
 
 @section('aside')
@@ -38,6 +41,7 @@
                         @if(session('success'))
                             <p class="text-success">{{ session('success') }}</p>
                         @endif
+                        @include('include.ads.single_post_top_ads')
                         <div class="entry-header entry-header-style-1 mb-20">
                             <h1 class="entry-title mb-30 font-weight-900">
                                 {{ $movie->name }}
@@ -119,15 +123,8 @@
                                     
                                     <div class="mt-50 mb-30">
                                         <h5><u>Instructions (নির্দেশনা)</u></h5>
-                                    {{--    <h5 class="text-danger">
-                                            (Chrome Browser Not Working)
-                                            <br>
-                                            (ক্রোম ব্রাউজার কাজ করে না)
-                                        </h5>
-                                        <h6 class="text-success font-wieght-bold">FireFox, Opera, UC, Edge, Safari ext. Working Nice.</h6>
-                                        <span class="text-primary">অনেক সময় সার্ভার ডাউন থাকে, যদি এরকম হয় তাহলে কিছু সময় পরে চেষ্টা করুন</span> <br> --}}
+                                    
                                         <span>(If download link not working then <a href={{ route('contact') }}>contact with us</a> and report for update!)</span> <br>
-                                        <span>(যদি ডাউনলোড লিঙ্ক কাজ না করে তাহলে আমাদের কে <a href={{ route('contact') }}>মেসেজ</a> দিয়ে জানিয়ে দিন। আমরা লিঙ্কটি  ঠিক করে দিবো!)</span>
                                     </div>
                                 </div>
                             </div>
@@ -150,9 +147,10 @@
                                 </div>
                             </div>
 
+                            @include('include.ads.single_post_bottom_ads')
 
                             <!--More posts-->
-                            <div class="single-more-articles border-radius-5">
+                            {{-- <div class="single-more-articles border-radius-5">
                                 <div class="widget-header-2 position-relative mb-30">
                                     <h5 class="mt-5 mb-15">You might be interested in</h5>
                                     <button class="single-more-articles-close"><i class="elegant-icon icon_close"></i></button>
@@ -182,7 +180,7 @@
                                     @endforeach
                                     </ul>
                                 </div>
-                            </div>
+                            </div> --}}
 
                         </article>
                     </div>
@@ -196,6 +194,7 @@
                         <div class="sidebar-widget widget-latest-posts mb-30">
                             <div class="widget-header-2 position-relative mb-20">
                                 <h5 class="mt-5 mb-20">Related movie</h5>
+                                @include('include.ads.sidebar_top_ads')
                             </div>
 
                             @foreach($movie->category as $category)
@@ -228,6 +227,8 @@
                                 @endforeach
                                 </ul>
                             </div>
+
+                            @include('include.ads.sidebar_bottom_ads')
 
                         </div>
 
