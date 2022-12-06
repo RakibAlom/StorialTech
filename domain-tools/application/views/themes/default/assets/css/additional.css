@@ -1,8 +1,0 @@
-.resultAvailorNotMain .resultAvailorNot .leftSec h1 .buy-now.main-buy-now {
-    background: white;
-    color: #09844b;
-}
-
-.resultAvailorNotMain .resultAvailorNot .leftSec h1 .buy-now.main-buy-now::before {
-    background: none !important;
-}
